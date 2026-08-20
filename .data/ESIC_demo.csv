@@ -1,4 +1,2221 @@
-﻿Source,Indicator,Year,Frequency,States,Gender,Sector,Age-group (years),Value,Unit
-ESIC,Net number of ESIC beneficiaries (Persons),2024,Annual,India,Person,Total,15 & above,31000000,Number
-ESIC,Net number of ESIC beneficiaries (Persons),2024,Annual,Uttar Pradesh,Person,Total,15 & above,4200000,Number
-ESIC,Net number of ESIC beneficiaries (Persons),2024,Annual,Maharashtra,Person,Total,15 & above,5200000,Number
+Source,Indicator,Year,Month,State,Value,Unit
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,India,20947381,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Jammu and Kashmir,414543,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Himachal Pradesh,568401,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Punjab,433253,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Chandigarh,463423,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Uttarakhand,531829,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Haryana,584236,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Delhi,311785,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Rajasthan,343924,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Uttar Pradesh,373660,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Bihar,312361,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Sikkim,585248,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Arunachal Pradesh,657691,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Nagaland,417163,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Manipur,627464,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Mizoram,687112,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Tripura,403370,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Meghalaya,404613,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Assam,578819,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,West Bengal,292975,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Jharkhand,452938,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Odisha,313593,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Chhattisgarh,270187,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Madhya Pradesh,346681,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Gujarat,358374,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Dadra and Nagar Haveli and Daman and Diu,448357,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Maharashtra,344879,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Andhra Pradesh,659973,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Karnataka,485042,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Goa,332064,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Lakshadweep,294184,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Kerala,588003,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Tamil Nadu,375543,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Puducherry,412063,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Andaman and Nicobar Islands,325093,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Telangana,449310,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jan,Ladakh,390328,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,India,22649499,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Jammu and Kashmir,413070,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Himachal Pradesh,551846,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Punjab,468563,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Chandigarh,504943,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Uttarakhand,570800,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Haryana,594082,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Delhi,315235,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Rajasthan,337869,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Uttar Pradesh,358433,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Bihar,307800,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Sikkim,594144,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Arunachal Pradesh,621080,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Nagaland,409859,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Manipur,619439,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Mizoram,677667,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Tripura,379044,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Meghalaya,407963,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Assam,574497,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,West Bengal,274424,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Jharkhand,451410,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Odisha,306340,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Chhattisgarh,270381,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Madhya Pradesh,345866,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Gujarat,358800,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Dadra and Nagar Haveli and Daman and Diu,426557,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Maharashtra,350596,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Andhra Pradesh,643956,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Karnataka,496202,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Goa,322973,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Lakshadweep,306519,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Kerala,596963,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Tamil Nadu,403605,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Puducherry,417439,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Andaman and Nicobar Islands,339874,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Telangana,455730,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Feb,Ladakh,369785,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,India,21165207,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Jammu and Kashmir,427237,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Himachal Pradesh,591264,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Punjab,445668,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Chandigarh,472617,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Uttarakhand,550461,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Haryana,610760,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Delhi,316135,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Rajasthan,339893,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Uttar Pradesh,372584,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Bihar,326462,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Sikkim,573380,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Arunachal Pradesh,653195,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Nagaland,396524,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Manipur,612717,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Mizoram,651404,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Tripura,415615,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Meghalaya,404843,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Assam,605155,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,West Bengal,294587,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Jharkhand,436555,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Odisha,302548,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Chhattisgarh,268571,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Madhya Pradesh,357100,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Gujarat,375088,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Dadra and Nagar Haveli and Daman and Diu,426581,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Maharashtra,371702,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Andhra Pradesh,696606,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Karnataka,509181,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Goa,327948,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Lakshadweep,309790,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Kerala,584179,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Tamil Nadu,391361,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Puducherry,431664,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Andaman and Nicobar Islands,339197,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Telangana,468148,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Mar,Ladakh,361689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,India,22235272,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Jammu and Kashmir,450870,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Himachal Pradesh,567037,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Punjab,446882,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Chandigarh,508937,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Uttarakhand,594287,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Haryana,583011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Delhi,324004,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Rajasthan,332291,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Uttar Pradesh,387323,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Bihar,314993,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Sikkim,615032,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Arunachal Pradesh,663011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Nagaland,414828,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Manipur,615026,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Mizoram,665775,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Tripura,384548,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Meghalaya,411322,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Assam,598969,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,West Bengal,286323,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Jharkhand,457577,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Odisha,313975,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Chhattisgarh,256377,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Madhya Pradesh,361200,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Gujarat,374140,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Dadra and Nagar Haveli and Daman and Diu,444196,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Maharashtra,356642,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Andhra Pradesh,645609,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Karnataka,524084,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Goa,325756,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Lakshadweep,320351,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Kerala,580170,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Tamil Nadu,418397,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Puducherry,456065,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Andaman and Nicobar Islands,358171,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Telangana,438659,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Apr,Ladakh,396285,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,India,22304056,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Jammu and Kashmir,427272,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Himachal Pradesh,591562,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Punjab,436018,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Chandigarh,473988,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Uttarakhand,563966,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Haryana,591447,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Delhi,321343,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Rajasthan,341169,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Uttar Pradesh,367909,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Bihar,323290,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Sikkim,594395,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Arunachal Pradesh,633299,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Nagaland,403772,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Manipur,633798,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Mizoram,662306,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Tripura,412784,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Meghalaya,422618,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Assam,631499,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,West Bengal,302733,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Jharkhand,452113,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Odisha,294048,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Chhattisgarh,263575,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Madhya Pradesh,355474,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Gujarat,379181,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Dadra and Nagar Haveli and Daman and Diu,435161,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Maharashtra,351741,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Andhra Pradesh,652598,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Karnataka,538313,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Goa,324935,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Lakshadweep,303919,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Kerala,617703,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Tamil Nadu,398400,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Puducherry,427462,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Andaman and Nicobar Islands,357417,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Telangana,475953,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,May,Ladakh,370912,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,India,21716415,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Jammu and Kashmir,435971,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Himachal Pradesh,548122,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Punjab,481071,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Chandigarh,503338,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Uttarakhand,559915,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Haryana,608224,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Delhi,331540,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Rajasthan,336814,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Uttar Pradesh,391607,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Bihar,339870,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Sikkim,611910,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Arunachal Pradesh,687024,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Nagaland,435413,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Manipur,659465,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Mizoram,675169,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Tripura,422971,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Meghalaya,420684,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Assam,600176,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,West Bengal,291130,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Jharkhand,446177,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Odisha,294616,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Chhattisgarh,272323,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Madhya Pradesh,362115,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Gujarat,353630,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Dadra and Nagar Haveli and Daman and Diu,459505,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Maharashtra,355353,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Andhra Pradesh,688948,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Karnataka,511481,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Goa,343395,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Lakshadweep,323387,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Kerala,584615,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Tamil Nadu,414980,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Puducherry,426103,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Andaman and Nicobar Islands,359475,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Telangana,482010,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jun,Ladakh,366992,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,India,21860039,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Jammu and Kashmir,422936,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Himachal Pradesh,585092,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Punjab,479175,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Chandigarh,490610,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Uttarakhand,562776,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Haryana,645362,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Delhi,321636,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Rajasthan,348038,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Uttar Pradesh,387574,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Bihar,341876,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Sikkim,594826,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Arunachal Pradesh,690952,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Nagaland,420532,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Manipur,646196,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Mizoram,701042,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Tripura,396306,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Meghalaya,424059,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Assam,640924,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,West Bengal,289559,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Jharkhand,447924,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Odisha,319955,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Chhattisgarh,286160,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Madhya Pradesh,375203,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Gujarat,352462,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Dadra and Nagar Haveli and Daman and Diu,423488,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Maharashtra,382552,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Andhra Pradesh,711661,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Karnataka,538946,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Goa,326014,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Lakshadweep,315172,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Kerala,611114,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Tamil Nadu,417520,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Puducherry,453574,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Andaman and Nicobar Islands,344403,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Telangana,471821,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Jul,Ladakh,401147,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,India,22869071,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Jammu and Kashmir,427742,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Himachal Pradesh,578676,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Punjab,481014,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Chandigarh,496470,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Uttarakhand,608999,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Haryana,618556,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Delhi,326955,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Rajasthan,336527,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Uttar Pradesh,386857,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Bihar,339900,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Sikkim,639136,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Arunachal Pradesh,653431,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Nagaland,408138,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Manipur,610315,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Mizoram,682992,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Tripura,427444,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Meghalaya,439592,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Assam,632494,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,West Bengal,303073,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Jharkhand,471195,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Odisha,321820,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Chhattisgarh,261425,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Madhya Pradesh,372940,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Gujarat,383772,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Dadra and Nagar Haveli and Daman and Diu,432069,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Maharashtra,386184,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Andhra Pradesh,694771,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Karnataka,533742,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Goa,328839,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Lakshadweep,304955,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Kerala,629136,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Tamil Nadu,401316,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Puducherry,449874,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Andaman and Nicobar Islands,347013,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Telangana,445551,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Aug,Ladakh,393888,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,India,22178307,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Jammu and Kashmir,459573,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Himachal Pradesh,577477,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Punjab,450179,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Chandigarh,506532,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Uttarakhand,561897,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Haryana,637416,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Delhi,324940,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Rajasthan,356403,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Uttar Pradesh,410674,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Bihar,334139,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Sikkim,632429,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Arunachal Pradesh,668990,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Nagaland,436440,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Manipur,660364,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Mizoram,707616,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Tripura,421384,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Meghalaya,434509,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Assam,603491,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,West Bengal,301288,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Jharkhand,475563,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Odisha,327625,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Chhattisgarh,281914,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Madhya Pradesh,365125,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Gujarat,357370,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Dadra and Nagar Haveli and Daman and Diu,428803,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Maharashtra,364776,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Andhra Pradesh,725409,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Karnataka,531955,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Goa,349863,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Lakshadweep,324440,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Kerala,618449,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Tamil Nadu,408561,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Puducherry,458004,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Andaman and Nicobar Islands,344325,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Telangana,472555,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Sep,Ladakh,375868,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,India,23304378,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Jammu and Kashmir,462467,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Himachal Pradesh,594916,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Punjab,477370,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Chandigarh,500648,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Uttarakhand,572189,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Haryana,612253,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Delhi,319858,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Rajasthan,368110,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Uttar Pradesh,407213,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Bihar,331532,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Sikkim,656864,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Arunachal Pradesh,668997,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Nagaland,412103,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Manipur,635600,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Mizoram,735365,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Tripura,408874,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Meghalaya,438136,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Assam,604836,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,West Bengal,306591,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Jharkhand,468644,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Odisha,329229,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Chhattisgarh,268443,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Madhya Pradesh,360038,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Gujarat,364558,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Dadra and Nagar Haveli and Daman and Diu,442921,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Maharashtra,383657,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Andhra Pradesh,691769,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Karnataka,555460,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Goa,332033,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Lakshadweep,322499,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Kerala,586958,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Tamil Nadu,398027,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Puducherry,436511,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Andaman and Nicobar Islands,369738,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Telangana,486904,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Oct,Ladakh,380970,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,India,22742696,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Jammu and Kashmir,465977,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Himachal Pradesh,566826,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Punjab,471707,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Chandigarh,508010,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Uttarakhand,573842,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Haryana,652919,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Delhi,350218,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Rajasthan,355890,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Uttar Pradesh,385363,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Bihar,353502,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Sikkim,622816,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Arunachal Pradesh,667011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Nagaland,443955,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Manipur,665481,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Mizoram,675845,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Tripura,413377,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Meghalaya,438816,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Assam,628386,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,West Bengal,289166,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Jharkhand,453778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Odisha,319639,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Chhattisgarh,285179,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Madhya Pradesh,362124,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Gujarat,390143,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Dadra and Nagar Haveli and Daman and Diu,476797,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Maharashtra,380018,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Andhra Pradesh,705763,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Karnataka,517988,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Goa,325151,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Lakshadweep,334561,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Kerala,600872,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Tamil Nadu,425509,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Puducherry,466144,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Andaman and Nicobar Islands,374697,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Telangana,476905,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Nov,Ladakh,377476,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,India,24036292,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Jammu and Kashmir,469562,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Himachal Pradesh,596516,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Punjab,454651,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Chandigarh,536673,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Uttarakhand,567682,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Haryana,646817,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Delhi,326560,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Rajasthan,358801,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Uttar Pradesh,390826,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Bihar,326689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Sikkim,643321,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Arunachal Pradesh,668990,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Nagaland,420066,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Manipur,648305,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Mizoram,680523,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Tripura,408580,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Meghalaya,418908,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Assam,651889,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,West Bengal,314928,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Jharkhand,480559,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Odisha,322811,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Chhattisgarh,268967,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Madhya Pradesh,378152,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Gujarat,383863,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Dadra and Nagar Haveli and Daman and Diu,441219,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Maharashtra,382370,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Andhra Pradesh,683396,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Karnataka,533835,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Goa,354696,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Lakshadweep,336338,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Kerala,587249,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Tamil Nadu,428190,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Puducherry,464157,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Andaman and Nicobar Islands,350041,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Telangana,474124,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2021,Dec,Ladakh,400910,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,India,24442804,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Jammu and Kashmir,464368,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Himachal Pradesh,632858,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Punjab,497688,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Chandigarh,551720,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Uttarakhand,639169,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Haryana,624697,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Delhi,350412,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Rajasthan,363884,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Uttar Pradesh,413750,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Bihar,357950,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Sikkim,640570,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Arunachal Pradesh,722794,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Nagaland,472063,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Manipur,666563,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Mizoram,734038,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Tripura,427856,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Meghalaya,438070,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Assam,674290,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,West Bengal,322080,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Jharkhand,510107,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Odisha,314770,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Chhattisgarh,296636,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Madhya Pradesh,384981,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Gujarat,380195,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Dadra and Nagar Haveli and Daman and Diu,490314,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Maharashtra,381449,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Andhra Pradesh,701634,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Karnataka,576298,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Goa,355245,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Lakshadweep,316095,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Kerala,617810,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Tamil Nadu,429030,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Puducherry,469650,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Andaman and Nicobar Islands,379599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Telangana,501386,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jan,Ladakh,426401,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,India,24878055,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Jammu and Kashmir,467124,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Himachal Pradesh,645606,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Punjab,500178,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Chandigarh,544599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Uttarakhand,627855,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Haryana,636753,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Delhi,363355,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Rajasthan,355128,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Uttar Pradesh,422308,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Bihar,338930,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Sikkim,633833,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Arunachal Pradesh,710250,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Nagaland,431778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Manipur,708510,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Mizoram,739474,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Tripura,453344,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Meghalaya,451221,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Assam,650964,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,West Bengal,308691,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Jharkhand,497636,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Odisha,344849,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Chhattisgarh,298298,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Madhya Pradesh,401072,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Gujarat,400370,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Dadra and Nagar Haveli and Daman and Diu,466255,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Maharashtra,401604,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Andhra Pradesh,752102,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Karnataka,541929,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Goa,359082,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Lakshadweep,348161,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Kerala,650269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Tamil Nadu,422554,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Puducherry,489044,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Andaman and Nicobar Islands,384628,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Telangana,488404,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Feb,Ladakh,426532,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,India,23955427,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Jammu and Kashmir,456954,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Himachal Pradesh,597227,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Punjab,476023,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Chandigarh,544164,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Uttarakhand,648911,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Haryana,686381,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Delhi,369095,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Rajasthan,387865,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Uttar Pradesh,420476,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Bihar,347300,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Sikkim,682101,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Arunachal Pradesh,709900,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Nagaland,453604,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Manipur,703396,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Mizoram,710014,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Tripura,428950,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Meghalaya,461865,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Assam,663308,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,West Bengal,314031,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Jharkhand,475593,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Odisha,334389,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Chhattisgarh,286633,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Madhya Pradesh,380073,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Gujarat,408193,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Dadra and Nagar Haveli and Daman and Diu,468246,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Maharashtra,400218,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Andhra Pradesh,718878,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Karnataka,563145,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Goa,358054,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Lakshadweep,321658,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Kerala,626221,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Tamil Nadu,428955,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Puducherry,475879,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Andaman and Nicobar Islands,390226,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Telangana,501871,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Mar,Ladakh,427927,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,India,23678138,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Jammu and Kashmir,480326,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Himachal Pradesh,594158,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Punjab,493247,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Chandigarh,537600,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Uttarakhand,621624,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Haryana,650106,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Delhi,353341,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Rajasthan,363705,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Uttar Pradesh,408352,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Bihar,363979,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Sikkim,657994,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Arunachal Pradesh,719177,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Nagaland,479057,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Manipur,683911,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Mizoram,715218,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Tripura,432679,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Meghalaya,459491,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Assam,638153,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,West Bengal,300142,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Jharkhand,519492,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Odisha,339897,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Chhattisgarh,308843,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Madhya Pradesh,382954,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Gujarat,385346,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Dadra and Nagar Haveli and Daman and Diu,495726,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Maharashtra,387436,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Andhra Pradesh,751080,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Karnataka,570135,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Goa,356733,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Lakshadweep,329202,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Kerala,659587,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Tamil Nadu,422620,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Puducherry,489337,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Andaman and Nicobar Islands,394902,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Telangana,520608,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Apr,Ladakh,416492,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,India,24279750,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Jammu and Kashmir,475205,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Himachal Pradesh,602207,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Punjab,516873,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Chandigarh,553358,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Uttarakhand,644118,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Haryana,657968,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Delhi,354805,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Rajasthan,388985,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Uttar Pradesh,419817,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Bihar,373699,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Sikkim,655158,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Arunachal Pradesh,700051,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Nagaland,478247,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Manipur,657655,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Mizoram,767530,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Tripura,430559,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Meghalaya,450120,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Assam,680164,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,West Bengal,318850,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Jharkhand,496725,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Odisha,346952,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Chhattisgarh,308075,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Madhya Pradesh,397071,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Gujarat,414878,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Dadra and Nagar Haveli and Daman and Diu,470656,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Maharashtra,409269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Andhra Pradesh,777984,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Karnataka,568793,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Goa,354054,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Lakshadweep,333019,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Kerala,643090,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Tamil Nadu,459345,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Puducherry,483944,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Andaman and Nicobar Islands,394687,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Telangana,493411,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,May,Ladakh,413196,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,India,23758953,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Jammu and Kashmir,485806,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Himachal Pradesh,639346,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Punjab,490701,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Chandigarh,571038,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Uttarakhand,608734,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Haryana,668641,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Delhi,355127,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Rajasthan,397558,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Uttar Pradesh,417644,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Bihar,342733,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Sikkim,675693,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Arunachal Pradesh,725176,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Nagaland,469913,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Manipur,663456,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Mizoram,762135,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Tripura,429063,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Meghalaya,458146,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Assam,682908,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,West Bengal,318761,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Jharkhand,495338,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Odisha,337932,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Chhattisgarh,311858,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Madhya Pradesh,403288,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Gujarat,401527,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Dadra and Nagar Haveli and Daman and Diu,486578,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Maharashtra,420914,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Andhra Pradesh,779533,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Karnataka,557629,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Goa,343301,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Lakshadweep,342369,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Kerala,677661,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Tamil Nadu,422396,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Puducherry,487107,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Andaman and Nicobar Islands,374333,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Telangana,526520,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jun,Ladakh,432851,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,India,25351833,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Jammu and Kashmir,469428,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Himachal Pradesh,659011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Punjab,487499,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Chandigarh,547611,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Uttarakhand,662382,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Haryana,695689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Delhi,346847,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Rajasthan,387551,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Uttar Pradesh,415484,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Bihar,355529,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Sikkim,702890,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Arunachal Pradesh,726350,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Nagaland,462899,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Manipur,723902,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Mizoram,736374,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Tripura,444546,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Meghalaya,467361,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Assam,675502,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,West Bengal,311899,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Jharkhand,517711,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Odisha,339152,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Chhattisgarh,308999,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Madhya Pradesh,413467,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Gujarat,411916,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Dadra and Nagar Haveli and Daman and Diu,474460,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Maharashtra,416864,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Andhra Pradesh,755360,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Karnataka,587262,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Goa,346558,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Lakshadweep,346831,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Kerala,683381,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Tamil Nadu,435589,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Puducherry,471335,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Andaman and Nicobar Islands,380697,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Telangana,484433,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Jul,Ladakh,411613,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,India,24886493,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Jammu and Kashmir,495465,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Himachal Pradesh,604892,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Punjab,518760,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Chandigarh,556328,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Uttarakhand,660269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Haryana,670681,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Delhi,374095,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Rajasthan,390686,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Uttar Pradesh,439900,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Bihar,353647,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Sikkim,709459,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Arunachal Pradesh,718334,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Nagaland,473182,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Manipur,721630,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Mizoram,751818,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Tripura,433568,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Meghalaya,473489,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Assam,655705,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,West Bengal,310407,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Jharkhand,493820,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Odisha,355147,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Chhattisgarh,297321,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Madhya Pradesh,391792,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Gujarat,413989,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Dadra and Nagar Haveli and Daman and Diu,483349,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Maharashtra,411876,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Andhra Pradesh,728767,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Karnataka,583618,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Goa,373120,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Lakshadweep,326635,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Kerala,668759,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Tamil Nadu,455298,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Puducherry,496621,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Andaman and Nicobar Islands,381746,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Telangana,491989,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Aug,Ladakh,432638,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,India,26123639,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Jammu and Kashmir,512324,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Himachal Pradesh,642722,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Punjab,512726,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Chandigarh,546880,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Uttarakhand,666371,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Haryana,674887,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Delhi,369999,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Rajasthan,397000,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Uttar Pradesh,409472,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Bihar,356536,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Sikkim,690633,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Arunachal Pradesh,710219,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Nagaland,480676,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Manipur,688389,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Mizoram,788297,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Tripura,457710,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Meghalaya,477060,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Assam,652560,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,West Bengal,317773,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Jharkhand,507577,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Odisha,334638,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Chhattisgarh,306247,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Madhya Pradesh,395644,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Gujarat,410314,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Dadra and Nagar Haveli and Daman and Diu,493780,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Maharashtra,420442,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Andhra Pradesh,738295,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Karnataka,552441,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Goa,367845,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Lakshadweep,345019,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Kerala,654729,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Tamil Nadu,463778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Puducherry,479290,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Andaman and Nicobar Islands,402171,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Telangana,528920,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Sep,Ladakh,417885,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,India,26183692,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Jammu and Kashmir,511074,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Himachal Pradesh,675115,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Punjab,497288,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Chandigarh,552998,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Uttarakhand,633436,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Haryana,655317,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Delhi,380475,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Rajasthan,383106,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Uttar Pradesh,442457,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Bihar,366420,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Sikkim,711898,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Arunachal Pradesh,773158,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Nagaland,477013,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Manipur,726295,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Mizoram,738419,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Tripura,463480,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Meghalaya,457215,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Assam,688880,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,West Bengal,309738,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Jharkhand,504008,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Odisha,335619,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Chhattisgarh,302865,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Madhya Pradesh,424700,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Gujarat,423580,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Dadra and Nagar Haveli and Daman and Diu,498590,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Maharashtra,404394,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Andhra Pradesh,780693,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Karnataka,582589,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Goa,368249,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Lakshadweep,337066,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Kerala,696616,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Tamil Nadu,435824,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Puducherry,501925,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Andaman and Nicobar Islands,381345,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Telangana,522397,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Oct,Ladakh,437015,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,India,25832522,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Jammu and Kashmir,477501,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Himachal Pradesh,635897,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Punjab,513745,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Chandigarh,563192,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Uttarakhand,666024,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Haryana,696687,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Delhi,370332,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Rajasthan,374682,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Uttar Pradesh,437048,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Bihar,371651,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Sikkim,675010,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Arunachal Pradesh,756150,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Nagaland,496214,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Manipur,717598,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Mizoram,749838,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Tripura,443650,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Meghalaya,498601,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Assam,716772,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,West Bengal,328816,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Jharkhand,501594,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Odisha,345480,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Chhattisgarh,293815,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Madhya Pradesh,422920,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Gujarat,421182,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Dadra and Nagar Haveli and Daman and Diu,518629,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Maharashtra,418910,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Andhra Pradesh,759986,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Karnataka,607600,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Goa,363837,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Lakshadweep,363478,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Kerala,687236,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Tamil Nadu,459002,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Puducherry,509867,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Andaman and Nicobar Islands,395583,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Telangana,501403,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Nov,Ladakh,435013,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,India,24709963,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Jammu and Kashmir,519297,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Himachal Pradesh,668418,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Punjab,544464,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Chandigarh,536435,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Uttarakhand,657879,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Haryana,668085,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Delhi,376330,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Rajasthan,398105,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Uttar Pradesh,415060,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Bihar,387470,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Sikkim,726840,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Arunachal Pradesh,732161,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Nagaland,478728,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Manipur,733506,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Mizoram,767883,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Tripura,461847,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Meghalaya,495626,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Assam,662468,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,West Bengal,330881,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Jharkhand,501705,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Odisha,367637,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Chhattisgarh,301025,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Madhya Pradesh,419240,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Gujarat,403714,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Dadra and Nagar Haveli and Daman and Diu,490254,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Maharashtra,428335,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Andhra Pradesh,774410,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Karnataka,563523,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Goa,360961,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Lakshadweep,348672,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Kerala,676226,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Tamil Nadu,473778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Puducherry,477832,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Andaman and Nicobar Islands,383025,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Telangana,518179,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2022,Dec,Ladakh,457179,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,India,25081803,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Jammu and Kashmir,525393,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Himachal Pradesh,669767,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Punjab,531438,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Chandigarh,570840,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Uttarakhand,636192,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Haryana,744251,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Delhi,364716,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Rajasthan,412921,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Uttar Pradesh,444320,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Bihar,382337,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Sikkim,747762,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Arunachal Pradesh,767463,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Nagaland,470421,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Manipur,742199,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Mizoram,765209,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Tripura,463433,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Meghalaya,485744,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Assam,733519,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,West Bengal,330967,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Jharkhand,520076,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Odisha,369396,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Chhattisgarh,317090,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Madhya Pradesh,415937,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Gujarat,413143,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Dadra and Nagar Haveli and Daman and Diu,516935,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Maharashtra,422429,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Andhra Pradesh,815779,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Karnataka,601861,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Goa,365972,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Lakshadweep,373730,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Kerala,716981,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Tamil Nadu,448467,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Puducherry,497061,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Andaman and Nicobar Islands,415631,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Telangana,553810,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jan,Ladakh,463460,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,India,27373023,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Jammu and Kashmir,528423,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Himachal Pradesh,638815,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Punjab,558233,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Chandigarh,599319,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Uttarakhand,700208,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Haryana,742755,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Delhi,386340,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Rajasthan,405449,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Uttar Pradesh,472998,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Bihar,368027,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Sikkim,682628,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Arunachal Pradesh,770401,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Nagaland,488608,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Manipur,748214,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Mizoram,819468,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Tripura,490277,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Meghalaya,477080,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Assam,739562,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,West Bengal,348486,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Jharkhand,523055,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Odisha,348885,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Chhattisgarh,310773,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Madhya Pradesh,435948,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Gujarat,435006,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Dadra and Nagar Haveli and Daman and Diu,523623,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Maharashtra,438073,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Andhra Pradesh,766828,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Karnataka,613596,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Goa,377562,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Lakshadweep,345478,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Kerala,667307,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Tamil Nadu,476824,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Puducherry,520863,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Andaman and Nicobar Islands,392682,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Telangana,520232,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Feb,Ladakh,470559,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,India,27898482,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Jammu and Kashmir,509275,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Himachal Pradesh,649527,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Punjab,562220,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Chandigarh,595964,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Uttarakhand,669407,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Haryana,752367,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Delhi,374092,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Rajasthan,391250,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Uttar Pradesh,462573,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Bihar,374006,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Sikkim,739340,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Arunachal Pradesh,780712,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Nagaland,508652,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Manipur,741614,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Mizoram,803949,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Tripura,495953,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Meghalaya,499761,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Assam,742061,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,West Bengal,347291,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Jharkhand,539213,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Odisha,381568,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Chhattisgarh,330916,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Madhya Pradesh,411308,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Gujarat,451193,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Dadra and Nagar Haveli and Daman and Diu,503380,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Maharashtra,428211,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Andhra Pradesh,811160,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Karnataka,612735,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Goa,399209,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Lakshadweep,367491,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Kerala,663372,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Tamil Nadu,488233,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Puducherry,540822,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Andaman and Nicobar Islands,393309,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Telangana,532826,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Mar,Ladakh,474068,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,India,26842855,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Jammu and Kashmir,527450,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Himachal Pradesh,710456,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Punjab,531064,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Chandigarh,579825,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Uttarakhand,661322,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Haryana,734405,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Delhi,390866,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Rajasthan,416118,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Uttar Pradesh,435907,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Bihar,407486,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Sikkim,728596,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Arunachal Pradesh,818468,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Nagaland,500126,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Manipur,726736,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Mizoram,812818,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Tripura,488673,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Meghalaya,521013,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Assam,723443,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,West Bengal,348739,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Jharkhand,551938,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Odisha,354174,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Chhattisgarh,316125,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Madhya Pradesh,411804,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Gujarat,417998,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Dadra and Nagar Haveli and Daman and Diu,543709,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Maharashtra,435187,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Andhra Pradesh,774873,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Karnataka,624320,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Goa,391970,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Lakshadweep,352426,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Kerala,692314,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Tamil Nadu,473945,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Puducherry,512378,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Andaman and Nicobar Islands,423791,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Telangana,535746,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Apr,Ladakh,450449,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,India,28076111,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Jammu and Kashmir,500089,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Himachal Pradesh,710814,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Punjab,523825,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Chandigarh,616909,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Uttarakhand,676817,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Haryana,700048,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Delhi,402018,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Rajasthan,424162,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Uttar Pradesh,471167,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Bihar,407276,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Sikkim,703065,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Arunachal Pradesh,809590,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Nagaland,521539,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Manipur,747733,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Mizoram,788945,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Tripura,500057,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Meghalaya,523757,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Assam,723038,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,West Bengal,353640,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Jharkhand,548987,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Odisha,372841,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Chhattisgarh,325136,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Madhya Pradesh,418933,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Gujarat,416081,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Dadra and Nagar Haveli and Daman and Diu,501890,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Maharashtra,417020,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Andhra Pradesh,782397,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Karnataka,621776,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Goa,404397,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Lakshadweep,374656,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Kerala,733414,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Tamil Nadu,475231,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Puducherry,530827,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Andaman and Nicobar Islands,424750,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Telangana,530653,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,May,Ladakh,450532,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,India,28277029,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Jammu and Kashmir,523407,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Himachal Pradesh,710978,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Punjab,560720,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Chandigarh,570484,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Uttarakhand,707609,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Haryana,694740,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Delhi,408780,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Rajasthan,430304,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Uttar Pradesh,444844,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Bihar,395743,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Sikkim,735233,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Arunachal Pradesh,781802,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Nagaland,492336,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Manipur,771746,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Mizoram,854002,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Tripura,466891,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Meghalaya,516104,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Assam,756299,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,West Bengal,360159,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Jharkhand,569913,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Odisha,371722,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Chhattisgarh,330810,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Madhya Pradesh,436559,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Gujarat,450389,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Dadra and Nagar Haveli and Daman and Diu,526104,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Maharashtra,442298,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Andhra Pradesh,806119,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Karnataka,630920,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Goa,403745,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Lakshadweep,385422,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Kerala,728924,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Tamil Nadu,459800,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Puducherry,527470,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Andaman and Nicobar Islands,434821,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Telangana,575482,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jun,Ladakh,471950,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,India,25937896,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Jammu and Kashmir,516871,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Himachal Pradesh,699557,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Punjab,567115,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Chandigarh,596182,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Uttarakhand,689222,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Haryana,752787,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Delhi,398508,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Rajasthan,406240,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Uttar Pradesh,466849,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Bihar,389729,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Sikkim,715024,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Arunachal Pradesh,785812,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Nagaland,492443,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Manipur,764863,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Mizoram,827101,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Tripura,494153,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Meghalaya,521040,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Assam,757548,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,West Bengal,355497,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Jharkhand,527798,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Odisha,388814,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Chhattisgarh,321246,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Madhya Pradesh,440097,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Gujarat,425535,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Dadra and Nagar Haveli and Daman and Diu,531568,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Maharashtra,419601,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Andhra Pradesh,863245,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Karnataka,634556,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Goa,410336,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Lakshadweep,380858,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Kerala,715921,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Tamil Nadu,485933,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Puducherry,553364,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Andaman and Nicobar Islands,409963,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Telangana,573227,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Jul,Ladakh,462932,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,India,26196958,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Jammu and Kashmir,543195,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Himachal Pradesh,718659,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Punjab,582186,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Chandigarh,585210,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Uttarakhand,714396,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Haryana,764076,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Delhi,407386,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Rajasthan,436515,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Uttar Pradesh,445613,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Bihar,415397,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Sikkim,710201,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Arunachal Pradesh,803505,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Nagaland,530795,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Manipur,760062,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Mizoram,843693,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Tripura,463093,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Meghalaya,487739,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Assam,738082,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,West Bengal,364394,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Jharkhand,561972,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Odisha,381644,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Chhattisgarh,326499,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Madhya Pradesh,452849,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Gujarat,449535,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Dadra and Nagar Haveli and Daman and Diu,555674,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Maharashtra,439878,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Andhra Pradesh,808777,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Karnataka,597720,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Goa,395850,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Lakshadweep,375848,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Kerala,747115,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Tamil Nadu,466709,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Puducherry,545631,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Andaman and Nicobar Islands,415179,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Telangana,571259,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Aug,Ladakh,482614,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,India,28034658,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Jammu and Kashmir,521773,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Himachal Pradesh,710422,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Punjab,558878,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Chandigarh,607305,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Uttarakhand,710625,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Haryana,741565,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Delhi,393553,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Rajasthan,415686,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Uttar Pradesh,467048,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Bihar,385507,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Sikkim,742275,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Arunachal Pradesh,791380,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Nagaland,508923,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Manipur,784978,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Mizoram,799901,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Tripura,513540,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Meghalaya,534122,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Assam,752204,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,West Bengal,369186,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Jharkhand,578051,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Odisha,362080,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Chhattisgarh,330252,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Madhya Pradesh,450487,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Gujarat,436898,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Dadra and Nagar Haveli and Daman and Diu,556639,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Maharashtra,436442,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Andhra Pradesh,806547,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Karnataka,595732,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Goa,415072,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Lakshadweep,376432,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Kerala,732026,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Tamil Nadu,502851,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Puducherry,549091,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Andaman and Nicobar Islands,408455,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Telangana,561036,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Sep,Ladakh,480745,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,India,27228205,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Jammu and Kashmir,513969,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Himachal Pradesh,722684,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Punjab,561606,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Chandigarh,590627,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Uttarakhand,664687,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Haryana,751056,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Delhi,384438,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Rajasthan,424810,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Uttar Pradesh,461296,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Bihar,418022,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Sikkim,779239,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Arunachal Pradesh,774412,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Nagaland,520063,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Manipur,782527,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Mizoram,863234,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Tripura,479095,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Meghalaya,494754,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Assam,747734,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,West Bengal,362769,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Jharkhand,583047,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Odisha,389088,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Chhattisgarh,329475,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Madhya Pradesh,466224,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Gujarat,459282,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Dadra and Nagar Haveli and Daman and Diu,543598,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Maharashtra,455425,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Andhra Pradesh,838437,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Karnataka,635896,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Goa,399514,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Lakshadweep,379510,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Kerala,751797,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Tamil Nadu,499897,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Puducherry,555755,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Andaman and Nicobar Islands,443995,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Telangana,566187,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Oct,Ladakh,487240,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,India,28424084,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Jammu and Kashmir,546226,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Himachal Pradesh,691036,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Punjab,556852,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Chandigarh,634357,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Uttarakhand,722235,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Haryana,783341,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Delhi,421473,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Rajasthan,443030,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Uttar Pradesh,471862,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Bihar,384930,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Sikkim,724935,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Arunachal Pradesh,823615,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Nagaland,524678,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Manipur,809677,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Mizoram,875153,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Tripura,471471,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Meghalaya,530603,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Assam,730378,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,West Bengal,362689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Jharkhand,540090,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Odisha,367257,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Chhattisgarh,337192,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Madhya Pradesh,431853,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Gujarat,453188,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Dadra and Nagar Haveli and Daman and Diu,537863,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Maharashtra,441995,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Andhra Pradesh,881918,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Karnataka,617356,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Goa,413015,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Lakshadweep,392996,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Kerala,696662,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Tamil Nadu,514595,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Puducherry,514484,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Andaman and Nicobar Islands,406797,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Telangana,560855,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Nov,Ladakh,461361,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,India,27444944,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Jammu and Kashmir,535864,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Himachal Pradesh,689653,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Punjab,546492,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Chandigarh,638811,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Uttarakhand,673831,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Haryana,721961,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Delhi,394938,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Rajasthan,413214,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Uttar Pradesh,456217,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Bihar,412175,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Sikkim,739574,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Arunachal Pradesh,798913,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Nagaland,531803,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Manipur,786433,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Mizoram,849430,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Tripura,498753,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Meghalaya,514339,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Assam,784689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,West Bengal,339599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Jharkhand,572531,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Odisha,385255,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Chhattisgarh,343633,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Madhya Pradesh,470176,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Gujarat,458229,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Dadra and Nagar Haveli and Daman and Diu,559738,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Maharashtra,450575,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Andhra Pradesh,867067,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Karnataka,649812,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Goa,388306,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Lakshadweep,372330,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Kerala,731553,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Tamil Nadu,480483,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Puducherry,523378,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Andaman and Nicobar Islands,417275,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Telangana,580095,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2023,Dec,Ladakh,491327,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,India,29138303,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Jammu and Kashmir,563703,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Himachal Pradesh,709170,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Punjab,580108,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Chandigarh,629778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Uttarakhand,726672,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Haryana,791108,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Delhi,405200,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Rajasthan,435127,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Uttar Pradesh,463782,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Bihar,403417,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Sikkim,773247,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Arunachal Pradesh,880441,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Nagaland,546506,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Manipur,778732,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Mizoram,853438,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Tripura,508559,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Meghalaya,532139,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Assam,750524,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,West Bengal,367257,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Jharkhand,556092,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Odisha,371761,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Chhattisgarh,350190,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Madhya Pradesh,448515,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Gujarat,482442,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Dadra and Nagar Haveli and Daman and Diu,563602,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Maharashtra,450847,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Andhra Pradesh,901293,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Karnataka,652524,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Goa,401607,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Lakshadweep,385831,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Kerala,784472,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Tamil Nadu,495476,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Puducherry,555443,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Andaman and Nicobar Islands,442971,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Telangana,604516,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jan,Ladakh,502902,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,India,29988570,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Jammu and Kashmir,538956,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Himachal Pradesh,704417,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Punjab,570736,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Chandigarh,652973,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Uttarakhand,738032,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Haryana,785755,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Delhi,401967,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Rajasthan,434431,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Uttar Pradesh,506862,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Bihar,400061,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Sikkim,769095,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Arunachal Pradesh,823893,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Nagaland,532708,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Manipur,838937,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Mizoram,862097,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Tripura,524595,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Meghalaya,539662,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Assam,746494,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,West Bengal,380991,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Jharkhand,584263,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Odisha,380578,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Chhattisgarh,338148,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Madhya Pradesh,471123,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Gujarat,475666,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Dadra and Nagar Haveli and Daman and Diu,575711,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Maharashtra,470741,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Andhra Pradesh,859795,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Karnataka,644001,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Goa,413003,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Lakshadweep,392543,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Kerala,724541,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Tamil Nadu,487964,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Puducherry,553105,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Andaman and Nicobar Islands,451946,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Telangana,597555,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Feb,Ladakh,477416,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,India,29857637,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Jammu and Kashmir,547861,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Himachal Pradesh,747159,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Punjab,590574,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Chandigarh,647961,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Uttarakhand,756154,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Haryana,755717,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Delhi,419942,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Rajasthan,444170,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Uttar Pradesh,487451,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Bihar,417522,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Sikkim,788985,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Arunachal Pradesh,887550,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Nagaland,517713,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Manipur,778789,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Mizoram,835289,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Tripura,530642,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Meghalaya,525913,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Assam,806447,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,West Bengal,374382,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Jharkhand,563233,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Odisha,396143,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Chhattisgarh,351224,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Madhya Pradesh,482670,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Gujarat,474713,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Dadra and Nagar Haveli and Daman and Diu,589111,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Maharashtra,479753,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Andhra Pradesh,883918,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Karnataka,647289,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Goa,429715,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Lakshadweep,413403,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Kerala,756576,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Tamil Nadu,502734,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Puducherry,537305,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Andaman and Nicobar Islands,424388,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Telangana,614893,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Mar,Ladakh,502076,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,India,29804191,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Jammu and Kashmir,555953,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Himachal Pradesh,729926,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Punjab,583711,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Chandigarh,632230,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Uttarakhand,741696,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Haryana,748852,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Delhi,422027,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Rajasthan,447366,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Uttar Pradesh,506525,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Bihar,422343,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Sikkim,795988,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Arunachal Pradesh,897525,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Nagaland,540616,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Manipur,827395,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Mizoram,874118,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Tripura,519198,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Meghalaya,553270,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Assam,798389,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,West Bengal,387726,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Jharkhand,565102,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Odisha,379308,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Chhattisgarh,362789,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Madhya Pradesh,465444,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Gujarat,461673,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Dadra and Nagar Haveli and Daman and Diu,563173,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Maharashtra,458486,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Andhra Pradesh,836890,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Karnataka,686026,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Goa,402225,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Lakshadweep,378229,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Kerala,795241,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Tamil Nadu,507278,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Puducherry,557666,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Andaman and Nicobar Islands,457569,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Telangana,596664,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Apr,Ladakh,485338,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,India,28242137,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Jammu and Kashmir,574916,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Himachal Pradesh,722040,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Punjab,614923,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Chandigarh,617571,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Uttarakhand,765334,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Haryana,757773,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Delhi,432133,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Rajasthan,458430,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Uttar Pradesh,509895,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Bihar,433737,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Sikkim,797751,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Arunachal Pradesh,857865,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Nagaland,560303,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Manipur,784906,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Mizoram,839539,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Tripura,510042,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Meghalaya,563356,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Assam,749189,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,West Bengal,373357,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Jharkhand,596819,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Odisha,378309,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Chhattisgarh,366579,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Madhya Pradesh,468660,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Gujarat,479020,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Dadra and Nagar Haveli and Daman and Diu,544044,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Maharashtra,452171,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Andhra Pradesh,855534,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Karnataka,678251,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Goa,433222,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Lakshadweep,417515,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Kerala,768207,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Tamil Nadu,507822,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Puducherry,571813,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Andaman and Nicobar Islands,457922,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Telangana,598034,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,May,Ladakh,509685,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,India,29271436,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Jammu and Kashmir,554579,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Himachal Pradesh,772145,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Punjab,613475,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Chandigarh,620383,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Uttarakhand,711621,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Haryana,801409,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Delhi,423280,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Rajasthan,457912,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Uttar Pradesh,499707,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Bihar,410930,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Sikkim,792597,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Arunachal Pradesh,823022,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Nagaland,528732,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Manipur,820805,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Mizoram,857096,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Tripura,510489,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Meghalaya,522687,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Assam,759595,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,West Bengal,360313,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Jharkhand,569970,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Odisha,418679,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Chhattisgarh,333725,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Madhya Pradesh,471344,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Gujarat,449617,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Dadra and Nagar Haveli and Daman and Diu,551476,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Maharashtra,493317,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Andhra Pradesh,862734,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Karnataka,673042,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Goa,431748,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Lakshadweep,404778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Kerala,791127,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Tamil Nadu,516898,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Puducherry,554419,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Andaman and Nicobar Islands,468574,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Telangana,589421,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jun,Ladakh,474718,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,India,28968314,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Jammu and Kashmir,556374,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Himachal Pradesh,722358,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Punjab,619573,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Chandigarh,648161,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Uttarakhand,768127,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Haryana,754248,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Delhi,428452,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Rajasthan,433117,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Uttar Pradesh,515498,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Bihar,412214,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Sikkim,803228,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Arunachal Pradesh,907892,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Nagaland,573778,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Manipur,800875,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Mizoram,929895,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Tripura,536494,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Meghalaya,562243,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Assam,831923,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,West Bengal,394292,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Jharkhand,608178,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Odisha,407732,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Chhattisgarh,340782,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Madhya Pradesh,489008,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Gujarat,487487,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Dadra and Nagar Haveli and Daman and Diu,590233,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Maharashtra,479910,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Andhra Pradesh,915457,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Karnataka,662138,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Goa,427269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Lakshadweep,400906,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Kerala,793500,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Tamil Nadu,549834,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Puducherry,544626,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Andaman and Nicobar Islands,444784,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Telangana,589494,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Jul,Ladakh,478886,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,India,30874348,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Jammu and Kashmir,585587,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Himachal Pradesh,785096,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Punjab,571177,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Chandigarh,664517,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Uttarakhand,711802,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Haryana,766999,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Delhi,414060,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Rajasthan,460974,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Uttar Pradesh,499396,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Bihar,412651,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Sikkim,767599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Arunachal Pradesh,869383,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Nagaland,530456,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Manipur,802166,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Mizoram,873916,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Tripura,525368,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Meghalaya,570418,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Assam,823333,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,West Bengal,381547,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Jharkhand,571477,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Odisha,386752,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Chhattisgarh,363936,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Madhya Pradesh,470524,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Gujarat,496896,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Dadra and Nagar Haveli and Daman and Diu,571173,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Maharashtra,484938,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Andhra Pradesh,903603,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Karnataka,655229,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Goa,411383,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Lakshadweep,385992,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Kerala,793944,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Tamil Nadu,546104,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Puducherry,569403,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Andaman and Nicobar Islands,469346,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Telangana,579868,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Aug,Ladakh,489906,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,India,29103271,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Jammu and Kashmir,553135,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Himachal Pradesh,720067,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Punjab,594281,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Chandigarh,644340,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Uttarakhand,750744,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Haryana,793460,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Delhi,434574,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Rajasthan,462324,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Uttar Pradesh,489567,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Bihar,415076,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Sikkim,770011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Arunachal Pradesh,918115,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Nagaland,541796,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Manipur,827626,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Mizoram,862141,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Tripura,504845,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Meghalaya,530412,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Assam,832141,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,West Bengal,371534,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Jharkhand,630120,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Odisha,404279,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Chhattisgarh,362256,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Madhya Pradesh,500580,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Gujarat,496191,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Dadra and Nagar Haveli and Daman and Diu,570257,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Maharashtra,458756,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Andhra Pradesh,922510,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Karnataka,679660,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Goa,448127,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Lakshadweep,410859,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Kerala,779398,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Tamil Nadu,526259,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Puducherry,596035,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Andaman and Nicobar Islands,477215,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Telangana,576992,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Sep,Ladakh,481236,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,India,29083800,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Jammu and Kashmir,557313,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Himachal Pradesh,775647,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Punjab,583839,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Chandigarh,674051,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Uttarakhand,789745,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Haryana,779908,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Delhi,422456,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Rajasthan,457069,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Uttar Pradesh,484303,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Bihar,427494,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Sikkim,839140,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Arunachal Pradesh,856205,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Nagaland,554464,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Manipur,858534,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Mizoram,869129,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Tripura,507578,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Meghalaya,570746,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Assam,764145,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,West Bengal,396384,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Jharkhand,582718,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Odisha,422177,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Chhattisgarh,353719,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Madhya Pradesh,459245,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Gujarat,470388,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Dadra and Nagar Haveli and Daman and Diu,583100,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Maharashtra,485341,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Andhra Pradesh,884119,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Karnataka,698704,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Goa,412935,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Lakshadweep,403003,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Kerala,746228,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Tamil Nadu,534379,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Puducherry,551860,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Andaman and Nicobar Islands,476613,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Telangana,632164,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Oct,Ladakh,502012,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,India,28714881,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Jammu and Kashmir,605112,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Himachal Pradesh,793555,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Punjab,605985,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Chandigarh,684242,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Uttarakhand,785498,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Haryana,812133,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Delhi,413113,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Rajasthan,439189,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Uttar Pradesh,500924,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Bihar,449557,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Sikkim,800830,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Arunachal Pradesh,892645,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Nagaland,543587,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Manipur,837765,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Mizoram,945202,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Tripura,542599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Meghalaya,568045,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Assam,804964,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,West Bengal,393979,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Jharkhand,599675,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Odisha,415651,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Chhattisgarh,361144,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Madhya Pradesh,482117,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Gujarat,460687,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Dadra and Nagar Haveli and Daman and Diu,566406,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Maharashtra,482162,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Andhra Pradesh,905009,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Karnataka,655040,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Goa,431621,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Lakshadweep,417340,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Kerala,797689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Tamil Nadu,527632,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Puducherry,583076,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Andaman and Nicobar Islands,463770,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Telangana,633423,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Nov,Ladakh,496789,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,India,28569870,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Jammu and Kashmir,562563,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Himachal Pradesh,786159,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Punjab,588666,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Chandigarh,687078,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Uttarakhand,740582,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Haryana,778073,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Delhi,437336,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Rajasthan,467323,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Uttar Pradesh,494130,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Bihar,414548,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Sikkim,771204,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Arunachal Pradesh,917841,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Nagaland,551064,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Manipur,862074,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Mizoram,899328,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Tripura,511195,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Meghalaya,566376,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Assam,845120,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,West Bengal,384957,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Jharkhand,605776,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Odisha,425194,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Chhattisgarh,344362,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Madhya Pradesh,468273,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Gujarat,495082,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Dadra and Nagar Haveli and Daman and Diu,561272,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Maharashtra,463194,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Andhra Pradesh,917304,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Karnataka,659359,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Goa,414286,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Lakshadweep,397670,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Kerala,775890,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Tamil Nadu,518757,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Puducherry,564976,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Andaman and Nicobar Islands,473896,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Telangana,594689,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2024,Dec,Ladakh,530738,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,India,32123224,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Jammu and Kashmir,625690,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Himachal Pradesh,747408,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Punjab,624945,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Chandigarh,692293,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Uttarakhand,768129,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Haryana,853324,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Delhi,428769,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Rajasthan,454891,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Uttar Pradesh,511839,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Bihar,460675,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Sikkim,820232,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Arunachal Pradesh,873543,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Nagaland,589881,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Manipur,822765,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Mizoram,973741,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Tripura,537547,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Meghalaya,592147,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Assam,820746,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,West Bengal,402287,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Jharkhand,616798,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Odisha,416801,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Chhattisgarh,362901,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Madhya Pradesh,479925,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Gujarat,475506,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Dadra and Nagar Haveli and Daman and Diu,589074,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Maharashtra,507763,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Andhra Pradesh,978434,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Karnataka,694786,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Goa,434105,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Lakshadweep,403838,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Kerala,817909,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Tamil Nadu,567331,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Puducherry,578908,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Andaman and Nicobar Islands,495207,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Telangana,650540,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jan,Ladakh,505365,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,India,30281135,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Jammu and Kashmir,615469,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Himachal Pradesh,822733,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Punjab,644606,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Chandigarh,678883,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Uttarakhand,750776,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Haryana,876351,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Delhi,459000,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Rajasthan,454696,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Uttar Pradesh,500015,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Bihar,464941,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Sikkim,830965,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Arunachal Pradesh,891614,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Nagaland,575064,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Manipur,832232,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Mizoram,967421,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Tripura,573374,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Meghalaya,594129,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Assam,809233,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,West Bengal,414448,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Jharkhand,608300,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Odisha,412655,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Chhattisgarh,367943,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Madhya Pradesh,495217,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Gujarat,506414,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Dadra and Nagar Haveli and Daman and Diu,615162,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Maharashtra,518474,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Andhra Pradesh,959539,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Karnataka,709679,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Goa,442617,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Lakshadweep,419333,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Kerala,776970,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Tamil Nadu,543793,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Puducherry,578437,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Andaman and Nicobar Islands,475876,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Telangana,613939,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Feb,Ladakh,522217,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,India,31444909,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Jammu and Kashmir,581119,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Himachal Pradesh,767959,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Punjab,654831,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Chandigarh,661992,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Uttarakhand,806524,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Haryana,858380,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Delhi,454178,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Rajasthan,461587,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Uttar Pradesh,547426,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Bihar,451462,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Sikkim,849256,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Arunachal Pradesh,887316,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Nagaland,577124,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Manipur,834611,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Mizoram,941284,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Tripura,571901,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Meghalaya,570253,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Assam,806500,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,West Bengal,379534,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Jharkhand,621489,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Odisha,426169,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Chhattisgarh,377046,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Madhya Pradesh,484354,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Gujarat,511325,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Dadra and Nagar Haveli and Daman and Diu,579751,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Maharashtra,483050,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Andhra Pradesh,977928,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Karnataka,684249,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Goa,463115,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Lakshadweep,417965,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Kerala,790348,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Tamil Nadu,564698,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Puducherry,583318,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Andaman and Nicobar Islands,482983,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Telangana,636002,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Mar,Ladakh,551052,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,India,32567706,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Jammu and Kashmir,620425,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Himachal Pradesh,760805,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Punjab,663300,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Chandigarh,718829,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Uttarakhand,826395,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Haryana,807418,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Delhi,449206,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Rajasthan,460950,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Uttar Pradesh,545716,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Bihar,430925,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Sikkim,851099,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Arunachal Pradesh,925410,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Nagaland,571596,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Manipur,826349,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Mizoram,976868,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Tripura,572602,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Meghalaya,589990,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Assam,859867,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,West Bengal,407322,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Jharkhand,620155,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Odisha,437725,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Chhattisgarh,364945,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Madhya Pradesh,485752,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Gujarat,480409,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Dadra and Nagar Haveli and Daman and Diu,614027,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Maharashtra,483011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Andhra Pradesh,900612,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Karnataka,713424,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Goa,447739,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Lakshadweep,421457,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Kerala,810193,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Tamil Nadu,540985,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Puducherry,629176,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Andaman and Nicobar Islands,464196,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Telangana,612999,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Apr,Ladakh,531170,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,India,32699134,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Jammu and Kashmir,602482,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Himachal Pradesh,789131,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Punjab,660533,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Chandigarh,683071,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Uttarakhand,760117,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Haryana,840133,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Delhi,462302,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Rajasthan,456675,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Uttar Pradesh,541309,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Bihar,454544,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Sikkim,833440,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Arunachal Pradesh,883727,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Nagaland,569802,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Manipur,844517,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Mizoram,995643,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Tripura,565070,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Meghalaya,566274,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Assam,851498,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,West Bengal,390987,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Jharkhand,642622,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Odisha,447732,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Chhattisgarh,388919,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Madhya Pradesh,506135,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Gujarat,485562,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Dadra and Nagar Haveli and Daman and Diu,621191,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Maharashtra,528216,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Andhra Pradesh,949664,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Karnataka,693870,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Goa,471950,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Lakshadweep,447023,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Kerala,787797,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Tamil Nadu,570678,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Puducherry,598974,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Andaman and Nicobar Islands,474425,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Telangana,662297,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,May,Ladakh,523254,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,India,32460230,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Jammu and Kashmir,585768,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Himachal Pradesh,800873,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Punjab,659246,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Chandigarh,707791,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Uttarakhand,776489,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Haryana,844652,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Delhi,457429,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Rajasthan,493599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Uttar Pradesh,520943,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Bihar,437065,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Sikkim,826257,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Arunachal Pradesh,969503,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Nagaland,570722,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Manipur,911558,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Mizoram,950799,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Tripura,564269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Meghalaya,607945,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Assam,867359,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,West Bengal,417871,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Jharkhand,627314,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Odisha,450614,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Chhattisgarh,374120,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Madhya Pradesh,529356,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Gujarat,531520,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Dadra and Nagar Haveli and Daman and Diu,641849,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Maharashtra,529578,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Andhra Pradesh,961768,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Karnataka,742345,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Goa,466323,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Lakshadweep,435435,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Kerala,815220,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Tamil Nadu,575493,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Puducherry,615858,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Andaman and Nicobar Islands,469376,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Telangana,668266,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jun,Ladakh,535865,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,India,31645697,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Jammu and Kashmir,600212,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Himachal Pradesh,801603,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Punjab,616353,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Chandigarh,672234,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Uttarakhand,791605,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Haryana,878355,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Delhi,477181,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Rajasthan,471385,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Uttar Pradesh,516639,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Bihar,461691,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Sikkim,864572,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Arunachal Pradesh,930284,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Nagaland,595425,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Manipur,867056,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Mizoram,999242,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Tripura,585688,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Meghalaya,609925,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Assam,857283,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,West Bengal,423470,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Jharkhand,656298,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Odisha,439347,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Chhattisgarh,374522,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Madhya Pradesh,528871,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Gujarat,518489,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Dadra and Nagar Haveli and Daman and Diu,616176,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Maharashtra,528478,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Andhra Pradesh,1005186,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Karnataka,748036,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Goa,469688,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Lakshadweep,450929,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Kerala,816278,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Tamil Nadu,590117,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Puducherry,596843,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Andaman and Nicobar Islands,500841,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Telangana,618981,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Jul,Ladakh,549676,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,India,32542529,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Jammu and Kashmir,620491,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Himachal Pradesh,828514,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Punjab,657528,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Chandigarh,723745,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Uttarakhand,798381,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Haryana,822972,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Delhi,449461,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Rajasthan,502316,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Uttar Pradesh,515808,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Bihar,460780,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Sikkim,855520,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Arunachal Pradesh,965792,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Nagaland,586020,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Manipur,861528,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Mizoram,961187,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Tripura,591976,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Meghalaya,583556,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Assam,814430,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,West Bengal,412717,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Jharkhand,656111,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Odisha,446839,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Chhattisgarh,373368,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Madhya Pradesh,535615,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Gujarat,532449,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Dadra and Nagar Haveli and Daman and Diu,596477,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Maharashtra,504706,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Andhra Pradesh,962269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Karnataka,714700,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Goa,480128,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Lakshadweep,448847,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Kerala,841345,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Tamil Nadu,571381,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Puducherry,621675,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Andaman and Nicobar Islands,471484,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Telangana,649011,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Aug,Ladakh,539421,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,India,30423531,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Jammu and Kashmir,636760,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Himachal Pradesh,775264,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Punjab,624397,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Chandigarh,692688,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Uttarakhand,806928,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Haryana,872247,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Delhi,453113,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Rajasthan,469998,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Uttar Pradesh,552875,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Bihar,479367,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Sikkim,837150,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Arunachal Pradesh,908302,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Nagaland,619638,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Manipur,915289,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Mizoram,1010236,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Tripura,554865,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Meghalaya,595402,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Assam,856924,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,West Bengal,401307,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Jharkhand,661050,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Odisha,432655,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Chhattisgarh,364789,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Madhya Pradesh,503891,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Gujarat,506404,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Dadra and Nagar Haveli and Daman and Diu,632985,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Maharashtra,501046,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Andhra Pradesh,936185,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Karnataka,724469,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Goa,444326,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Lakshadweep,456256,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Kerala,858379,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Tamil Nadu,592655,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Puducherry,647494,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Andaman and Nicobar Islands,511793,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Telangana,658624,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Sep,Ladakh,556780,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,India,31130690,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Jammu and Kashmir,639734,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Himachal Pradesh,783931,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Punjab,655241,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Chandigarh,721015,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Uttarakhand,794284,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Haryana,877305,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Delhi,474609,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Rajasthan,483889,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Uttar Pradesh,536241,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Bihar,463855,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Sikkim,863030,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Arunachal Pradesh,898023,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Nagaland,585236,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Manipur,932635,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Mizoram,933771,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Tripura,590272,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Meghalaya,608002,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Assam,891302,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,West Bengal,401876,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Jharkhand,681345,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Odisha,444704,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Chhattisgarh,387471,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Madhya Pradesh,508943,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Gujarat,512675,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Dadra and Nagar Haveli and Daman and Diu,631640,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Maharashtra,529317,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Andhra Pradesh,1008953,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Karnataka,728171,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Goa,448036,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Lakshadweep,443906,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Kerala,827866,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Tamil Nadu,577902,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Puducherry,621655,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Andaman and Nicobar Islands,486462,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Telangana,621871,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Oct,Ladakh,531504,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,India,30834787,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Jammu and Kashmir,635102,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Himachal Pradesh,823748,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Punjab,642533,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Chandigarh,728599,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Uttarakhand,792474,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Haryana,879111,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Delhi,487421,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Rajasthan,472311,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Uttar Pradesh,540107,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Bihar,479225,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Sikkim,846512,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Arunachal Pradesh,930946,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Nagaland,593143,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Manipur,853796,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Mizoram,1003281,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Tripura,552352,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Meghalaya,612502,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Assam,869776,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,West Bengal,413052,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Jharkhand,628116,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Odisha,452407,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Chhattisgarh,386124,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Madhya Pradesh,510711,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Gujarat,520600,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Dadra and Nagar Haveli and Daman and Diu,634623,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Maharashtra,528394,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Andhra Pradesh,946351,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Karnataka,752731,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Goa,468661,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Lakshadweep,459790,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Kerala,879769,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Tamil Nadu,557238,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Puducherry,652506,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Andaman and Nicobar Islands,472153,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Telangana,628740,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Nov,Ladakh,543037,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,India,30986538,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Jammu and Kashmir,656581,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Himachal Pradesh,814871,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Punjab,631267,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Chandigarh,715748,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Uttarakhand,829269,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Haryana,840665,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Delhi,464747,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Rajasthan,509768,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Uttar Pradesh,571612,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Bihar,455910,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Sikkim,888481,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Arunachal Pradesh,907418,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Nagaland,601533,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Manipur,923822,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Mizoram,943051,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Tripura,576529,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Meghalaya,621976,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Assam,870975,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,West Bengal,419370,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Jharkhand,627754,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Odisha,436212,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Chhattisgarh,386433,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Madhya Pradesh,517005,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Gujarat,504718,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Dadra and Nagar Haveli and Daman and Diu,658246,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Maharashtra,501210,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Andhra Pradesh,1024348,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Karnataka,765191,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Goa,473739,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Lakshadweep,453133,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Kerala,839841,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Tamil Nadu,583258,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Puducherry,601911,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Andaman and Nicobar Islands,486899,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Telangana,650202,Number
+ESIC,Net number of ESIC beneficiaries (Persons),2025,Dec,Ladakh,530286,Number
