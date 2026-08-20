@@ -82,7 +82,14 @@ tbody tr:hover{background:#f7fbfc}
 .value{font-weight:800;color:var(--navy)}
 .chart-wrap{border:1px solid var(--border);border-radius:9px;padding:18px;overflow:auto}
 .chart-title{font-weight:800;color:var(--navy);font-size:15px;margin-bottom:10px}
+.chart-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.chart-controls label{margin:0;font-size:12px;color:var(--muted)}
+.chart-type-btn{padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--muted);font-weight:700;font-size:12px;cursor:pointer}
+.chart-type-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.chart-type-btn:hover:not(.active){border-color:var(--teal);color:var(--teal)}
+.chart-hint{font-size:11px;color:var(--muted);margin-left:auto}
 svg{width:100%;height:auto;display:block;min-width:780px}
+.bar-label{font-size:11px;fill:#667b8b}
 .meta{margin-top:17px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
 .notice{background:#fff8e8;border:1px solid #f0dfb7;color:#765719;border-radius:9px;padding:11px 13px;font-size:12px;margin-bottom:15px}
 footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
@@ -243,10 +250,17 @@ Demo mode: results use illustrative demonstration values. When production data i
 
 <section id="chartPanel" class="panel" hidden>
 <div class="chart-wrap">
-<div class="chart-title">Selected indicator comparison</div>
-<svg id="chart" viewBox="0 0 1200 620" role="img" aria-label="Selected indicator comparison chart"></svg>
+<div class="chart-title">Visualisation</div>
+<div class="chart-controls">
+  <button class="chart-type-btn active" data-chart="line">Trend (Line)</button>
+  <button class="chart-type-btn" data-chart="bar">Bar Chart</button>
+  <button class="chart-type-btn" data-chart="hbar">Horizontal Bars</button>
+  <button class="chart-type-btn" data-chart="grouped">Grouped by Dimension</button>
+  <span class="chart-hint" id="chartHint">Showing trend by year</span>
 </div>
-<div class="meta">Chart aggregates active results by indicator and year.</div>
+<svg id="chart" viewBox="0 0 1200 620" role="img" aria-label="Chart"></svg>
+</div>
+<div class="meta" id="chartMeta">Chart uses the same filters as the table. Switch chart type above. Map view requires a geo library in production.</div>
 </section>
 </main>
 
@@ -516,7 +530,7 @@ function runQuery(){
     <td>${r.unit}</td>
   </tr>`).join("");
 
-  drawChart(indicators, years);
+  drawChart(indicators, years, states, genders, sectors);
   updateURL(source, indicators, estimates, years, frequencies, states, genders, sectors, ages);
 }
 
@@ -535,24 +549,45 @@ function updateURL(source, indicators, estimates, years, frequencies, states, ge
   history.replaceState(null, "", "indicator.html?" + params.toString());
 }
 
-function drawChart(indicators, years){
+
+let currentChartType = "line";
+let lastIndicators = [];
+let lastYears = [];
+let lastStates = [];
+let lastGenders = [];
+let lastSectors = [];
+
+function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
+
+function drawChart(indicators, years, states, genders, sectors){
+  lastIndicators = indicators;
+  lastYears = years;
+  lastStates = states || [];
+  lastGenders = genders || [];
+  lastSectors = sectors || [];
+
   const svg = document.getElementById("chart");
-  const W = 1200, H = 620, L = 80, R = 40, T = 55, B = 90;
-  const plotW = W - L - R, plotH = H - T - B;
-  const series = indicators;
-  const chartYears = years;
+  const hint = document.getElementById("chartHint");
+  const type = currentChartType;
 
-  const vals = series.map(ind => chartYears.map(yr => {
-    const subset = currentRows.filter(r => r.indicator === ind && r.year === yr);
-    if (!subset.length) return 0;
-    return subset.reduce((a, r) => a + r.value, 0) / subset.length;
-  }));
+  if (type === "line") {
+    hint.textContent = "Trend by year (line chart)";
+    drawLineChart(svg, indicators, years);
+  } else if (type === "bar") {
+    hint.textContent = "Values by year (bar chart)";
+    drawBarChart(svg, indicators, years);
+  } else if (type === "hbar") {
+    hint.textContent = "Comparison across selected dimension";
+    drawHBarChart(svg, indicators, years, states, genders, sectors);
+  } else if (type === "grouped") {
+    hint.textContent = "Grouped comparison by gender / sector / state";
+    drawGroupedChart(svg, indicators, years, states, genders, sectors);
+  }
+}
 
-  const all = vals.flat();
-  const min = Math.min(...all, 0);
-  const max = Math.max(...all, 1);
-  const range = Math.max(max - min, 1);
-
+function drawAxes(svg, W, H, L, R, T, B, min, max){
+  const plotW = W-L-R, plotH = H-T-B;
+  const range = Math.max(max-min, 1);
   let out = "";
   for (let i = 0; i < 5; i++) {
     const y = T + i * plotH / 4;
@@ -562,26 +597,162 @@ function drawChart(indicators, years){
   }
   out += `<line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="#667b8b"/>
           <line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#667b8b"/>`;
+  return {out, plotW, plotH, range};
+}
 
+function seriesValuesByYear(indicators, years){
+  return indicators.map(ind => years.map(yr => {
+    const subset = currentRows.filter(r => r.indicator === ind && r.year === yr);
+    return avg(subset.map(r => r.value));
+  }));
+}
+
+function drawLineChart(svg, indicators, years){
+  const W=1200, H=620, L=80, R=40, T=55, B=90;
+  const vals = seriesValuesByYear(indicators, years);
+  const all = vals.flat();
+  const min = Math.min(...all, 0), max = Math.max(...all, 1);
+  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
+  let out = axes;
   const palette = ["#0f766e","#14919b","#082f49","#c58a22","#64748b","#287653","#8b5cf6","#b45309"];
-  series.forEach((ind, si) => {
+  indicators.forEach((ind, si) => {
     const pts = vals[si].map((v, i) => {
-      const x = chartYears.length === 1 ? L + plotW / 2 : L + (i / Math.max(chartYears.length - 1, 1)) * plotW;
-      const y = T + (1 - (v - min) / range) * plotH;
-      return [x, y];
+      const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
+      const y = T + (1 - (v-min)/range) * plotH;
+      return [x,y];
     });
-    if (pts.length > 1) out += `<polyline fill="none" stroke="${palette[si%palette.length]}" stroke-width="4" points="${pts.map(p=>p[0]+","+p[1]).join(" ")}"/>`;
-    pts.forEach(p => out += `<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="${palette[si%palette.length]}"/>`);
-    const lx = 90 + si * 220;
-    out += `<line x1="${lx}" y1="${H-35}" x2="${lx+22}" y2="${H-35}" stroke="${palette[si%palette.length]}" stroke-width="4"/>
-            <text x="${lx+30}" y="${H-31}" font-size="12" fill="#17324a">${ind.slice(0,27)}${ind.length>27?"…":""}</text>`;
+    if (pts.length > 1) out += `<polyline fill="none" stroke="${palette[si%palette.length]}" stroke-width="3.5" points="${pts.map(p=>p[0]+","+p[1]).join(" ")}"/>`;
+    pts.forEach(p => out += `<circle cx="${p[0]}" cy="${p[1]}" r="5.5" fill="${palette[si%palette.length]}"/>`);
+    const lx = 90 + si * 210;
+    out += `<line x1="${lx}" y1="${H-35}" x2="${lx+20}" y2="${H-35}" stroke="${palette[si%palette.length]}" stroke-width="3.5"/>
+            <text x="${lx+28}" y="${H-31}" font-size="12" fill="#17324a">${ind.slice(0,26)}${ind.length>26?"…":""}</text>`;
   });
-  chartYears.forEach((yr, i) => {
-    const x = chartYears.length === 1 ? L + plotW / 2 : L + (i / Math.max(chartYears.length - 1, 1)) * plotW;
+  years.forEach((yr, i) => {
+    const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
     out += `<text x="${x}" y="${H-65}" text-anchor="middle" font-size="12" fill="#667b8b">${yr}</text>`;
   });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
+
+function drawBarChart(svg, indicators, years){
+  const W=1200, H=620, L=80, R=40, T=55, B=100;
+  const vals = seriesValuesByYear(indicators, years);
+  const all = vals.flat();
+  const min = 0, max = Math.max(...all, 1);
+  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
+  let out = axes;
+  const palette = ["#0f766e","#14919b","#082f49","#c58a22","#64748b","#287653","#8b5cf6","#b45309"];
+  const nYears = years.length, nSeries = indicators.length;
+  const groupW = plotW / Math.max(nYears, 1);
+  const barW = Math.min(28, (groupW * 0.75) / Math.max(nSeries, 1));
+  years.forEach((yr, yi) => {
+    const gx = L + yi * groupW + groupW/2;
+    indicators.forEach((ind, si) => {
+      const v = vals[si][yi];
+      const h = ((v - min) / range) * plotH;
+      const x = gx - (nSeries * barW)/2 + si * barW;
+      const y = T + plotH - h;
+      out += `<rect x="${x}" y="${y}" width="${Math.max(barW-3,4)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
+    });
+    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#667b8b">${yr}</text>`;
+  });
+  indicators.forEach((ind, si) => {
+    const lx = 90 + si * 210;
+    out += `<rect x="${lx}" y="${H-42}" width="16" height="10" fill="${palette[si%palette.length]}" rx="2"/>
+            <text x="${lx+22}" y="${H-33}" font-size="12" fill="#17324a">${ind.slice(0,26)}${ind.length>26?"…":""}</text>`;
+  });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.innerHTML = out;
+}
+
+function drawHBarChart(svg, indicators, years, states, genders, sectors){
+  // Prefer: if multiple states -> by state; else if multiple genders -> gender; else sector; else years
+  let dimLabel = "Year";
+  let categories = years;
+  let getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.year===cat).map(r=>r.value));
+
+  if (states && states.length > 1) {
+    dimLabel = "State"; categories = states;
+    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.state===cat).map(r=>r.value));
+  } else if (genders && genders.length > 1) {
+    dimLabel = "Gender"; categories = genders;
+    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.gender===cat).map(r=>r.value));
+  } else if (sectors && sectors.length > 1) {
+    dimLabel = "Sector"; categories = sectors;
+    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.sector===cat).map(r=>r.value));
+  }
+
+  // Use first indicator for simple h-bar clarity if many indicators
+  const ind = indicators[0] || "Indicator";
+  const data = categories.map(c => ({label: c, value: getVal(ind, c)}));
+  const max = Math.max(...data.map(d => d.value), 1);
+  const W = 1200, H = Math.max(420, 80 + data.length * 42);
+  const L = 160, R = 80, T = 40, B = 40;
+  const plotW = W - L - R, plotH = H - T - B;
+  const barH = Math.min(28, plotH / Math.max(data.length,1) * 0.65);
+  let out = `<text x="${W/2}" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#082f49">${ind.slice(0,50)} — by ${dimLabel}</text>`;
+  data.forEach((d, i) => {
+    const y = T + (i + 0.5) * (plotH / data.length) - barH/2;
+    const w = (d.value / max) * plotW;
+    out += `<rect x="${L}" y="${y}" width="${Math.max(w,2)}" height="${barH}" fill="#0f766e" rx="4"/>
+            <text x="${L-10}" y="${y+barH/2+4}" text-anchor="end" font-size="12" fill="#17324a">${String(d.label).slice(0,18)}</text>
+            <text x="${L+w+8}" y="${y+barH/2+4}" font-size="12" font-weight="700" fill="#082f49">${d.value.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
+  });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.innerHTML = out;
+}
+
+function drawGroupedChart(svg, indicators, years, states, genders, sectors){
+  // Group bars by year, series = gender or sector if multi, else indicators
+  let seriesLabels = indicators;
+  let getSeriesVal = (series, yr) => avg(currentRows.filter(r => r.indicator===series && r.year===yr).map(r=>r.value));
+  let title = "Indicators by year";
+
+  if (genders && genders.length > 1 && indicators.length === 1) {
+    seriesLabels = genders;
+    getSeriesVal = (g, yr) => avg(currentRows.filter(r => r.gender===g && r.year===yr).map(r=>r.value));
+    title = `${indicators[0]} by gender`;
+  } else if (sectors && sectors.length > 1 && indicators.length === 1) {
+    seriesLabels = sectors;
+    getSeriesVal = (s, yr) => avg(currentRows.filter(r => r.sector===s && r.year===yr).map(r=>r.value));
+    title = `${indicators[0]} by sector`;
+  } else if (states && states.length > 1 && states.length <= 8 && indicators.length === 1) {
+    seriesLabels = states;
+    getSeriesVal = (st, yr) => avg(currentRows.filter(r => r.state===st && r.year===yr).map(r=>r.value));
+    title = `${indicators[0]} by state`;
+  }
+
+  const vals = seriesLabels.map(s => years.map(yr => getSeriesVal(s, yr)));
+  const all = vals.flat();
+  const min = 0, max = Math.max(...all, 1);
+  const W=1200, H=620, L=80, R=40, T=60, B=100;
+  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
+  let out = axes + `<text x="${W/2}" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#082f49">${title.slice(0,70)}</text>`;
+  const palette = ["#0f766e","#14919b","#082f49","#c58a22","#64748b","#287653","#8b5cf6","#b45309"];
+  const nYears = years.length, nSeries = seriesLabels.length;
+  const groupW = plotW / Math.max(nYears, 1);
+  const barW = Math.min(26, (groupW * 0.8) / Math.max(nSeries, 1));
+  years.forEach((yr, yi) => {
+    const gx = L + yi * groupW + groupW/2;
+    seriesLabels.forEach((lab, si) => {
+      const v = vals[si][yi];
+      const h = ((v - min) / range) * plotH;
+      const x = gx - (nSeries * barW)/2 + si * barW;
+      const y = T + plotH - h;
+      out += `<rect x="${x}" y="${y}" width="${Math.max(barW-2,3)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
+    });
+    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#667b8b">${yr}</text>`;
+  });
+  seriesLabels.forEach((lab, si) => {
+    const lx = 80 + si * 150;
+    out += `<rect x="${lx}" y="${H-42}" width="14" height="10" fill="${palette[si%palette.length]}" rx="2"/>
+            <text x="${lx+20}" y="${H-33}" font-size="11" fill="#17324a">${String(lab).slice(0,18)}</text>`;
+  });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.innerHTML = out;
+}
+
 
 document.getElementById("applyBtn").addEventListener("click", runQuery);
 document.getElementById("resetBtn").addEventListener("click", () => {
@@ -602,6 +773,16 @@ document.querySelectorAll(".tab").forEach(btn => {
     const isTable = btn.dataset.tab === "table";
     document.getElementById("tablePanel").hidden = !isTable;
     document.getElementById("chartPanel").hidden = isTable;
+    if (!isTable) drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
+  });
+});
+
+document.querySelectorAll(".chart-type-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".chart-type-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentChartType = btn.dataset.chart;
+    drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
   });
 });
 
