@@ -4,28 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Explorer | SHRAM SHANKHIKI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#082f49;--teal:#0f766e;--teal2:#14919b;--mint:#eaf8f6;
-  --bg:#f4f8fa;--white:#fff;--border:#d7e3e8;--text:#17324a;
-  --muted:#667b8b;--gold:#c58a22;--shadow:0 12px 34px rgba(8,47,73,.075)
+  --navy:#0a3357;--navy-deep:#082347;--teal:#0f766e;--teal2:#14919b;--mint:#eaf8f6;
+  --bg:#f4f8fa;--white:#fff;--border:#d7e3e8;--text:#1a2e42;
+  --muted:#5c7185;--gold:#b8860b;--gold-deep:#8a5a1a;
+  --gold-bg:#fdf3e0;--gold-border:#e8cd94;
+  --rust:#b5563a;--sage:#3d7a5c;--slate:#4a6785;--plum:#6b4e71;
+  --shadow:0 12px 34px rgba(8,47,73,.1);--shadow-lg:0 20px 48px rgba(8,47,73,.14);
+  --heading-font:"Source Serif 4",Georgia,serif;--body-font:"Inter","Segoe UI",Arial,sans-serif
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:"Segoe UI",Inter,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.5}
+body{margin:0;font-family:var(--body-font);color:var(--text);background:var(--bg);line-height:1.55}
 a{text-decoration:none;color:inherit}
 .topbar{background:var(--navy);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between}
 header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
 .head{max-width:1340px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
 .brand{display:flex;align-items:center;gap:13px}
 .logo{width:50px;height:50px;border:2px solid var(--navy);border-radius:12px;display:grid;place-items:center;font-weight:900;color:var(--navy)}
-.brand h1{margin:0;color:var(--navy);font-size:25px;letter-spacing:.4px}
+.brand h1{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:25px;letter-spacing:.2px}
 .brand p{margin:1px 0 0;color:var(--muted);font-size:12px}
 .back{color:var(--teal);font-size:13px;font-weight:800}
 main{max-width:1340px;margin:auto;padding:34px 5% 65px}
 .crumb{font-size:12px;color:var(--muted);margin-bottom:14px}
 .hero{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:18px}
 .hero-top{display:flex;justify-content:space-between;gap:24px}
-.hero h2{margin:0;color:var(--navy);font-size:28px;line-height:1.2}
+.hero h2{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:28px;line-height:1.2}
 .hero p{margin:8px 0;color:var(--muted);font-size:14px}
 .badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
 .badge{padding:6px 10px;border-radius:999px;background:var(--mint);color:var(--teal);font-size:11px;font-weight:800}
@@ -43,7 +50,7 @@ select{width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;
 .multi{position:relative}
 .multi-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;border:1px solid var(--border);border-radius:8px;padding:10px 12px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer}
 .multi-toggle:hover{background:#f7fbfc;border-color:var(--teal2)}
-.multi-toggle .chevron{font-size:16px;color:var(--teal);line-height:1}
+.multi-toggle .chevron{color:var(--teal);display:inline-flex;transition:transform .15s}
 .multi.open .multi-toggle{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.10)}
 .multi-panel{display:none;position:absolute;z-index:100;left:0;right:0;top:calc(100% + 5px);background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px;box-shadow:0 16px 40px rgba(8,47,73,.16);max-height:280px;overflow:auto}
 .multi.open .multi-panel{display:block}
@@ -89,9 +96,9 @@ tbody tr:hover{background:#f7fbfc}
 .chart-type-btn:hover:not(.active){border-color:var(--teal);color:var(--teal)}
 .chart-hint{font-size:11px;color:var(--muted);margin-left:auto}
 svg{width:100%;height:auto;display:block;min-width:780px}
-.bar-label{font-size:11px;fill:#667b8b}
+.bar-label{font-size:11px;fill:#5c7185}
 .meta{margin-top:17px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
-.notice{background:#fff8e8;border:1px solid #f0dfb7;color:#765719;border-radius:9px;padding:11px 13px;font-size:12px;margin-bottom:15px}
+.notice{background:var(--gold-bg);border:1px solid var(--gold-border);color:var(--gold-deep);border-radius:9px;padding:11px 13px;font-size:12px;margin-bottom:15px}
 footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
 .footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px}
 @media(max-width:1100px){.summary{grid-template-columns:repeat(3,1fr)}.filters{grid-template-columns:repeat(2,1fr)}}
@@ -101,7 +108,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
 </style>
 </head>
 <body>
-<div class="topbar"><span>V.V. Giri National Labour Institute</span><span>Labour Market Statistics</span></div>
+<div class="topbar"><span>Government of India | Ministry of Labour &amp; Employment</span><span>V.V. Giri National Labour Institute | Labour Market Statistics</span></div>
 <header>
 <div class="head">
 <a class="brand" href="index.html"><div class="logo">SS</div><div><h1>SHRAM SHANKHIKI</h1><p>Labour Market Statistics Portal</p></div></a>
@@ -144,56 +151,56 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
     <div style="grid-column:1/-1">
       <label>Indicators <span style="font-weight:600;color:var(--teal)">(multiple)</span></label>
       <div class="multi" id="indicatorMenu">
-        <button type="button" class="multi-toggle" id="indicatorToggle"><span id="indicatorSummary">Select indicators</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="indicatorToggle"><span id="indicatorSummary">Select indicators</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="indicatorPanel"></div>
       </div>
     </div>
     <div id="estimateWrap">
       <label>Type of Estimate</label>
       <div class="multi" id="estimateMenu">
-        <button type="button" class="multi-toggle" id="estimateToggle"><span id="estimateSummary">Select type(s)</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="estimateToggle"><span id="estimateSummary">Select type(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="estimatePanel"></div>
       </div>
     </div>
     <div>
       <label>Year</label>
       <div class="multi" id="yearMenu">
-        <button type="button" class="multi-toggle" id="yearToggle"><span id="yearSummary">Select year(s)</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="yearToggle"><span id="yearSummary">Select year(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="yearPanel"></div>
       </div>
     </div>
     <div>
       <label>Frequency</label>
       <div class="multi" id="frequencyMenu">
-        <button type="button" class="multi-toggle" id="frequencyToggle"><span id="frequencySummary">Select frequency</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="frequencyToggle"><span id="frequencySummary">Select frequency</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="frequencyPanel"></div>
       </div>
     </div>
     <div>
       <label>States</label>
       <div class="multi" id="stateMenu">
-        <button type="button" class="multi-toggle" id="stateToggle"><span id="stateSummary">Select state(s)</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="stateToggle"><span id="stateSummary">Select state(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="statePanel"></div>
       </div>
     </div>
     <div>
       <label>Gender</label>
       <div class="multi" id="genderMenu">
-        <button type="button" class="multi-toggle" id="genderToggle"><span id="genderSummary">Select gender(s)</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="genderToggle"><span id="genderSummary">Select gender(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="genderPanel"></div>
       </div>
     </div>
     <div>
       <label>Sector</label>
       <div class="multi" id="sectorMenu">
-        <button type="button" class="multi-toggle" id="sectorToggle"><span id="sectorSummary">Select sector(s)</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="sectorToggle"><span id="sectorSummary">Select sector(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="sectorPanel"></div>
       </div>
     </div>
     <div>
       <label>Age-group (years)</label>
       <div class="multi" id="ageMenu">
-        <button type="button" class="multi-toggle" id="ageToggle"><span id="ageSummary">Select age-group(s)</span><span class="chevron">⌄</span></button>
+        <button type="button" class="multi-toggle" id="ageToggle"><span id="ageSummary">Select age-group(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="agePanel"></div>
       </div>
     </div>
@@ -266,8 +273,9 @@ Demo mode: results use illustrative demonstration values. When production data i
 
 <footer>
 <div class="footer-inner">
-<span><strong>SHRAM SHANKHIKI</strong><br>Labour Market Statistics Portal</span>
-<span>V.V. Giri National Labour Institute</span>
+<span><strong>SHRAM SHANKHIKI</strong><br>Labour Market Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
+<span>Ministry of Labour &amp; Employment<br>Government of India</span>
+<span><a href="#" style="color:#fff">RTI</a> · <a href="#" style="color:#fff">Sitemap</a> · <a href="#" style="color:#fff">Disclaimer</a> · <a href="#" style="color:#fff">Contact Us</a></span>
 </div>
 </footer>
 
@@ -593,10 +601,10 @@ function drawAxes(svg, W, H, L, R, T, B, min, max){
     const y = T + i * plotH / 4;
     const v = max - i * range / 4;
     out += `<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#d7e3e8"/>
-            <text x="${L-10}" y="${y+4}" text-anchor="end" font-size="12" fill="#667b8b">${v.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
+            <text x="${L-10}" y="${y+4}" text-anchor="end" font-size="12" fill="#5c7185">${v.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
   }
-  out += `<line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="#667b8b"/>
-          <line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#667b8b"/>`;
+  out += `<line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="#5c7185"/>
+          <line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#5c7185"/>`;
   return {out, plotW, plotH, range};
 }
 
@@ -614,7 +622,7 @@ function drawLineChart(svg, indicators, years){
   const min = Math.min(...all, 0), max = Math.max(...all, 1);
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes;
-  const palette = ["#0f766e","#14919b","#082f49","#c58a22","#64748b","#287653","#8b5cf6","#b45309"];
+  const palette = ["#0f766e","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
   indicators.forEach((ind, si) => {
     const pts = vals[si].map((v, i) => {
       const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
@@ -629,7 +637,7 @@ function drawLineChart(svg, indicators, years){
   });
   years.forEach((yr, i) => {
     const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
-    out += `<text x="${x}" y="${H-65}" text-anchor="middle" font-size="12" fill="#667b8b">${yr}</text>`;
+    out += `<text x="${x}" y="${H-65}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
   });
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
@@ -642,7 +650,7 @@ function drawBarChart(svg, indicators, years){
   const min = 0, max = Math.max(...all, 1);
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes;
-  const palette = ["#0f766e","#14919b","#082f49","#c58a22","#64748b","#287653","#8b5cf6","#b45309"];
+  const palette = ["#0f766e","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
   const nYears = years.length, nSeries = indicators.length;
   const groupW = plotW / Math.max(nYears, 1);
   const barW = Math.min(28, (groupW * 0.75) / Math.max(nSeries, 1));
@@ -655,7 +663,7 @@ function drawBarChart(svg, indicators, years){
       const y = T + plotH - h;
       out += `<rect x="${x}" y="${y}" width="${Math.max(barW-3,4)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
     });
-    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#667b8b">${yr}</text>`;
+    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
   });
   indicators.forEach((ind, si) => {
     const lx = 90 + si * 210;
@@ -691,13 +699,13 @@ function drawHBarChart(svg, indicators, years, states, genders, sectors){
   const L = 160, R = 80, T = 40, B = 40;
   const plotW = W - L - R, plotH = H - T - B;
   const barH = Math.min(28, plotH / Math.max(data.length,1) * 0.65);
-  let out = `<text x="${W/2}" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#082f49">${ind.slice(0,50)} — by ${dimLabel}</text>`;
+  let out = `<text x="${W/2}" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${ind.slice(0,50)} — by ${dimLabel}</text>`;
   data.forEach((d, i) => {
     const y = T + (i + 0.5) * (plotH / data.length) - barH/2;
     const w = (d.value / max) * plotW;
     out += `<rect x="${L}" y="${y}" width="${Math.max(w,2)}" height="${barH}" fill="#0f766e" rx="4"/>
             <text x="${L-10}" y="${y+barH/2+4}" text-anchor="end" font-size="12" fill="#17324a">${String(d.label).slice(0,18)}</text>
-            <text x="${L+w+8}" y="${y+barH/2+4}" font-size="12" font-weight="700" fill="#082f49">${d.value.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
+            <text x="${L+w+8}" y="${y+barH/2+4}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
   });
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
@@ -728,8 +736,8 @@ function drawGroupedChart(svg, indicators, years, states, genders, sectors){
   const min = 0, max = Math.max(...all, 1);
   const W=1200, H=620, L=80, R=40, T=60, B=100;
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
-  let out = axes + `<text x="${W/2}" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#082f49">${title.slice(0,70)}</text>`;
-  const palette = ["#0f766e","#14919b","#082f49","#c58a22","#64748b","#287653","#8b5cf6","#b45309"];
+  let out = axes + `<text x="${W/2}" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${title.slice(0,70)}</text>`;
+  const palette = ["#0f766e","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
   const nYears = years.length, nSeries = seriesLabels.length;
   const groupW = plotW / Math.max(nYears, 1);
   const barW = Math.min(26, (groupW * 0.8) / Math.max(nSeries, 1));
@@ -742,7 +750,7 @@ function drawGroupedChart(svg, indicators, years, states, genders, sectors){
       const y = T + plotH - h;
       out += `<rect x="${x}" y="${y}" width="${Math.max(barW-2,3)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
     });
-    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#667b8b">${yr}</text>`;
+    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
   });
   seriesLabels.forEach((lab, si) => {
     const lx = 80 + si * 150;
