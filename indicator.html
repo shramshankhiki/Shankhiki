@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Explorer | SHRAM SHANKHIKI</title>
+<title>Data Explorer | Shram Sankhyiki </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,71 +14,73 @@
   --muted:#5c7185;--gold:#b8860b;--gold-deep:#8a5a1a;
   --gold-bg:#fdf3e0;--gold-border:#e8cd94;
   --rust:#b5563a;--sage:#3d7a5c;--slate:#4a6785;--plum:#6b4e71;
+  /* Bhagwa / Saffron */
+  --bhagwa:#FF6B00;--bhagwa-deep:#E65C00;--bhagwa-light:#FFF4EB;--bhagwa-soft:#FFE8D6;
   --shadow:0 12px 34px rgba(8,47,73,.1);--shadow-lg:0 20px 48px rgba(8,47,73,.14);
   --heading-font:"Source Serif 4",Georgia,serif;--body-font:"Inter","Segoe UI",Arial,sans-serif
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--body-font);color:var(--text);background:var(--bg);line-height:1.55}
 a{text-decoration:none;color:inherit}
-.topbar{background:var(--navy);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between}
-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
-.head{max-width:1340px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.brand{display:flex;align-items:center;gap:13px}
-.logo{width:50px;height:50px;border:2px solid var(--navy);border-radius:12px;display:grid;place-items:center;font-weight:900;color:var(--navy)}
-.brand h1{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:25px;letter-spacing:.2px}
-.brand p{margin:1px 0 0;color:var(--muted);font-size:12px}
-.back{color:var(--teal);font-size:13px;font-weight:800}
+.topbar{background:linear-gradient(90deg,var(--navy) 0%,#0d3a5c 100%);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between;align-items:center}
+header{background:#fff;border-bottom:3px solid var(--bhagwa);position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(8,47,73,.06)}
+.head{max-width:1340px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-img{height:52px;width:auto;object-fit:contain;display:block}
+.logo-divider{width:1px;height:42px;background:var(--border)}
+.brand-text h1{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:24px;letter-spacing:.2px}
+.brand-text p{margin:2px 0 0;color:var(--muted);font-size:12px}
+.back{color:var(--bhagwa);font-size:13px;font-weight:800}
+.back:hover{color:var(--bhagwa-deep)}
 main{max-width:1340px;margin:auto;padding:34px 5% 65px}
 .crumb{font-size:12px;color:var(--muted);margin-bottom:14px}
-.hero{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:18px}
+.hero{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:18px;border-top:3px solid var(--bhagwa)}
 .hero-top{display:flex;justify-content:space-between;gap:24px}
 .hero h2{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:28px;line-height:1.2}
 .hero p{margin:8px 0;color:var(--muted);font-size:14px}
 .badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
-.badge{padding:6px 10px;border-radius:999px;background:var(--mint);color:var(--teal);font-size:11px;font-weight:800}
-.latest{min-width:200px;background:var(--mint);border-left:4px solid var(--teal2);border-radius:10px;padding:14px 18px}
+.badge{padding:6px 10px;border-radius:999px;background:var(--bhagwa-light);color:var(--bhagwa-deep);font-size:11px;font-weight:800}
+.latest{min-width:200px;background:var(--bhagwa-light);border-left:4px solid var(--bhagwa);border-radius:10px;padding:14px 18px}
 .latest small{display:block;color:var(--muted);font-size:11px}
 .latest strong{display:block;color:var(--navy);font-size:28px}
 .latest span{font-size:11px;color:var(--muted)}
-
 /* Filters panel */
-.filters-panel{background:#fff;border:1px solid var(--border);border-radius:13px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px;overflow-x:hidden}
+.filters-panel{background:#fff;border:1px solid var(--border);border-radius:13px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px;overflow-x:hidden;border-top:3px solid var(--bhagwa)}
 .filters-panel h3{margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:18px}
 .filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .filters > *{min-width:0}
 label{display:block;font-size:11px;font-weight:800;color:var(--muted);margin-bottom:5px}
-select{width:100%;padding:10px 34px 10px 12px;border:1px solid var(--border);border-radius:8px;background-color:#fff;color:var(--text);font-size:13px;font-weight:600;font-family:var(--body-font);appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%230f766e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');background-repeat:no-repeat;background-position:right 10px center;background-size:13px;cursor:pointer;transition:border-color .15s;box-sizing:border-box}
-select:hover{border-color:var(--teal)}
-select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.10)}
+select{width:100%;padding:10px 34px 10px 12px;border:1px solid var(--border);border-radius:8px;background-color:#fff;color:var(--text);font-size:13px;font-weight:600;font-family:var(--body-font);appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FF6B00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');background-repeat:no-repeat;background-position:right 10px center;background-size:13px;cursor:pointer;transition:border-color .15s;box-sizing:border-box}
+select:hover{border-color:var(--bhagwa)}
+select:focus{outline:none;border-color:var(--bhagwa);box-shadow:0 0 0 3px rgba(255,107,0,.12)}
 .multi{position:relative;width:100%}
 .multi-toggle{width:100%;min-height:42px;display:flex;align-items:center;justify-content:space-between;text-align:left;border:1px solid var(--border);border-radius:8px;padding:10px 12px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer;box-sizing:border-box}
-.multi-toggle:hover{background:#f7fbfc;border-color:var(--teal2)}
-.multi-toggle .chevron{color:var(--teal);display:inline-flex;flex-shrink:0;transition:transform .15s}
-.multi.open .multi-toggle{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.10)}
+.multi-toggle:hover{background:#f7fbfc;border-color:var(--bhagwa)}
+.multi-toggle .chevron{color:var(--bhagwa);display:inline-flex;flex-shrink:0;transition:transform .15s}
+.multi.open .multi-toggle{border-color:var(--bhagwa);box-shadow:0 0 0 3px rgba(255,107,0,.12)}
 .multi-panel{display:none;position:absolute;z-index:100;left:0;right:0;top:calc(100% + 5px);background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px;box-shadow:0 16px 40px rgba(8,47,73,.16);max-height:280px;overflow:auto}
 .multi.open .multi-panel{display:block}
 .check{display:flex;gap:8px;align-items:flex-start;padding:7px 6px;font-size:12px;border-radius:6px;cursor:pointer}
-.check:hover{background:var(--mint)}
-.check input{width:15px;height:15px;margin-top:1px;accent-color:var(--teal);cursor:pointer}
+.check:hover{background:var(--bhagwa-light)}
+.check input{width:15px;height:15px;margin-top:1px;accent-color:var(--bhagwa);cursor:pointer}
 .select-tools{display:flex;justify-content:space-between;gap:6px;padding:3px 3px 8px;border-bottom:1px solid var(--border);margin-bottom:4px}
-.select-tools button{padding:5px 8px;background:#fff;color:var(--teal);border:1px solid var(--border);font-size:10px;border-radius:6px;cursor:pointer}
-.select-tools button:hover{background:var(--teal);color:#fff}
+.select-tools button{padding:5px 8px;background:#fff;color:var(--bhagwa);border:1px solid var(--border);font-size:10px;border-radius:6px;cursor:pointer}
+.select-tools button:hover{background:var(--bhagwa);color:#fff}
 .filter-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
-.filter-actions button{border:0;border-radius:9px;padding:11px 16px;background:var(--teal);color:#fff;font-weight:800;cursor:pointer;font-size:13px}
-.filter-actions button:hover{background:var(--navy)}
-.filter-actions .secondary{background:#fff;color:var(--teal);border:1px solid var(--border)}
-.filter-actions .secondary:hover{background:var(--mint)}
-
+.filter-actions button{border:0;border-radius:9px;padding:11px 16px;background:var(--bhagwa);color:#fff;font-weight:800;cursor:pointer;font-size:13px}
+.filter-actions button:hover{background:var(--bhagwa-deep)}
+.filter-actions .secondary{background:#fff;color:var(--bhagwa);border:1px solid var(--border)}
+.filter-actions .secondary:hover{background:var(--bhagwa-light)}
 .chips-bar{background:#fff;border:1px solid var(--border);border-radius:13px;padding:14px 18px;box-shadow:var(--shadow);margin-bottom:18px}
 .chips-bar h3{margin:0 0 10px;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:15px}
 .chips{display:flex;gap:7px;flex-wrap:wrap}
-.chip{background:#f1f7f8;border:1px solid #d7e9e9;color:var(--teal);padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700}
-
+.chip{background:var(--bhagwa-light);border:1px solid var(--bhagwa-soft);color:var(--bhagwa-deep);padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700}
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:13px}
 .tabs,.downloads{display:flex;gap:7px;flex-wrap:wrap}
 .tab,.download{padding:10px 14px;border:1px solid var(--border);border-radius:9px;background:#fff;color:var(--muted);font-weight:800;font-size:12px;cursor:pointer}
-.tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
-.download:hover{border-color:var(--teal);color:var(--teal)}
+.tab.active{background:var(--bhagwa);color:#fff;border-color:var(--bhagwa)}
+.download:hover{border-color:var(--bhagwa);color:var(--bhagwa)}
 .panel{background:#fff;border:1px solid var(--border);border-radius:13px;padding:21px;box-shadow:var(--shadow)}
 .summary{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
 .stat{border:1px solid var(--border);border-radius:9px;padding:15px;background:#fbfdfe}
@@ -95,33 +97,47 @@ tbody tr:hover{background:#f7fbfc}
 .chart-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
 .chart-controls label{margin:0;font-size:12px;color:var(--muted)}
 .chart-type-btn{padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--muted);font-weight:700;font-size:12px;cursor:pointer}
-.chart-type-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
-.chart-type-btn:hover:not(.active){border-color:var(--teal);color:var(--teal)}
+.chart-type-btn.active{background:var(--bhagwa);color:#fff;border-color:var(--bhagwa)}
+.chart-type-btn:hover:not(.active){border-color:var(--bhagwa);color:var(--bhagwa)}
 .chart-hint{font-size:11px;color:var(--muted);margin-left:auto}
 #chart{width:100%;height:auto;display:block;min-width:780px}
 .multi-toggle .chevron svg{width:13px;height:13px;display:block;min-width:0;flex-shrink:0}
 .bar-label{font-size:11px;fill:#5c7185}
 .meta{margin-top:17px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
 .notice{background:var(--gold-bg);border:1px solid var(--gold-border);color:var(--gold-deep);border-radius:9px;padding:11px 13px;font-size:12px;margin-bottom:15px}
-footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
-.footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px}
+footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-top:4px solid var(--bhagwa)}
+.footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.footer-logos img{height:40px;width:auto;background:#fff;padding:4px;border-radius:6px}
 @media(max-width:1100px){.summary{grid-template-columns:repeat(3,1fr)}.filters{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:850px){.hero-top{display:block}.latest{margin-top:18px}.summary{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.topbar{display:none}.head{padding:12px 4%}.hero{padding:20px}.hero h2{font-size:24px}main{padding:24px 4% 50px}.summary{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.footer-inner{display:block}}
+@media(max-width:850px){.hero-top{display:block}.latest{margin-top:18px}.summary{grid-template-columns:repeat(2,1fr)}.logo-img{height:42px}}
+@media(max-width:620px){.topbar{display:none}.head{padding:12px 4%}.hero{padding:20px}.hero h2{font-size:24px}main{padding:24px 4% 50px}.summary{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.footer-inner{display:block}.brand-text h1{font-size:20px}.logo-wrap{gap:6px}}
 @media print{header,.topbar,.toolbar,.filters-panel,.chips-bar,.notice,footer{display:none!important}main{padding:0}.panel{box-shadow:none;border:0}}
 </style>
 </head>
 <body>
-<div class="topbar"><span>Government of India | Ministry of Labour &amp; Employment</span><span>V.V. Giri National Labour Institute | Labour Market Statistics</span></div>
+<div class="topbar">
+  <span>Government of India | Ministry of Labour &amp; Employment</span>
+  <span>V.V. Giri National Labour Institute | Labour Market Statistics</span>
+</div>
 <header>
 <div class="head">
-<a class="brand" href="index.html"><div class="logo">SS</div><div><h1>SHRAM SHANKHIKI</h1><p>Labour Market Statistics Portal</p></div></a>
+<a class="brand" href="index.html">
+  <div class="logo-wrap">
+    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India - Ministry of Labour & Employment" title="Ministry of Labour & Employment">
+    <div class="logo-divider"></div>
+    <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="V.V. Giri National Labour Institute" title="V.V. Giri National Labour Institute" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
+  </div>
+  <div class="brand-text">
+    <h1>Shram Sankhyiki </h1>
+    <p>Labour Market Statistics Portal</p>
+  </div>
+</a>
 <a class="back" href="index.html#explorer">← Back to Data Explorer</a>
 </div>
 </header>
 <main>
 <div class="crumb">Home / Data Explorer / Results</div>
-
 <section class="hero">
 <div class="hero-top">
 <div>
@@ -139,7 +155,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
 </div>
 </div>
 </section>
-
 <!-- ===== FILTER OPTIONS ===== -->
 <section class="filters-panel">
   <h3>Refine selection</h3>
@@ -153,7 +168,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
       </select>
     </div>
     <div style="grid-column:1/-1">
-      <label>Indicators <span style="font-weight:600;color:var(--teal)">(multiple)</span></label>
+      <label>Indicators <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
       <div class="multi" id="indicatorMenu">
         <button type="button" class="multi-toggle" id="indicatorToggle"><span id="indicatorSummary">Select indicators</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
         <div class="multi-panel" id="indicatorPanel"></div>
@@ -214,16 +229,13 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px}
     <button class="secondary" id="resetBtn">Reset to defaults</button>
   </div>
 </section>
-
 <section class="chips-bar">
   <h3>Active selections</h3>
   <div class="chips" id="chips"></div>
 </section>
-
 <div class="notice">
 Demo mode: results use illustrative demonstration values. When production data is connected, the same filters will retrieve matching rows from PLFS / EPFO / ESIC files.
 </div>
-
 <div class="toolbar">
 <div class="tabs">
 <button class="tab active" data-tab="table">▤ Table View</button>
@@ -236,7 +248,6 @@ Demo mode: results use illustrative demonstration values. When production data i
 <button class="download" id="print">Print</button>
 </div>
 </div>
-
 <section id="tablePanel" class="panel">
 <div class="summary">
 <div class="stat"><span>Source</span><strong id="sSource">PLFS</strong></div>
@@ -258,7 +269,6 @@ Demo mode: results use illustrative demonstration values. When production data i
 </div>
 <div class="meta"><strong>Source:</strong> <span id="metaSource"></span> · <strong>Rows displayed:</strong> <span id="metaRows"></span>. Values are illustrative.</div>
 </section>
-
 <section id="chartPanel" class="panel" hidden>
 <div class="chart-wrap">
 <div class="chart-title">Visualisation</div>
@@ -274,15 +284,19 @@ Demo mode: results use illustrative demonstration values. When production data i
 <div class="meta" id="chartMeta">Chart uses the same filters as the table. Switch chart type above. Map view requires a geo library in production.</div>
 </section>
 </main>
-
 <footer>
 <div class="footer-inner">
-<span><strong>SHRAM SHANKHIKI</strong><br>Labour Market Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
-<span>Ministry of Labour &amp; Employment<br>Government of India</span>
-<span><a href="#" style="color:#fff">RTI</a> · <a href="#" style="color:#fff">Sitemap</a> · <a href="#" style="color:#fff">Disclaimer</a> · <a href="#" style="color:#fff">Contact Us</a></span>
+  <div>
+    <div class="footer-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
+      <img src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
+    </div>
+    <span><strong>Shram Sankhyiki </strong><br>Labour Market Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
+  </div>
+  <span>Ministry of Labour &amp; Employment<br>Government of India</span>
+  <span><a href="#" style="color:#fff">RTI</a> · <a href="#" style="color:#fff">Sitemap</a> · <a href="#" style="color:#fff">Disclaimer</a> · <a href="#" style="color:#fff">Contact Us</a></span>
 </div>
 </footer>
-
 <script>
 const plfsIndicators = [
   "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate",
@@ -305,7 +319,6 @@ const dimensions = {
   sector: {values:["Total","Rural","Urban"], panel:"sectorPanel", summary:"sectorSummary"},
   age: {values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"], panel:"agePanel", summary:"ageSummary"}
 };
-
 const demoSeries = {
   "Labour Force Participation Rate":[55.1,56.2,57.3,58.2,59.0],
   "Worker Population Ratio / Employment Rate":[52.0,53.2,54.4,55.8,56.7],
@@ -331,9 +344,7 @@ const units = {
   "Net number of subscribers":"Number",
   "Net number of ESIC beneficiaries (Persons)":"Number"
 };
-
 const sourceEl = document.getElementById("source");
-
 function buildMulti(panelId, values, prefix, prechecked){
   const el = document.getElementById(panelId);
   const set = new Set(prechecked || []);
@@ -355,17 +366,14 @@ function buildMulti(panelId, values, prefix, prechecked){
   });
   el.addEventListener("change", updateSummaries);
 }
-
 function selected(prefix){
   return [...document.querySelectorAll(`.${prefix}Check:checked`)].map(x => x.value);
 }
-
 function labelCount(prefix, none, singular){
   const a = selected(prefix);
   if (!a.length) return none;
   return `${a.length} ${a.length === 1 ? singular : singular + "s"} selected`;
 }
-
 function updateSummaries(){
   document.getElementById("indicatorSummary").textContent = labelCount("indicator","Select indicators","indicator");
   document.getElementById("estimateSummary").textContent = labelCount("estimate","Select type(s)","type");
@@ -376,7 +384,6 @@ function updateSummaries(){
   document.getElementById("sectorSummary").textContent = labelCount("sector","Select sector(s)","sector");
   document.getElementById("ageSummary").textContent = labelCount("age","Select age-group(s)","age-group");
 }
-
 function setupToggle(menuId, toggleId){
   const menu = document.getElementById(menuId);
   const toggle = document.getElementById(toggleId);
@@ -386,7 +393,6 @@ function setupToggle(menuId, toggleId){
     menu.classList.toggle("open");
   });
 }
-
 function renderFilterUI(pre){
   const src = sourceEl.value;
   buildMulti("indicatorPanel", sourceIndicators[src], "indicator", pre.indicators);
@@ -394,7 +400,6 @@ function renderFilterUI(pre){
   document.getElementById("estimateWrap").style.display = src === "PLFS" ? "block" : "none";
   updateSummaries();
 }
-
 setupToggle("indicatorMenu","indicatorToggle");
 setupToggle("estimateMenu","estimateToggle");
 setupToggle("yearMenu","yearToggle");
@@ -403,11 +408,9 @@ setupToggle("stateMenu","stateToggle");
 setupToggle("genderMenu","genderToggle");
 setupToggle("sectorMenu","sectorToggle");
 setupToggle("ageMenu","ageToggle");
-
 document.addEventListener("click", e => {
   if (!e.target.closest(".multi")) document.querySelectorAll(".multi.open").forEach(m => m.classList.remove("open"));
 });
-
 sourceEl.addEventListener("change", () => {
   renderFilterUI({
     indicators: sourceIndicators[sourceEl.value].slice(0,1),
@@ -415,7 +418,6 @@ sourceEl.addEventListener("change", () => {
     states: ["India"], genders: ["Person"], sectors: ["Total"], ages: ["15 & above"]
   });
 });
-
 /* Parse URL on load */
 const q = new URLSearchParams(location.search);
 const split = v => (q.get(v) || "").split("||").filter(Boolean);
@@ -432,7 +434,6 @@ const initial = {
 };
 sourceEl.value = initial.source;
 renderFilterUI(initial);
-
 function unitFor(ind){ return units[ind] || "Percent"; }
 function baseValue(ind, yearIndex){
   const a = demoSeries[ind] || [0,0,0,0,0];
@@ -457,9 +458,7 @@ function adjustedValue(ind, yearIndex, state, gender, sector, age){
 function cartesian(arrays){
   return arrays.reduce((acc, arr) => acc.flatMap(a => arr.map(v => a.concat([v]))), [[]]);
 }
-
 let currentRows = [];
-
 function runQuery(){
   const source = sourceEl.value;
   let indicators = selected("indicator");
@@ -470,7 +469,6 @@ function runQuery(){
   let genders = selected("gender");
   let sectors = selected("sector");
   let ages = selected("age");
-
   if (!indicators.length) indicators = sourceIndicators[source].slice(0,1);
   if (source === "PLFS" && !estimates.length) estimates = ["PS+SS"];
   if (!years.length) years = ["2024"];
@@ -479,7 +477,6 @@ function runQuery(){
   if (!genders.length) genders = ["Person"];
   if (!sectors.length) sectors = ["Total"];
   if (!ages.length) ages = ["15 & above"];
-
   const combinations = cartesian([indicators, estimates, years, frequencies, states, genders, sectors, ages]);
   currentRows = combinations.map(c => {
     const [indicator, estimate, year, frequency, state, gender, sector, age] = c;
@@ -490,7 +487,6 @@ function runQuery(){
       unit: unitFor(indicator)
     };
   });
-
   /* Header */
   const single = indicators.length === 1;
   document.getElementById("pageTitle").textContent = single ? indicators[0] : "Selected Labour Market Data";
@@ -499,7 +495,6 @@ function runQuery(){
   document.getElementById("combinationCount").textContent = combinations.length.toLocaleString();
   document.getElementById("description").textContent =
     `${indicators.length} indicator${indicators.length>1?"s":""} across ${years.length} year${years.length>1?"s":""}, ${states.length} state${states.length>1?"s":""} and selected demographic dimensions.`;
-
   document.getElementById("sSource").textContent = source;
   document.getElementById("sIndicators").textContent = indicators.length;
   document.getElementById("sYears").textContent = years.length;
@@ -507,7 +502,6 @@ function runQuery(){
   document.getElementById("sRows").textContent = currentRows.length.toLocaleString();
   document.getElementById("metaSource").textContent = source;
   document.getElementById("metaRows").textContent = currentRows.length.toLocaleString();
-
   /* Chips */
   const chips = document.getElementById("chips");
   chips.innerHTML = "";
@@ -526,7 +520,6 @@ function runQuery(){
   addChip("Gender", genders);
   addChip("Sector", sectors);
   addChip("Age-group", ages);
-
   /* Table */
   document.getElementById("rows").innerHTML = currentRows.map(r => `
   <tr>
@@ -541,11 +534,9 @@ function runQuery(){
     <td class="value">${Number(r.value).toLocaleString()}</td>
     <td>${r.unit}</td>
   </tr>`).join("");
-
   drawChart(indicators, years, states, genders, sectors);
   updateURL(source, indicators, estimates, years, frequencies, states, genders, sectors, ages);
 }
-
 function updateURL(source, indicators, estimates, years, frequencies, states, genders, sectors, ages){
   const params = new URLSearchParams({
     source,
@@ -560,28 +551,22 @@ function updateURL(source, indicators, estimates, years, frequencies, states, ge
   });
   history.replaceState(null, "", "indicator.html?" + params.toString());
 }
-
-
 let currentChartType = "line";
 let lastIndicators = [];
 let lastYears = [];
 let lastStates = [];
 let lastGenders = [];
 let lastSectors = [];
-
 function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
-
 function drawChart(indicators, years, states, genders, sectors){
   lastIndicators = indicators;
   lastYears = years;
   lastStates = states || [];
   lastGenders = genders || [];
   lastSectors = sectors || [];
-
   const svg = document.getElementById("chart");
   const hint = document.getElementById("chartHint");
   const type = currentChartType;
-
   if (type === "line") {
     hint.textContent = "Trend by year (line chart)";
     drawLineChart(svg, indicators, years);
@@ -596,7 +581,6 @@ function drawChart(indicators, years, states, genders, sectors){
     drawGroupedChart(svg, indicators, years, states, genders, sectors);
   }
 }
-
 function drawAxes(svg, W, H, L, R, T, B, min, max){
   const plotW = W-L-R, plotH = H-T-B;
   const range = Math.max(max-min, 1);
@@ -611,14 +595,12 @@ function drawAxes(svg, W, H, L, R, T, B, min, max){
           <line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#5c7185"/>`;
   return {out, plotW, plotH, range};
 }
-
 function seriesValuesByYear(indicators, years){
   return indicators.map(ind => years.map(yr => {
     const subset = currentRows.filter(r => r.indicator === ind && r.year === yr);
     return avg(subset.map(r => r.value));
   }));
 }
-
 function drawLineChart(svg, indicators, years){
   const W=1200, H=620, L=80, R=40, T=55, B=90;
   const vals = seriesValuesByYear(indicators, years);
@@ -626,7 +608,7 @@ function drawLineChart(svg, indicators, years){
   const min = Math.min(...all, 0), max = Math.max(...all, 1);
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes;
-  const palette = ["#0f766e","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
   indicators.forEach((ind, si) => {
     const pts = vals[si].map((v, i) => {
       const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
@@ -646,7 +628,6 @@ function drawLineChart(svg, indicators, years){
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-
 function drawBarChart(svg, indicators, years){
   const W=1200, H=620, L=80, R=40, T=55, B=100;
   const vals = seriesValuesByYear(indicators, years);
@@ -654,7 +635,7 @@ function drawBarChart(svg, indicators, years){
   const min = 0, max = Math.max(...all, 1);
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes;
-  const palette = ["#0f766e","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
   const nYears = years.length, nSeries = indicators.length;
   const groupW = plotW / Math.max(nYears, 1);
   const barW = Math.min(28, (groupW * 0.75) / Math.max(nSeries, 1));
@@ -677,13 +658,10 @@ function drawBarChart(svg, indicators, years){
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-
 function drawHBarChart(svg, indicators, years, states, genders, sectors){
-  // Prefer: if multiple states -> by state; else if multiple genders -> gender; else sector; else years
   let dimLabel = "Year";
   let categories = years;
   let getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.year===cat).map(r=>r.value));
-
   if (states && states.length > 1) {
     dimLabel = "State"; categories = states;
     getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.state===cat).map(r=>r.value));
@@ -694,8 +672,6 @@ function drawHBarChart(svg, indicators, years, states, genders, sectors){
     dimLabel = "Sector"; categories = sectors;
     getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.sector===cat).map(r=>r.value));
   }
-
-  // Use first indicator for simple h-bar clarity if many indicators
   const ind = indicators[0] || "Indicator";
   const data = categories.map(c => ({label: c, value: getVal(ind, c)}));
   const max = Math.max(...data.map(d => d.value), 1);
@@ -707,20 +683,17 @@ function drawHBarChart(svg, indicators, years, states, genders, sectors){
   data.forEach((d, i) => {
     const y = T + (i + 0.5) * (plotH / data.length) - barH/2;
     const w = (d.value / max) * plotW;
-    out += `<rect x="${L}" y="${y}" width="${Math.max(w,2)}" height="${barH}" fill="#0f766e" rx="4"/>
+    out += `<rect x="${L}" y="${y}" width="${Math.max(w,2)}" height="${barH}" fill="#FF6B00" rx="4"/>
             <text x="${L-10}" y="${y+barH/2+4}" text-anchor="end" font-size="12" fill="#17324a">${String(d.label).slice(0,18)}</text>
             <text x="${L+w+8}" y="${y+barH/2+4}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
   });
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-
 function drawGroupedChart(svg, indicators, years, states, genders, sectors){
-  // Group bars by year, series = gender or sector if multi, else indicators
   let seriesLabels = indicators;
   let getSeriesVal = (series, yr) => avg(currentRows.filter(r => r.indicator===series && r.year===yr).map(r=>r.value));
   let title = "Indicators by year";
-
   if (genders && genders.length > 1 && indicators.length === 1) {
     seriesLabels = genders;
     getSeriesVal = (g, yr) => avg(currentRows.filter(r => r.gender===g && r.year===yr).map(r=>r.value));
@@ -734,14 +707,13 @@ function drawGroupedChart(svg, indicators, years, states, genders, sectors){
     getSeriesVal = (st, yr) => avg(currentRows.filter(r => r.state===st && r.year===yr).map(r=>r.value));
     title = `${indicators[0]} by state`;
   }
-
   const vals = seriesLabels.map(s => years.map(yr => getSeriesVal(s, yr)));
   const all = vals.flat();
   const min = 0, max = Math.max(...all, 1);
   const W=1200, H=620, L=80, R=40, T=60, B=100;
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes + `<text x="${W/2}" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${title.slice(0,70)}</text>`;
-  const palette = ["#0f766e","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
   const nYears = years.length, nSeries = seriesLabels.length;
   const groupW = plotW / Math.max(nYears, 1);
   const barW = Math.min(26, (groupW * 0.8) / Math.max(nSeries, 1));
@@ -764,8 +736,6 @@ function drawGroupedChart(svg, indicators, years, states, genders, sectors){
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-
-
 document.getElementById("applyBtn").addEventListener("click", runQuery);
 document.getElementById("resetBtn").addEventListener("click", () => {
   sourceEl.value = "PLFS";
@@ -776,7 +746,6 @@ document.getElementById("resetBtn").addEventListener("click", () => {
   });
   runQuery();
 });
-
 /* Tabs */
 document.querySelectorAll(".tab").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -788,7 +757,6 @@ document.querySelectorAll(".tab").forEach(btn => {
     if (!isTable) drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
   });
 });
-
 document.querySelectorAll(".chart-type-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".chart-type-btn").forEach(b => b.classList.remove("active"));
@@ -797,7 +765,6 @@ document.querySelectorAll(".chart-type-btn").forEach(btn => {
     drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
   });
 });
-
 /* Downloads */
 function csvContent(){
   const header = ["Indicator","Type of Estimate","Year","Frequency","States","Gender","Sector","Age-group (years)","Value","Unit"];
@@ -812,10 +779,10 @@ function downloadBlob(content, name, type){
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 document.getElementById("csv").addEventListener("click", () => {
-  downloadBlob("\ufeff"+csvContent(), `SHRAM_SHANKHIKI_${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
+  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki _${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
 });
 document.getElementById("excel").addEventListener("click", () => {
-  downloadBlob("\ufeff"+csvContent(), `SHRAM_SHANKHIKI_${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
+  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki _${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
 });
 document.getElementById("print").addEventListener("click", () => window.print());
 document.getElementById("png").addEventListener("click", () => {
@@ -833,13 +800,12 @@ document.getElementById("png").addEventListener("click", () => {
     URL.revokeObjectURL(url);
     canvas.toBlob(b => {
       const u = URL.createObjectURL(b);
-      const a = document.createElement("a"); a.href = u; a.download = `SHRAM_SHANKHIKI_${sourceEl.value}_chart.png`; a.click();
+      const a = document.createElement("a"); a.href = u; a.download = `Shram_Sankhyiki _${sourceEl.value}_chart.png`; a.click();
       setTimeout(() => URL.revokeObjectURL(u), 1000);
     }, "image/png");
   };
   img.src = url;
 });
-
 /* Initial run */
 runQuery();
 </script>
