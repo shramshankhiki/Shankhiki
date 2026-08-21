@@ -24,7 +24,6 @@ a{text-decoration:none;color:inherit}
 .topbar{background:linear-gradient(90deg,var(--navy) 0%,#0d3a5c 100%);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between;align-items:center}
 .topbar .gov-text{display:flex;align-items:center;gap:8px}
 
-/* ===== NEW HEADER LAYOUT ===== */
 header{background:#fff;border-bottom:3px solid var(--bhagwa);position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(8,47,73,.06)}
 .head{max-width:1340px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
 .header-side {display:flex;align-items:center;gap:12px;flex:1}
@@ -53,7 +52,6 @@ nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2
 .btn,button{border:0;border-radius:9px;padding:12px 18px;background:var(--bhagwa);color:#fff;font-weight:800;cursor:pointer;transition:background .2s}
 .btn:hover,button:hover{background:var(--bhagwa-deep)}
 
-/* ===== KEY INDICATORS CAROUSEL ===== */
 .key-indicators{background:#f8fafc;padding:28px 5% 32px;border-bottom:1px solid var(--border)}
 .key-inner{max-width:1340px;margin:auto}
 .key-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
@@ -66,21 +64,23 @@ nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2
 .key-pause:hover{background:var(--bhagwa-light);border-color:var(--bhagwa)}
 .key-track-wrap{overflow:hidden}
 .key-track{display:flex;gap:18px;transition:transform .45s ease}
-.key-card{flex:0 0 calc(25% - 13.5px);min-width:240px;background:#fff;border:1px solid #e8eef2;border-radius:16px;padding:22px 20px 18px;text-align:center;box-shadow:0 4px 18px rgba(8,47,73,.06);transition:box-shadow .2s,transform .2s,border-color .2s;cursor:pointer;color:inherit;display:block}
-.key-card:hover{box-shadow:0 10px 28px rgba(8,47,73,.12);transform:translateY(-3px);border-color:var(--bhagwa-soft)}
-.key-card .ki-icon{width:52px;height:52px;margin:0 auto 14px;border-radius:50%;background:var(--bhagwa-light);color:var(--bhagwa-deep);display:grid;place-items:center}
+
+/* ===== NEW SKY BLUE KEY INDICATOR CARDS ===== */
+.key-card{flex:0 0 calc(25% - 13.5px);min-width:240px;background:#e0f2fe;border:1px solid #bae6fd;border-radius:16px;padding:22px 20px 18px;text-align:center;box-shadow:0 4px 18px rgba(8,47,73,.06);transition:box-shadow .2s,transform .2s,border-color .2s;cursor:pointer;color:inherit;display:block}
+.key-card:hover{box-shadow:0 12px 28px rgba(2,132,199,.15);transform:translateY(-3px);border-color:#7dd3fc}
+.key-card .ki-icon{width:52px;height:52px;margin:0 auto 14px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center}
 .key-card .ki-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .key-card .ki-title{font-size:14px;font-weight:800;color:var(--navy);line-height:1.35;margin:0 0 6px;min-height:38px}
-.key-card .ki-period{font-size:11px;color:var(--muted);margin:0 0 10px}
+.key-card .ki-period{font-size:11px;color:#386082;margin:0 0 10px}
 .key-card .ki-value{font-size:28px;font-weight:900;color:#1e3a5f;letter-spacing:-.3px;margin:0 0 12px;line-height:1.1}
-.key-card .ki-source{font-size:11px;color:var(--muted);line-height:1.35;margin:0}
+.key-card .ki-source{font-size:11px;color:#386082;line-height:1.35;margin:0}
+
 main{max-width:1340px;margin:auto;padding:35px 5% 65px}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:15px}
 .section-head h3{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:26px}
 .section-head span{font-size:12px;color:var(--muted)}
 .source-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-bottom:35px}
 
-/* ===== NEW SKY BLUE DATA SOURCE CARDS ===== */
 .source-card{background:#e0f2fe;border:1px solid #bae6fd;border-radius:13px;padding:22px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s,transform .2s}
 .source-card:hover{border-color:#7dd3fc;box-shadow:0 12px 28px rgba(2,132,199,.15);transform:translateY(-3px)}
 .source-card .icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:13px;background:#fff;color:var(--navy)}
@@ -116,7 +116,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 .footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .footer-logos img{height:40px;width:auto;background:#fff;padding:4px;border-radius:6px}
 
-/* MOBILE FIXES FOR NEW HEADER */
 @media(max-width:1100px){.key-card{flex:0 0 calc(33.333% - 12px)}.filters{grid-template-columns:repeat(2,1fr)}.source-cards{grid-template-columns:1fr}}
 @media(max-width:850px){
   .head{flex-direction:column;gap:15px;text-align:center}
@@ -140,10 +139,8 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
   <span>V.V. Giri National Labour Institute | Labour Market Statistics</span>
 </div>
 
-<!-- ===== NEW HEADER STRUCTURE ===== -->
 <header>
 <div class="head">
-  <!-- Left: Government & MOLE -->
   <div class="header-side header-left">
     <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
     <div class="logo-text" style="text-align:left">
@@ -152,7 +149,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     </div>
   </div>
   
-  <!-- Center: Main Title & Navigation -->
   <div class="header-center">
     <a href="index.html">
       <h1>Shram Sankhyiki</h1>
@@ -164,7 +160,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     </nav>
   </div>
   
-  <!-- Right: VVGNLI -->
   <div class="header-side header-right">
     <div class="logo-text" style="text-align:right">
       <strong>V.V. Giri National</strong>
@@ -200,7 +195,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <main>
 <section>
 <div class="section-head"><h3>Data Sources</h3><span>Select a source to explore its indicators</span></div>
-<!-- Sky Blue Cards are styled via CSS above -->
 <div class="source-cards">
 <article class="source-card c-plfs"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14"/><path d="M7 15l3-4 3 2 4-5"/></svg></div><h4>PLFS</h4><p>Labour force, employment, unemployment, earnings, skills and youth indicators.</p><a href="#explorer" data-source="PLFS">Explore PLFS →</a></article>
 <article class="source-card c-epfo"><div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h5M8 17h8"/></svg></div><h4>EPFO</h4><p>Administrative statistics on net subscribers and social-security participation.</p><a href="#explorer" data-source="EPFO">Explore EPFO →</a></article>
