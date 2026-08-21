@@ -23,18 +23,24 @@ body{margin:0;font-family:var(--body-font);color:var(--text);background:var(--bg
 a{text-decoration:none;color:inherit}
 .topbar{background:linear-gradient(90deg,var(--navy) 0%,#0d3a5c 100%);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between;align-items:center}
 .topbar .gov-text{display:flex;align-items:center;gap:8px}
+
+/* ===== NEW HEADER LAYOUT ===== */
 header{background:#fff;border-bottom:3px solid var(--bhagwa);position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(8,47,73,.06)}
-.head{max-width:1340px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:25px}
-.brand{display:flex;align-items:center;gap:14px}
-.logo-wrap{display:flex;align-items:center;gap:10px}
-.logo-img{height:52px;width:auto;object-fit:contain;display:block}
-.logo-divider{width:1px;height:42px;background:var(--border)}
-.brand-text h1{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:24px;letter-spacing:.2px}
-.brand-text p{margin:2px 0 0;color:var(--muted);font-size:12px}
-nav{display:flex;gap:18px;align-items:center;font-size:13px;font-weight:700}
+.head{max-width:1340px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.header-side {display:flex;align-items:center;gap:12px;flex:1}
+.header-left {justify-content:flex-start}
+.header-right {justify-content:flex-end;text-align:right}
+.logo-text {display:flex;flex-direction:column;font-size:12px;color:var(--navy);line-height:1.3}
+.logo-text strong {font-size:14px;font-weight:800}
+.logo-img {height:55px;width:auto;object-fit:contain;display:block}
+.header-center {text-align:center;flex:0 1 auto;text-decoration:none;display:block}
+.header-center h1 {margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:800;font-size:28px;letter-spacing:.2px}
+.header-center p {margin:2px 0 6px;color:var(--bhagwa-deep);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+nav{display:flex;gap:18px;align-items:center;justify-content:center;font-size:13px;font-weight:700}
 nav a{color:var(--navy);position:relative;padding-bottom:2px}
 nav a:hover{color:var(--bhagwa)}
 nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--bhagwa);border-radius:1px}
+
 .hero{background:linear-gradient(135deg,#fff8f2 0%,#f8fcfd 55%,#fff 100%);padding:58px 5% 45px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--bhagwa),var(--navy))}
 .hero-inner{max-width:1340px;margin:auto}
@@ -46,6 +52,8 @@ nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2
 .search input:focus{outline:none;border-color:var(--bhagwa);box-shadow:0 0 0 3px rgba(255,107,0,.12)}
 .btn,button{border:0;border-radius:9px;padding:12px 18px;background:var(--bhagwa);color:#fff;font-weight:800;cursor:pointer;transition:background .2s}
 .btn:hover,button:hover{background:var(--bhagwa-deep)}
+
+/* ===== KEY INDICATORS CAROUSEL ===== */
 .key-indicators{background:#f8fafc;padding:28px 5% 32px;border-bottom:1px solid var(--border)}
 .key-inner{max-width:1340px;margin:auto}
 .key-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
@@ -71,20 +79,17 @@ main{max-width:1340px;margin:auto;padding:35px 5% 65px}
 .section-head h3{margin:0;color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:26px}
 .section-head span{font-size:12px;color:var(--muted)}
 .source-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-bottom:35px}
-.source-card{background:#fff;border:1px solid var(--border);border-radius:13px;padding:22px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
-.source-card:hover{border-color:var(--bhagwa-soft);box-shadow:0 12px 28px rgba(255,107,0,.08)}
-.source-card .icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:13px}
-.source-card.c-plfs .icon{background:var(--mint);color:var(--teal)}
-.source-card.c-epfo .icon{background:var(--bhagwa-light);color:var(--bhagwa-deep)}
-.source-card.c-esic .icon{background:#eaf1f7;color:var(--slate)}
-.source-card a{font-weight:800}
-.source-card.c-plfs a{color:var(--teal)}
-.source-card.c-epfo a{color:var(--bhagwa-deep)}
-.source-card.c-esic a{color:var(--slate)}
+
+/* ===== NEW SKY BLUE DATA SOURCE CARDS ===== */
+.source-card{background:#e0f2fe;border:1px solid #bae6fd;border-radius:13px;padding:22px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s,transform .2s}
+.source-card:hover{border-color:#7dd3fc;box-shadow:0 12px 28px rgba(2,132,199,.15);transform:translateY(-3px)}
+.source-card .icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:13px;background:#fff;color:var(--navy)}
+.source-card a{font-weight:800;color:var(--navy)}
 .icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .source-card h4{margin:0;color:var(--navy);font-size:18px}
-.source-card p{margin:6px 0 15px;color:var(--muted);font-size:13px}
+.source-card p{margin:6px 0 15px;color:#386082;font-size:13px}
 .source-card a{font-size:12px}
+
 .explorer{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--shadow);margin-bottom:35px;border-top:3px solid var(--bhagwa)}
 .filters{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 label{display:block;font-size:11px;font-weight:800;color:var(--muted);margin-bottom:5px}
@@ -110,14 +115,22 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 .footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
 .footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .footer-logos img{height:40px;width:auto;background:#fff;padding:4px;border-radius:6px}
+
+/* MOBILE FIXES FOR NEW HEADER */
 @media(max-width:1100px){.key-card{flex:0 0 calc(33.333% - 12px)}.filters{grid-template-columns:repeat(2,1fr)}.source-cards{grid-template-columns:1fr}}
-@media(max-width:800px){.key-card{flex:0 0 calc(50% - 9px)}.logo-img{height:42px}}
+@media(max-width:850px){
+  .head{flex-direction:column;gap:15px;text-align:center}
+  .header-side{width:100%;justify-content:center;text-align:center !important}
+  .header-left,.header-right{flex-direction:column}
+  .logo-text{text-align:center !important}
+  .key-card{flex:0 0 calc(50% - 9px)}
+}
 @media(max-width:620px){
-  .topbar{display:none}.head{padding:12px 4%}nav{display:none}
+  .topbar{display:none}.head{padding:15px 4%}
   .hero{padding:40px 4% 35px}main{padding:28px 4% 50px}
   .filters{grid-template-columns:1fr}.search{flex-direction:column}
-  .footer-inner{display:block}.brand-text h1{font-size:20px}
-  .key-card{flex:0 0 85%}.logo-wrap{gap:6px}
+  .footer-inner{display:block}.header-center h1{font-size:22px}
+  .key-card{flex:0 0 85%}
 }
 </style>
 </head>
@@ -126,25 +139,42 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
   <span class="gov-text">Government of India | Ministry of Labour &amp; Employment</span>
   <span>V.V. Giri National Labour Institute | Labour Market Statistics</span>
 </div>
+
+<!-- ===== NEW HEADER STRUCTURE ===== -->
 <header>
 <div class="head">
-<a class="brand" href="index.html">
-  <div class="logo-wrap">
-    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India - Ministry of Labour & Employment" title="Ministry of Labour & Employment">
-    <div class="logo-divider"></div>
-    <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="V.V. Giri National Labour Institute" title="V.V. Giri National Labour Institute" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
+  <!-- Left: Government & MOLE -->
+  <div class="header-side header-left">
+    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
+    <div class="logo-text" style="text-align:left">
+      <strong>Government of India</strong>
+      <span>Ministry of Labour &amp; Employment</span>
+    </div>
   </div>
-  <div class="brand-text">
-    <h1>Shram Sankhyiki </h1>
-    <p>Labour Market Statistics Portal</p>
+  
+  <!-- Center: Main Title & Navigation -->
+  <div class="header-center">
+    <a href="index.html">
+      <h1>Shram Sankhyiki</h1>
+      <p>Labour Market Statistics</p>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#explorer">Explore Data</a>
+    </nav>
   </div>
-</a>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="#explorer">Explore Data</a>
-</nav>
+  
+  <!-- Right: VVGNLI -->
+  <div class="header-side header-right">
+    <div class="logo-text" style="text-align:right">
+      <strong>V.V. Giri National</strong>
+      <span>Labour Institute</span>
+    </div>
+    <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
+  </div>
 </div>
 </header>
+
 <section class="hero">
 <div class="hero-inner">
 <div class="eyebrow">VVGNLI Statistical Data Portal</div>
@@ -170,6 +200,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <main>
 <section>
 <div class="section-head"><h3>Data Sources</h3><span>Select a source to explore its indicators</span></div>
+<!-- Sky Blue Cards are styled via CSS above -->
 <div class="source-cards">
 <article class="source-card c-plfs"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14"/><path d="M7 15l3-4 3 2 4-5"/></svg></div><h4>PLFS</h4><p>Labour force, employment, unemployment, earnings, skills and youth indicators.</p><a href="#explorer" data-source="PLFS">Explore PLFS →</a></article>
 <article class="source-card c-epfo"><div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h5M8 17h8"/></svg></div><h4>EPFO</h4><p>Administrative statistics on net subscribers and social-security participation.</p><a href="#explorer" data-source="EPFO">Explore EPFO →</a></article>
@@ -297,7 +328,6 @@ function getCardsPerView(){
 async function buildKeyCards(){
   try{
     const response=await fetch("data/PLFS.txt",{cache:"no-store"});
-    
     if(!response.ok) throw new Error(`HTTP Error ${response.status} - The file data/PLFS.txt was not found.`);
     
     const text=(await response.text()).replace(/^\uFEFF/,"");
@@ -309,7 +339,6 @@ async function buildKeyCards(){
        throw new Error("Missing required columns ('Year' or 'Indicator'). Check if the file is truly tab-separated.");
     }
     
-    // FIX: Use a loop instead of Math.max(...array) to prevent the call stack error on large datasets
     let latest = 0;
     for (let i = 0; i < lines.length; i++) {
       if (!lines[i].trim()) continue;
