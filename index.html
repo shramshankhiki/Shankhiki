@@ -302,7 +302,7 @@ function getCardsPerView(){
 }
 async function buildKeyCards(){
   try{
-    const response=await fetch("data/PLFS.txt",{cache:"no-store"});
+    const response=await fetch("https://raw.githubusercontent.com/shramshankhiki/Shankhiki/main/data/PLFS.txt",{cache:"no-store"});
     if(!response.ok) throw new Error(`HTTP ${response.status}`);
     const text=(await response.text()).replace(/^\uFEFF/,"");
     const lines=text.split(/\r?\n/);
