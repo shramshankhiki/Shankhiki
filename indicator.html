@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Explorer | Shram Sankhyiki </title>
+<title>Data Explorer | Shram Sankhyiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
   --muted:#5c7185;--gold:#b8860b;--gold-deep:#8a5a1a;
   --gold-bg:#fdf3e0;--gold-border:#e8cd94;
   --rust:#b5563a;--sage:#3d7a5c;--slate:#4a6785;--plum:#6b4e71;
-  /* Bhagwa / Saffron */
   --bhagwa:#FF6B00;--bhagwa-deep:#E65C00;--bhagwa-light:#FFF4EB;--bhagwa-soft:#FFE8D6;
   --shadow:0 12px 34px rgba(8,47,73,.1);--shadow-lg:0 20px 48px rgba(8,47,73,.14);
   --heading-font:"Source Serif 4",Georgia,serif;--body-font:"Inter","Segoe UI",Arial,sans-serif
@@ -45,7 +44,6 @@ main{max-width:1340px;margin:auto;padding:34px 5% 65px}
 .latest small{display:block;color:var(--muted);font-size:11px}
 .latest strong{display:block;color:var(--navy);font-size:28px}
 .latest span{font-size:11px;color:var(--muted)}
-/* Filters panel */
 .filters-panel{background:#fff;border:1px solid var(--border);border-radius:13px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px;overflow-x:hidden;border-top:3px solid var(--bhagwa)}
 .filters-panel h3{margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:18px}
 .filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -155,7 +153,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 </div>
 </div>
 </section>
-<!-- ===== FILTER OPTIONS ===== -->
 <section class="filters-panel">
   <h3>Refine selection</h3>
   <div class="filters">
@@ -362,13 +359,20 @@ function parsePLFS(text){
   const idx=Object.fromEntries(header.map((h,i)=>[h,i]));
   const required=["Source","Indicator","Type of Estimate","Year","Frequency","State","Gender","Sector","Age-group","Value"];
   const missing=required.filter(h=>idx[h]===undefined);
+  
   if(missing.length) throw new Error("Missing columns: "+missing.join(", "));
   const rows=[];
+  
   for(let i=0;i<lines.length;i++){
     const line=lines[i]; if(!line.trim()) continue;
     const c=line.split("\t");
-    const value=Number(String(c[idx.Value]??"").replace(/,/g,""));
+    
+    const valStr = String(c[idx.Value]??"").replace(/,/g,"").trim();
+    if(valStr === "") continue; 
+    
+    const value = Number(valStr);
     if(!Number.isFinite(value)) continue;
+    
     rows.push({
       source:String(c[idx.Source]??"").trim(),
       indicator:String(c[idx.Indicator]??"").trim(),
@@ -704,7 +708,46 @@ document.getElementById("resetBtn").addEventListener("click", () => {
   });
   runQuery();
 });
-/* Tabs */
+function csvContent(){
+  const header = ["Indicator","Type of Estimate","Year","Frequency","States","Gender","Sector","Age-group (years)","Value","Unit"];
+  const rows = currentRows.map(r => [r.indicator,r.estimate,r.year,r.frequency,r.state,r.gender,r.sector,r.age,r.value,r.unit]);
+  return [header, ...rows].map(row => row.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+}
+function downloadBlob(content, name, type){
+  const blob = new Blob([content], {type});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+document.getElementById("csv").addEventListener("click", () => {
+  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
+});
+document.getElementById("excel").addEventListener("click", () => {
+  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
+});
+document.getElementById("print").addEventListener("click", () => window.print());
+document.getElementById("png").addEventListener("click", () => {
+  const svg = document.getElementById("chart");
+  const sourceText = new XMLSerializer().serializeToString(svg);
+  const blob = new Blob([sourceText], {type:"image/svg+xml;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1800; canvas.height = 930;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#fff"; ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    URL.revokeObjectURL(url);
+    canvas.toBlob(b => {
+      const u = URL.createObjectURL(b);
+      const a = document.createElement("a"); a.href = u; a.download = `Shram_Sankhyiki_${sourceEl.value}_chart.png`; a.click();
+      setTimeout(() => URL.revokeObjectURL(u), 1000);
+    }, "image/png");
+  };
+  img.src = url;
+});
 document.querySelectorAll(".tab").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
@@ -723,48 +766,6 @@ document.querySelectorAll(".chart-type-btn").forEach(btn => {
     drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
   });
 });
-/* Downloads */
-function csvContent(){
-  const header = ["Indicator","Type of Estimate","Year","Frequency","States","Gender","Sector","Age-group (years)","Value","Unit"];
-  const rows = currentRows.map(r => [r.indicator,r.estimate,r.year,r.frequency,r.state,r.gender,r.sector,r.age,r.value,r.unit]);
-  return [header, ...rows].map(row => row.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
-}
-function downloadBlob(content, name, type){
-  const blob = new Blob([content], {type});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-document.getElementById("csv").addEventListener("click", () => {
-  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki _${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
-});
-document.getElementById("excel").addEventListener("click", () => {
-  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki _${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
-});
-document.getElementById("print").addEventListener("click", () => window.print());
-document.getElementById("png").addEventListener("click", () => {
-  const svg = document.getElementById("chart");
-  const sourceText = new XMLSerializer().serializeToString(svg);
-  const blob = new Blob([sourceText], {type:"image/svg+xml;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const img = new Image();
-  img.onload = () => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 1800; canvas.height = 930;
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#fff"; ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(img,0,0,canvas.width,canvas.height);
-    URL.revokeObjectURL(url);
-    canvas.toBlob(b => {
-      const u = URL.createObjectURL(b);
-      const a = document.createElement("a"); a.href = u; a.download = `Shram_Sankhyiki _${sourceEl.value}_chart.png`; a.click();
-      setTimeout(() => URL.revokeObjectURL(u), 1000);
-    }, "image/png");
-  };
-  img.src = url;
-});
-/* Load production PLFS data, then run the first query. */
 loadPLFS();
 </script>
 </body>
