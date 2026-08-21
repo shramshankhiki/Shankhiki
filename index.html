@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shram Sankhyiki | VVGNLI</title>
+<title>Shram Sankhyiki  | VVGNLI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
   --muted:#5c7185;--gold:#b8860b;--gold-deep:#8a5a1a;
   --gold-bg:#fdf3e0;--gold-border:#e8cd94;
   --rust:#b5563a;--sage:#3d7a5c;--slate:#4a6785;--plum:#6b4e71;
+  /* Bhagwa / Saffron palette */
   --bhagwa:#FF6B00;--bhagwa-deep:#E65C00;--bhagwa-light:#FFF4EB;--bhagwa-soft:#FFE8D6;
   --shadow:0 12px 34px rgba(8,47,73,.1);--shadow-lg:0 20px 48px rgba(8,47,73,.14);
   --heading-font:"Source Serif 4",Georgia,serif;--body-font:"Inter","Segoe UI",Arial,sans-serif
@@ -22,6 +23,7 @@
 body{margin:0;font-family:var(--body-font);color:var(--text);background:var(--bg);line-height:1.55}
 a{text-decoration:none;color:inherit}
 .topbar{background:linear-gradient(90deg,var(--navy) 0%,#0d3a5c 100%);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between;align-items:center}
+.topbar .gov-text{display:flex;align-items:center;gap:8px}
 header{background:#fff;border-bottom:3px solid var(--bhagwa);position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(8,47,73,.06)}
 .head{max-width:1340px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:25px}
 .brand{display:flex;align-items:center;gap:14px}
@@ -45,6 +47,7 @@ nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2
 .search input:focus{outline:none;border-color:var(--bhagwa);box-shadow:0 0 0 3px rgba(255,107,0,.12)}
 .btn,button{border:0;border-radius:9px;padding:12px 18px;background:var(--bhagwa);color:#fff;font-weight:800;cursor:pointer;transition:background .2s}
 .btn:hover,button:hover{background:var(--bhagwa-deep)}
+/* ===== KEY INDICATORS CAROUSEL ===== */
 .key-indicators{background:#f8fafc;padding:28px 5% 32px;border-bottom:1px solid var(--border)}
 .key-inner{max-width:1340px;margin:auto}
 .key-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
@@ -76,13 +79,14 @@ main{max-width:1340px;margin:auto;padding:35px 5% 65px}
 .source-card.c-plfs .icon{background:var(--mint);color:var(--teal)}
 .source-card.c-epfo .icon{background:var(--bhagwa-light);color:var(--bhagwa-deep)}
 .source-card.c-esic .icon{background:#eaf1f7;color:var(--slate)}
-.source-card a{font-weight:800;font-size:12px}
+.source-card a{font-weight:800}
 .source-card.c-plfs a{color:var(--teal)}
 .source-card.c-epfo a{color:var(--bhagwa-deep)}
 .source-card.c-esic a{color:var(--slate)}
 .icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .source-card h4{margin:0;color:var(--navy);font-size:18px}
 .source-card p{margin:6px 0 15px;color:var(--muted);font-size:13px}
+.source-card a{font-size:12px}
 .explorer{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--shadow);margin-bottom:35px;border-top:3px solid var(--bhagwa)}
 .filters{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 label{display:block;font-size:11px;font-weight:800;color:var(--muted);margin-bottom:5px}
@@ -110,28 +114,39 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 .footer-logos img{height:40px;width:auto;background:#fff;padding:4px;border-radius:6px}
 @media(max-width:1100px){.key-card{flex:0 0 calc(33.333% - 12px)}.filters{grid-template-columns:repeat(2,1fr)}.source-cards{grid-template-columns:1fr}}
 @media(max-width:800px){.key-card{flex:0 0 calc(50% - 9px)}.logo-img{height:42px}}
-@media(max-width:620px){.topbar{display:none}.head{padding:12px 4%}nav{display:none}.hero{padding:40px 4% 35px}.hero h2{white-space:normal;font-size:28px}main{padding:28px 4% 50px}.filters{grid-template-columns:1fr}.search{flex-direction:column}.footer-inner{display:block}.brand-text h1{font-size:20px}.key-card{flex:0 0 85%}.logo-wrap{gap:6px}}
+@media(max-width:620px){
+  .topbar{display:none}.head{padding:12px 4%}nav{display:none}
+  .hero{padding:40px 4% 35px}main{padding:28px 4% 50px}
+  .filters{grid-template-columns:1fr}.search{flex-direction:column}
+  .footer-inner{display:block}.brand-text h1{font-size:20px}
+  .key-card{flex:0 0 85%}.logo-wrap{gap:6px}
+}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <span>Government of India | Ministry of Labour &amp; Employment</span>
+  <span class="gov-text">Government of India | Ministry of Labour &amp; Employment</span>
   <span>V.V. Giri National Labour Institute | Labour Market Statistics</span>
 </div>
 <header>
 <div class="head">
 <a class="brand" href="index.html">
   <div class="logo-wrap">
-    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
+    <!-- Emblem of India (MOLE / Government of India) -->
+    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India - Ministry of Labour & Employment" title="Ministry of Labour & Employment">
     <div class="logo-divider"></div>
-    <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
+    <!-- VVGNLI Logo -->
+    <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="V.V. Giri National Labour Institute" title="V.V. Giri National Labour Institute" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
   </div>
   <div class="brand-text">
-    <h1>Shram Sankhyiki</h1>
+    <h1>Shram Sankhyiki </h1>
     <p>Labour Market Statistics Portal</p>
   </div>
 </a>
-<nav><a href="index.html">Home</a><a href="#explorer">Explore Data</a></nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#explorer">Explore Data</a>
+</nav>
 </div>
 </header>
 <section class="hero">
@@ -142,16 +157,19 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <div class="search"><input id="searchInput" type="search" placeholder="Search indicator, source or state..."><button id="searchBtn">Search</button></div>
 </div>
 </section>
+<!-- ===== KEY INDICATORS CAROUSEL ===== -->
 <section class="key-indicators">
   <div class="key-inner">
     <div class="key-head">
-      <h3>Key Indicators <span id="kiYearLabel" style="font-size:13px;color:var(--muted);font-weight:600"></span></h3>
+      <h3>Key Indicators</h3>
       <div class="key-nav">
         <div class="key-dots" id="keyDots"></div>
         <button class="key-pause" id="keyPauseBtn" title="Pause"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
       </div>
     </div>
-    <div class="key-track-wrap"><div class="key-track" id="keyTrack"></div></div>
+    <div class="key-track-wrap">
+      <div class="key-track" id="keyTrack"></div>
+    </div>
   </div>
 </section>
 <main>
@@ -166,25 +184,71 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <section id="explorer" class="explorer">
 <div class="section-head"><h3>Labour Market Data Explorer</h3><span>Select one or more indicators</span></div>
 <div class="filters">
-<div style="grid-column:1/-1"><label>Source</label><select id="source"><option>PLFS</option><option>EPFO</option><option>ESIC</option></select></div>
-<div style="grid-column:1/-1"><label>Indicators <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
-<div class="multi" id="indicatorMenu"><button type="button" class="multi-toggle" id="indicatorToggle"><span id="indicatorSummary">Select indicators</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="indicatorPanel"></div></div></div>
-<div id="estimateWrap"><label>Type of Estimate <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="estimateMenu"><button type="button" class="multi-toggle" id="estimateToggle"><span id="estimateSummary">Select type(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="estimatePanel"></div></div></div>
-<div><label>Year <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="yearMenu"><button type="button" class="multi-toggle" id="yearToggle"><span id="yearSummary">Select year(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="yearPanel"></div></div></div>
-<div><label>Frequency <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="frequencyMenu"><button type="button" class="multi-toggle" id="frequencyToggle"><span id="frequencySummary">Select frequency</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="frequencyPanel"></div></div></div>
-<div><label>States <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="stateMenu"><button type="button" class="multi-toggle" id="stateToggle"><span id="stateSummary">Select state(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="statePanel"></div></div></div>
-<div><label>Gender <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="genderMenu"><button type="button" class="multi-toggle" id="genderToggle"><span id="genderSummary">Select gender(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="genderPanel"></div></div></div>
-<div><label>Sector <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="sectorMenu"><button type="button" class="multi-toggle" id="sectorToggle"><span id="sectorSummary">Select sector(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="sectorPanel"></div></div></div>
-<div><label>Age-group (years) <span style="font-weight:600;color:var(--bhagwa)">(multiple)</span></label>
-<div class="multi" id="ageMenu"><button type="button" class="multi-toggle" id="ageToggle"><span id="ageSummary">Select age-group(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="multi-panel" id="agePanel"></div></div></div>
+<div style="grid-column:1/-1">
+<label>Source</label>
+<select id="source"><option>PLFS</option><option>EPFO</option><option>ESIC</option></select>
 </div>
-<div class="actions"><button id="viewBtn">View Selected Data →</button><span id="selection">No indicators selected</span></div>
+<div style="grid-column:1/-1">
+<label>Indicators <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="indicatorMenu">
+<button type="button" class="multi-toggle" id="indicatorToggle"><span id="indicatorSummary">Select indicators</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="indicatorPanel"></div>
+</div>
+</div>
+<div id="estimateWrap">
+<label>Type of Estimate <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="estimateMenu">
+<button type="button" class="multi-toggle" id="estimateToggle"><span id="estimateSummary">Select type(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="estimatePanel"></div>
+</div>
+</div>
+<div>
+<label>Year <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="yearMenu">
+<button type="button" class="multi-toggle" id="yearToggle"><span id="yearSummary">Select year(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="yearPanel"></div>
+</div>
+</div>
+<div>
+<label>Frequency <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="frequencyMenu">
+<button type="button" class="multi-toggle" id="frequencyToggle"><span id="frequencySummary">Select frequency</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="frequencyPanel"></div>
+</div>
+</div>
+<div>
+<label>States <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="stateMenu">
+<button type="button" class="multi-toggle" id="stateToggle"><span id="stateSummary">Select state(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="statePanel"></div>
+</div>
+</div>
+<div>
+<label>Gender <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="genderMenu">
+<button type="button" class="multi-toggle" id="genderToggle"><span id="genderSummary">Select gender(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="genderPanel"></div>
+</div>
+</div>
+<div>
+<label>Sector <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="sectorMenu">
+<button type="button" class="multi-toggle" id="sectorToggle"><span id="sectorSummary">Select sector(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="sectorPanel"></div>
+</div>
+</div>
+<div>
+<label>Age-group (years) <span style="font-weight:600;color:var(--bhagwa)">(multiple selection)</span></label>
+<div class="multi" id="ageMenu">
+<button type="button" class="multi-toggle" id="ageToggle"><span id="ageSummary">Select age-group(s)</span><span class="chevron"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+<div class="multi-panel" id="agePanel"></div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button id="viewBtn">View Selected Data →</button>
+<span id="selection">No indicators selected</span>
+</div>
 </section>
 </main>
 <footer>
@@ -194,15 +258,27 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
       <img src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
     </div>
-    <span><strong>Shram Sankhyiki</strong><br>Labour Market Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
+    <span><strong>Shram Sankhyiki </strong><br>Labour Market Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
   </div>
   <span>Ministry of Labour &amp; Employment<br>Government of India</span>
   <span><a href="#" style="color:#fff">RTI</a> · <a href="#" style="color:#fff">Sitemap</a> · <a href="#" style="color:#fff">Disclaimer</a> · <a href="#" style="color:#fff">Contact Us</a></span>
 </div>
 </footer>
 <script>
-const DATA_URL = "https://raw.githubusercontent.com/shramSankhyiki/Sankhyiki/refs/heads/main/.data/PLFS_demo.csv";
-const keyIndicators = [];
+/* ===== KEY INDICATORS CAROUSEL ===== */
+const keyIndicators = [
+  {name:"Labour Force Participation Rate", icon:"chart", sourceCode:"PLFS", unit:"Percent"},
+  {name:"Worker Population Ratio / Employment Rate", icon:"users", sourceCode:"PLFS", unit:"Percent"},
+  {name:"Unemployment Rate", icon:"alert", sourceCode:"PLFS", unit:"Percent"},
+  {name:"NEET Rate", icon:"youth", sourceCode:"PLFS", unit:"Percent"},
+  {name:"Average wages of casual workers", icon:"rupee", sourceCode:"PLFS", unit:"INR"},
+  {name:"Average monthly earnings – regular salaried", icon:"rupee", sourceCode:"PLFS", unit:"INR"},
+  {name:"Average monthly earnings – self-employed", icon:"rupee", sourceCode:"PLFS", unit:"INR"},
+  {name:"Access to technical education", icon:"edu", sourceCode:"PLFS", unit:"Percent"},
+  {name:"Access to vocational training", icon:"edu", sourceCode:"PLFS", unit:"Percent"},
+  {name:"Growth of Employed Persons (%)", icon:"trend", sourceCode:"PLFS", unit:"Percent"}
+];
+
 const kiIcons = {
   chart:`<svg viewBox="0 0 24 24"><path d="M4 19V5h16v14"/><path d="M7 15l3-4 3 2 4-5"/></svg>`,
   users:`<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
@@ -210,114 +286,124 @@ const kiIcons = {
   youth:`<svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M3 21v-2a7 7 0 0 1 14 0v2"/></svg>`,
   trend:`<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>`,
   rupee:`<svg viewBox="0 0 24 24"><path d="M6 3h12M6 8h12"/><path d="M6 13c4 0 6-2 6-5H6"/><path d="M10 13l6 8"/></svg>`,
-  edu:`<svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`
+  edu:`<svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+  people:`<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  shield:`<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
 };
-const KEY_DEFS = [
-  {name:"Labour Force Participation Rate", icon:"chart", money:false},
-  {name:"Worker Population Ratio / Employment Rate", icon:"users", money:false},
-  {name:"Unemployment Rate", icon:"alert", money:false},
-  {name:"NEET Rate", icon:"youth", money:false},
-  {name:"Average wages of casual workers", icon:"rupee", money:true},
-  {name:"Average monthly earnings – regular salaried", icon:"rupee", money:true},
-  {name:"Average monthly earnings – self-employed", icon:"rupee", money:true},
-  {name:"Access to technical education", icon:"edu", money:false},
-  {name:"Access to vocational training", icon:"edu", money:false},
-  {name:"Growth of Employed Persons (%)", icon:"trend", money:false}
-];
-function parseCSV(text){
-  const lines = text.trim().split(/\r?\n/);
-  const headers = lines[0].split(",").map(h=>h.trim());
-  return lines.slice(1).map(line=>{
-    const cols = line.split(",");
-    const o = {};
-    headers.forEach((h,i)=>o[h]=(cols[i]||"").trim());
-    return o;
-  });
+const keyTrack = document.getElementById("keyTrack");
+const keyDots = document.getElementById("keyDots");
+const keyPauseBtn = document.getElementById("keyPauseBtn");
+let currentPage = 0, isPaused = false, autoTimer = null;
+function getCardsPerView(){
+  if(window.innerWidth<=520) return 1;
+  if(window.innerWidth<=800) return 2;
+  if(window.innerWidth<=1100) return 3;
+  return 4;
 }
-function fmtVal(v, money){
-  if(v==null||v==="") return "—";
-  const n = Number(v);
-  if(isNaN(n)) return v;
-  if(money) return "₹" + Math.round(n).toLocaleString("en-IN");
-  return n.toFixed(1) + "%";
-}
-async function loadKeyIndicators(){
+async function buildKeyCards(){
   try{
-    const res = await fetch(DATA_URL);
-    const rows = parseCSV(await res.text());
-    const years = [...new Set(rows.map(r=>r.Year).filter(y=>/^\d{4}$/.test(y)))].sort();
-    const latest = years[years.length-1] || "2025";
-    document.getElementById("kiYearLabel").textContent = `· ${latest} (Annual)`;
-    const pick = name => {
-      const r = rows.find(x =>
-        x.Indicator===name && x.Year===latest && x.Frequency==="Annual" &&
-        x.State==="India" && x.Gender==="Person" && x.Sector==="Total" &&
-        x["Age-group"]==="15 & above" && x["Type of Estimate"]==="PS+SS"
-      );
-      return r ? r.Value : null;
-    };
-    KEY_DEFS.forEach(d=>{
-      keyIndicators.push({
-        name:d.name, period:`${latest} (Annual)`, value:fmtVal(pick(d.name), d.money),
-        source:"Periodic Labour Force Survey (PLFS)", icon:d.icon, sourceCode:"PLFS"
-      });
-    });
-  }catch(e){
-    console.error(e);
-    document.getElementById("kiYearLabel").textContent = "· demo data";
-    KEY_DEFS.forEach(d=>keyIndicators.push({name:d.name,period:"—",value:"—",source:"PLFS",icon:d.icon,sourceCode:"PLFS"}));
+    const response=await fetch("data/PLFS.txt",{cache:"no-store"});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const text=(await response.text()).replace(/^\uFEFF/,"");
+    const lines=text.split(/\r?\n/);
+    const h=lines.shift().split("\t");
+    const ix=Object.fromEntries(h.map((x,i)=>[x,i]));
+    const latest=Math.max(...lines.filter(Boolean).map(line=>Number(line.split("\t")[ix.Year])).filter(Number.isFinite));
+    const wanted=new Set(keyIndicators.map(d=>d.name));
+    const rows=[];
+    for(const line of lines){
+      if(!line) continue;
+      const c=line.split("\t");
+      const indicator=c[ix.Indicator];
+      if(!wanted.has(indicator)) continue;
+      if(c[ix.State]!=="India" || c[ix.Gender]!=="Person" || c[ix.Sector]!=="Total" || c[ix["Age-group"]]!=="15 & above" || c[ix["Type of Estimate"]]!=="PS+SS" || c[ix.Frequency]!=="Annual" || Number(c[ix.Year])!==latest) continue;
+      rows.push({indicator,value:Number(c[ix.Value])});
+    }
+    const byName=new Map(rows.map(r=>[r.indicator,r.value]));
+    const period=`Annual, ${latest}`;
+    keyTrack.innerHTML=keyIndicators.map(d=>{
+      const value=byName.get(d.name);
+      const display=value==null?"N/A":(d.unit==="INR"?`₹${value.toLocaleString(undefined,{maximumFractionDigits:0})}`:`${value.toLocaleString(undefined,{maximumFractionDigits:2})}%`);
+      const params=new URLSearchParams({source:"PLFS",indicators:d.name,years:String(latest),frequencies:"Annual",states:"India",genders:"Person",sectors:"Total",ages:"15 & above",estimates:"PS+SS"});
+      return `<a class="key-card" href="indicator.html?${params.toString()}"><div class="ki-icon">${kiIcons[d.icon]||kiIcons.chart}</div><div class="ki-title">${d.name}</div><div class="ki-period">${period}</div><div class="ki-value">${display}</div><p class="ki-source">Periodic Labour Force Survey (PLFS)</p></a>`;
+    }).join("");
+    buildDots(); goToPage(0); startAuto();
+  }catch(err){
+    console.error(err);
+    keyTrack.innerHTML='<div style="padding:20px;color:#8a1f1f;font-weight:700">PLFS data could not be loaded. Please open the portal through GitHub Pages or a web server.</div>';
   }
 }
-const keyTrack=document.getElementById("keyTrack"), keyDots=document.getElementById("keyDots"), keyPauseBtn=document.getElementById("keyPauseBtn");
-let currentPage=0, isPaused=false, autoTimer=null;
-function getCardsPerView(){ if(window.innerWidth<=520)return 1; if(window.innerWidth<=800)return 2; if(window.innerWidth<=1100)return 3; return 4; }
-function buildKeyCards(){
-  keyTrack.innerHTML = keyIndicators.map(d=>{
-    const params = new URLSearchParams({source:d.sourceCode,indicators:d.name,years:"2025",frequencies:"Annual",states:"India",genders:"Male||Female",sectors:"Total",ages:"15 & above",estimates:"PS+SS"});
-    return `<a class="key-card" href="indicator.html?${params}"><div class="ki-icon">${kiIcons[d.icon]||kiIcons.chart}</div><div class="ki-title">${d.name}</div><div class="ki-period">${d.period}</div><div class="ki-value">${d.value}</div><p class="ki-source">${d.source}</p></a>`;
-  }).join("");
-}
 function buildDots(){
-  const pages=Math.ceil(keyIndicators.length/getCardsPerView());
-  keyDots.innerHTML="";
-  for(let i=0;i<pages;i++){const btn=document.createElement("button");btn.className="key-dot"+(i===currentPage?" active":"");btn.onclick=()=>goToPage(i);keyDots.appendChild(btn);}
+  const pages = Math.ceil(keyIndicators.length / getCardsPerView());
+  keyDots.innerHTML = "";
+  for(let i=0;i<pages;i++){
+    const btn = document.createElement("button");
+    btn.className = "key-dot"+(i===currentPage?" active":"");
+    btn.addEventListener("click",()=>goToPage(i));
+    keyDots.appendChild(btn);
+  }
 }
 function goToPage(page){
-  const per=getCardsPerView(), pages=Math.ceil(keyIndicators.length/per)||1;
-  currentPage=((page%pages)+pages)%pages;
-  const card=keyTrack.querySelector(".key-card"); if(!card)return;
-  keyTrack.style.transform=`translateX(-${currentPage*per*(card.offsetWidth+18)}px)`;
+  const per = getCardsPerView();
+  const pages = Math.ceil(keyIndicators.length / per);
+  currentPage = ((page % pages) + pages) % pages;
+  const card = keyTrack.querySelector(".key-card");
+  if(!card) return;
+  const shift = currentPage * per * (card.offsetWidth + 18);
+  keyTrack.style.transform = `translateX(-${shift}px)`;
   [...keyDots.children].forEach((d,i)=>d.classList.toggle("active",i===currentPage));
 }
-function nextPage(){goToPage(currentPage+1);}
-function startAuto(){stopAuto();if(!isPaused)autoTimer=setInterval(nextPage,4500);}
-function stopAuto(){if(autoTimer)clearInterval(autoTimer);}
-keyPauseBtn.onclick=()=>{isPaused=!isPaused;keyPauseBtn.innerHTML=isPaused?'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 5l12 7-12 7V5z"/></svg>':'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';keyPauseBtn.title=isPaused?"Play":"Pause";if(isPaused)stopAuto();else startAuto();};
-window.addEventListener("resize",()=>{buildDots();goToPage(0);});
-loadKeyIndicators().then(()=>{buildKeyCards();buildDots();goToPage(0);startAuto();});
-
-/* Explorer filters */
-const plfsIndicators=["Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate","Growth of Labour Force (%)","Growth of Employed Persons (%)","Average wages of casual workers","Average monthly earnings – regular salaried","Average monthly earnings – self-employed","Distribution of employment by status","Distribution of employed persons by industry","Distribution of employed persons by occupation","Access to technical education","Access to vocational training"];
-const sourceIndicators={PLFS:plfsIndicators,EPFO:["Net number of subscribers"],ESIC:["Net number of ESIC beneficiaries (Persons)"]};
-const dimensions={
-  estimate:{values:["PS+SS","PS","CWS"],panel:"estimatePanel",summary:"estimateSummary"},
-  year:{values:["2025","2024","2023","2022","2021","2020"],panel:"yearPanel",summary:"yearSummary"},
-  frequency:{values:["Annual","Quarterly-Q1","Quarterly-Q2","Quarterly-Q3","Quarterly-Q4"],panel:"frequencyPanel",summary:"frequencySummary"},
-  state:{values:["India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"],panel:"statePanel",summary:"stateSummary"},
-  gender:{values:["Male","Female"],panel:"genderPanel",summary:"genderSummary"},
-  sector:{values:["Total","Rural","Urban"],panel:"sectorPanel",summary:"sectorSummary"},
-  age:{values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"],panel:"agePanel",summary:"ageSummary"}
+function nextPage(){ goToPage(currentPage+1); }
+function startAuto(){ stopAuto(); if(!isPaused) autoTimer=setInterval(nextPage,4500); }
+function stopAuto(){ if(autoTimer) clearInterval(autoTimer); }
+keyPauseBtn.addEventListener("click",()=>{
+  isPaused=!isPaused;
+  keyPauseBtn.innerHTML=isPaused?'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 5l12 7-12 7V5z"/></svg>':'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  keyPauseBtn.title=isPaused?"Play":"Pause";
+  if(isPaused) stopAuto(); else startAuto();
+});
+window.addEventListener("resize",()=>{ buildDots(); goToPage(0); });
+buildKeyCards();
+/* ===== DATA EXPLORER ===== */
+const plfsIndicators=[
+  "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate",
+  "Growth of Labour Force (%)","Growth of Employed Persons (%)","Average wages of casual workers",
+  "Average monthly earnings – regular salaried","Average monthly earnings – self-employed",
+  "Distribution of employment by status","Distribution of employed persons by industry",
+  "Distribution of employed persons by occupation","Access to technical education","Access to vocational training"
+];
+const sourceIndicators={
+  PLFS:plfsIndicators,
+  EPFO:["Net number of subscribers"],
+  ESIC:["Net number of ESIC beneficiaries (Persons)"]
 };
-const source=document.getElementById("source"), selection=document.getElementById("selection");
-function buildMulti(panelId,values,prefix){
+const dimensions={
+  estimate:{values:["PS+SS","PS","CWS"],panel:"estimatePanel",summary:"estimateSummary",menu:"estimateMenu"},
+  year:{values:["2026","2025","2024","2023","2022","2021","2020","2019","2018"],panel:"yearPanel",summary:"yearSummary",menu:"yearMenu"},
+  frequency:{values:["Annual","Quarterly","Monthly"],panel:"frequencyPanel",summary:"frequencySummary",menu:"frequencyMenu"},
+  state:{values:["India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"],panel:"statePanel",summary:"stateSummary",menu:"stateMenu"},
+  gender:{values:["Person","Male","Female"],panel:"genderPanel",summary:"genderSummary",menu:"genderMenu"},
+  sector:{values:["Total","Rural","Urban"],panel:"sectorPanel",summary:"sectorSummary",menu:"sectorMenu"},
+  age:{values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"],panel:"agePanel",summary:"ageSummary",menu:"ageMenu"}
+};
+const source=document.getElementById("source");
+const selection=document.getElementById("selection");
+function buildMulti(panelId, values, prefix){
   const el=document.getElementById(panelId);
-  el.innerHTML=`<div class="select-tools"><button type="button" data-action="all">Select all</button><button type="button" data-action="clear">Clear all</button></div>`+values.map(x=>`<label class="check"><input type="checkbox" class="${prefix}Check" value="${x}"><span>${x}</span></label>`).join("");
-  el.querySelector('[data-action="all"]').onclick=e=>{e.stopPropagation();el.querySelectorAll("input").forEach(c=>c.checked=true);updateAllSummaries();};
-  el.querySelector('[data-action="clear"]').onclick=e=>{e.stopPropagation();el.querySelectorAll("input").forEach(c=>c.checked=false);updateAllSummaries();};
-  el.onchange=updateAllSummaries;
+  el.innerHTML=`<div class="select-tools">
+    <button type="button" data-action="all">Select all</button>
+    <button type="button" data-action="clear">Clear all</button>
+  </div>`+values.map(x=>`<label class="check"><input type="checkbox" class="${prefix}Check" value="${x}"><span>${x}</span></label>`).join("");
+  el.querySelector('[data-action="all"]').addEventListener("click",e=>{e.stopPropagation();el.querySelectorAll("input[type=checkbox]").forEach(c=>c.checked=true);updateAllSummaries();});
+  el.querySelector('[data-action="clear"]').addEventListener("click",e=>{e.stopPropagation();el.querySelectorAll("input[type=checkbox]").forEach(c=>c.checked=false);updateAllSummaries();});
+  el.addEventListener("change",updateAllSummaries);
 }
 function selected(prefix){return [...document.querySelectorAll(`.${prefix}Check:checked`)].map(x=>x.value);}
-function labelCount(prefix,none,singular){const a=selected(prefix);if(!a.length)return none;return `${a.length} ${a.length===1?singular:singular+"s"} selected`;}
+function labelCount(prefix,none,singular){
+  const a=selected(prefix);
+  if(!a.length) return none;
+  return `${a.length} ${a.length===1?singular:singular+"s"} selected`;
+}
 function updateAllSummaries(){
   document.getElementById("indicatorSummary").textContent=labelCount("indicator","Select indicators","indicator");
   document.getElementById("estimateSummary").textContent=labelCount("estimate","Select type(s)","type");
@@ -331,38 +417,60 @@ function updateAllSummaries(){
   selection.textContent=n?`${n} indicator${n>1?"s":""} selected`:"No indicators selected";
 }
 function setupToggle(menuId,toggleId){
-  const menu=document.getElementById(menuId),toggle=document.getElementById(toggleId);
-  toggle.onclick=e=>{e.stopPropagation();document.querySelectorAll(".multi.open").forEach(m=>{if(m!==menu)m.classList.remove("open");});menu.classList.toggle("open");};
+  const menu=document.getElementById(menuId), toggle=document.getElementById(toggleId);
+  toggle.addEventListener("click",e=>{
+    e.stopPropagation();
+    document.querySelectorAll(".multi.open").forEach(m=>{if(m!==menu)m.classList.remove("open")});
+    menu.classList.toggle("open");
+  });
 }
 function renderIndicators(){
   buildMulti("indicatorPanel",sourceIndicators[source.value],"indicator");
-  Object.entries(dimensions).forEach(([k,d])=>buildMulti(d.panel,d.values,k));
+  Object.entries(dimensions).forEach(([key,d])=>buildMulti(d.panel,d.values,key));
   document.getElementById("estimateWrap").style.display=source.value==="PLFS"?"block":"none";
   updateAllSummaries();
 }
-["indicator","estimate","year","frequency","state","gender","sector","age"].forEach(k=>setupToggle(k+"Menu",k+"Toggle"));
-document.onclick=e=>{if(!e.target.closest(".multi"))document.querySelectorAll(".multi.open").forEach(m=>m.classList.remove("open"));};
-source.onchange=renderIndicators;
-document.querySelectorAll("[data-source]").forEach(a=>a.onclick=()=>{source.value=a.dataset.source;renderIndicators();});
-document.getElementById("viewBtn").onclick=()=>{
+setupToggle("indicatorMenu","indicatorToggle");
+setupToggle("estimateMenu","estimateToggle");
+setupToggle("yearMenu","yearToggle");
+setupToggle("frequencyMenu","frequencyToggle");
+setupToggle("stateMenu","stateToggle");
+setupToggle("genderMenu","genderToggle");
+setupToggle("sectorMenu","sectorToggle");
+setupToggle("ageMenu","ageToggle");
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".multi")) document.querySelectorAll(".multi.open").forEach(m=>m.classList.remove("open"));
+});
+source.addEventListener("change",renderIndicators);
+document.querySelectorAll("[data-source]").forEach(a=>a.addEventListener("click",()=>{
+  source.value=a.dataset.source; renderIndicators();
+}));
+document.getElementById("viewBtn").addEventListener("click",()=>{
   const inds=selected("indicator");
   if(!inds.length){alert("Please select at least one indicator.");return;}
   const params=new URLSearchParams({
-    source:source.value,indicators:inds.join("||"),estimates:selected("estimate").join("||"),
-    years:selected("year").join("||"),frequencies:selected("frequency").join("||"),
-    states:selected("state").join("||"),genders:selected("gender").join("||"),
-    sectors:selected("sector").join("||"),ages:selected("age").join("||")
+    source:source.value,
+    indicators:inds.join("||"),
+    estimates:selected("estimate").join("||"),
+    years:selected("year").join("||"),
+    frequencies:selected("frequency").join("||"),
+    states:selected("state").join("||"),
+    genders:selected("gender").join("||"),
+    sectors:selected("sector").join("||"),
+    ages:selected("age").join("||")
   });
-  location.href="indicator.html?"+params;
-};
-document.getElementById("searchBtn").onclick=()=>{
+  location.href="indicator.html?"+params.toString();
+});
+document.getElementById("searchBtn").addEventListener("click",()=>{
   const q=document.getElementById("searchInput").value.trim().toLowerCase();
-  if(!q)return;
+  if(!q) return;
   source.value=q.includes("epfo")?"EPFO":q.includes("esic")?"ESIC":"PLFS";
   renderIndicators();
   document.getElementById("explorer").scrollIntoView({behavior:"smooth"});
-};
-document.getElementById("searchInput").onkeydown=e=>{if(e.key==="Enter")document.getElementById("searchBtn").click();};
+});
+document.getElementById("searchInput").addEventListener("keydown",e=>{
+  if(e.key==="Enter") document.getElementById("searchBtn").click();
+});
 renderIndicators();
 </script>
 </body>
