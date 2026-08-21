@@ -298,7 +298,7 @@ Production data: results are retrieved from the connected PLFS dataset. EPFO and
 </div>
 </footer>
 <script>
-const DATA_URL = "data/PLFS.txt";
+const DATA_URL = "https://raw.githubusercontent.com/shramshankhiki/Shankhiki/main/data/PLFS.txt";
 const sourceEl = document.getElementById("source");
 let plfsData = [];
 let dataReady = false;
@@ -386,7 +386,7 @@ function parsePLFS(text){
 }
 
 async function loadPLFS(){
-  setDataStatus("Loading PLFS data from data/PLFS.txt…");
+  setDataStatus("Loading PLFS data from the GitHub data repository…");
   try{
     const response=await fetch(DATA_URL,{cache:"no-store"});
     if(!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -413,7 +413,7 @@ async function loadPLFS(){
   }catch(err){
     console.error(err);
     dataReady=false;
-    setDataStatus(`Unable to load PLFS data. ${err.message}. If you are opening the HTML directly as file://, use a local web server or GitHub Pages so the browser can fetch data/PLFS.txt.`,"error");
+    setDataStatus(`Unable to load PLFS data. ${err.message}. If you are opening the HTML directly as file://, use a local web server or GitHub Pages so the browser can fetch the PLFS data.`,"error");
   }
 }
 
