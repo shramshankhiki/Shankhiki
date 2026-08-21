@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shram Sankhyiki  | VVGNLI</title>
+<title>Shram Sankhyiki | VVGNLI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
   --muted:#5c7185;--gold:#b8860b;--gold-deep:#8a5a1a;
   --gold-bg:#fdf3e0;--gold-border:#e8cd94;
   --rust:#b5563a;--sage:#3d7a5c;--slate:#4a6785;--plum:#6b4e71;
-  /* Bhagwa / Saffron palette */
   --bhagwa:#FF6B00;--bhagwa-deep:#E65C00;--bhagwa-light:#FFF4EB;--bhagwa-soft:#FFE8D6;
   --shadow:0 12px 34px rgba(8,47,73,.1);--shadow-lg:0 20px 48px rgba(8,47,73,.14);
   --heading-font:"Source Serif 4",Georgia,serif;--body-font:"Inter","Segoe UI",Arial,sans-serif
@@ -47,7 +46,6 @@ nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2
 .search input:focus{outline:none;border-color:var(--bhagwa);box-shadow:0 0 0 3px rgba(255,107,0,.12)}
 .btn,button{border:0;border-radius:9px;padding:12px 18px;background:var(--bhagwa);color:#fff;font-weight:800;cursor:pointer;transition:background .2s}
 .btn:hover,button:hover{background:var(--bhagwa-deep)}
-/* ===== KEY INDICATORS CAROUSEL ===== */
 .key-indicators{background:#f8fafc;padding:28px 5% 32px;border-bottom:1px solid var(--border)}
 .key-inner{max-width:1340px;margin:auto}
 .key-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
@@ -132,10 +130,8 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <div class="head">
 <a class="brand" href="index.html">
   <div class="logo-wrap">
-    <!-- Emblem of India (MOLE / Government of India) -->
     <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India - Ministry of Labour & Employment" title="Ministry of Labour & Employment">
     <div class="logo-divider"></div>
-    <!-- VVGNLI Logo -->
     <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="V.V. Giri National Labour Institute" title="V.V. Giri National Labour Institute" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
   </div>
   <div class="brand-text">
@@ -157,7 +153,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <div class="search"><input id="searchInput" type="search" placeholder="Search indicator, source or state..."><button id="searchBtn">Search</button></div>
 </div>
 </section>
-<!-- ===== KEY INDICATORS CAROUSEL ===== -->
 <section class="key-indicators">
   <div class="key-inner">
     <div class="key-head">
@@ -265,7 +260,6 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 </div>
 </footer>
 <script>
-/* ===== KEY INDICATORS CAROUSEL ===== */
 const keyIndicators = [
   {name:"Labour Force Participation Rate", icon:"chart", sourceCode:"PLFS", unit:"Percent"},
   {name:"Worker Population Ratio / Employment Rate", icon:"users", sourceCode:"PLFS", unit:"Percent"},
@@ -278,7 +272,6 @@ const keyIndicators = [
   {name:"Access to vocational training", icon:"edu", sourceCode:"PLFS", unit:"Percent"},
   {name:"Growth of Employed Persons (%)", icon:"trend", sourceCode:"PLFS", unit:"Percent"}
 ];
-
 const kiIcons = {
   chart:`<svg viewBox="0 0 24 24"><path d="M4 19V5h16v14"/><path d="M7 15l3-4 3 2 4-5"/></svg>`,
   users:`<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
@@ -300,25 +293,38 @@ function getCardsPerView(){
   if(window.innerWidth<=1100) return 3;
   return 4;
 }
+
 async function buildKeyCards(){
   try{
     const response=await fetch("https://raw.githubusercontent.com/shramshankhiki/Shankhiki/main/data/PLFS.txt",{cache:"no-store"});
     if(!response.ok) throw new Error(`HTTP ${response.status}`);
     const text=(await response.text()).replace(/^\uFEFF/,"");
     const lines=text.split(/\r?\n/);
-    const h=lines.shift().split("\t");
+    const h=lines.shift().split("\t").map(x=>x.trim());
     const ix=Object.fromEntries(h.map((x,i)=>[x,i]));
-    const latest=Math.max(...lines.filter(Boolean).map(line=>Number(line.split("\t")[ix.Year])).filter(Number.isFinite));
+    
+    const latest=Math.max(...lines.filter(Boolean).map(line=>{
+      const val = line.split("\t")[ix.Year];
+      return val ? Number(val.trim()) : NaN;
+    }).filter(Number.isFinite));
+    
     const wanted=new Set(keyIndicators.map(d=>d.name));
     const rows=[];
+    
     for(const line of lines){
-      if(!line) continue;
-      const c=line.split("\t");
+      if(!line.trim()) continue;
+      const c=line.split("\t").map(x=>x.trim());
       const indicator=c[ix.Indicator];
       if(!wanted.has(indicator)) continue;
+      
       if(c[ix.State]!=="India" || c[ix.Gender]!=="Person" || c[ix.Sector]!=="Total" || c[ix["Age-group"]]!=="15 & above" || c[ix["Type of Estimate"]]!=="PS+SS" || c[ix.Frequency]!=="Annual" || Number(c[ix.Year])!==latest) continue;
-      rows.push({indicator,value:Number(c[ix.Value])});
+      
+      const valStr = String(c[ix.Value] || "").replace(/,/g,"").trim();
+      if(valStr !== "" && Number.isFinite(Number(valStr))) {
+         rows.push({indicator, value: Number(valStr)});
+      }
     }
+    
     const byName=new Map(rows.map(r=>[r.indicator,r.value]));
     const period=`Annual, ${latest}`;
     keyTrack.innerHTML=keyIndicators.map(d=>{
@@ -333,6 +339,7 @@ async function buildKeyCards(){
     keyTrack.innerHTML='<div style="padding:20px;color:#8a1f1f;font-weight:700">PLFS data could not be loaded. Please open the portal through GitHub Pages or a web server.</div>';
   }
 }
+
 function buildDots(){
   const pages = Math.ceil(keyIndicators.length / getCardsPerView());
   keyDots.innerHTML = "";
@@ -364,7 +371,7 @@ keyPauseBtn.addEventListener("click",()=>{
 });
 window.addEventListener("resize",()=>{ buildDots(); goToPage(0); });
 buildKeyCards();
-/* ===== DATA EXPLORER ===== */
+
 const plfsIndicators=[
   "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate",
   "Growth of Labour Force (%)","Growth of Employed Persons (%)","Average wages of casual workers",
@@ -372,11 +379,7 @@ const plfsIndicators=[
   "Distribution of employment by status","Distribution of employed persons by industry",
   "Distribution of employed persons by occupation","Access to technical education","Access to vocational training"
 ];
-const sourceIndicators={
-  PLFS:plfsIndicators,
-  EPFO:["Net number of subscribers"],
-  ESIC:["Net number of ESIC beneficiaries (Persons)"]
-};
+const sourceIndicators={ PLFS:plfsIndicators, EPFO:["Net number of subscribers"], ESIC:["Net number of ESIC beneficiaries (Persons)"] };
 const dimensions={
   estimate:{values:["PS+SS","PS","CWS"],panel:"estimatePanel",summary:"estimateSummary",menu:"estimateMenu"},
   year:{values:["2026","2025","2024","2023","2022","2021","2020","2019","2018"],panel:"yearPanel",summary:"yearSummary",menu:"yearMenu"},
@@ -388,6 +391,7 @@ const dimensions={
 };
 const source=document.getElementById("source");
 const selection=document.getElementById("selection");
+
 function buildMulti(panelId, values, prefix){
   const el=document.getElementById(panelId);
   el.innerHTML=`<div class="select-tools">
