@@ -296,7 +296,6 @@ function getCardsPerView(){
 
 async function buildKeyCards(){
   try{
-    // FIX 1: Use a relative path. This bypasses raw.githubusercontent branch issues.
     const response=await fetch("data/PLFS.txt",{cache:"no-store"});
     
     if(!response.ok) throw new Error(`HTTP Error ${response.status} - The file data/PLFS.txt was not found.`);
@@ -306,15 +305,22 @@ async function buildKeyCards(){
     const h=lines.shift().split("\t").map(x=>x.trim());
     const ix=Object.fromEntries(h.map((x,i)=>[x,i]));
     
-    // Check if critical columns exist to prevent silent parsing crashes
     if(ix.Year === undefined || ix.Indicator === undefined) {
        throw new Error("Missing required columns ('Year' or 'Indicator'). Check if the file is truly tab-separated.");
     }
     
-    const latest=Math.max(...lines.filter(Boolean).map(line=>{
-      const val = line.split("\t")[ix.Year];
-      return val ? Number(val.trim()) : NaN;
-    }).filter(Number.isFinite));
+    // FIX: Use a loop instead of Math.max(...array) to prevent the call stack error on large datasets
+    let latest = 0;
+    for (let i = 0; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      const val = lines[i].split("\t")[ix.Year];
+      if (val) {
+        const num = Number(val.trim());
+        if (Number.isFinite(num) && num > latest) {
+          latest = num;
+        }
+      }
+    }
     
     const wanted=new Set(keyIndicators.map(d=>d.name));
     const rows=[];
@@ -344,7 +350,6 @@ async function buildKeyCards(){
     buildDots(); goToPage(0); startAuto();
   }catch(err){
     console.error(err);
-    // FIX 2: Output the exact error to the screen so we can debug it if it fails again
     keyTrack.innerHTML=`<div style="padding:20px;color:#8a1f1f;font-weight:700">Failed to load data: ${err.message}</div>`;
   }
 }
