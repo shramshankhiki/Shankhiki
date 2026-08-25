@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <style>
 :root{
   --navy:#0a3357;--navy-deep:#082347;--teal:#0f766e;--teal2:#14919b;--mint:#eaf8f6;
@@ -23,7 +24,6 @@ body{margin:0;font-family:var(--body-font);color:var(--text);background:var(--bg
 a{text-decoration:none;color:inherit}
 .topbar{background:linear-gradient(90deg,var(--navy) 0%,#0d3a5c 100%);color:#fff;padding:8px 5%;font-size:12px;display:flex;justify-content:space-between;align-items:center}
 
-/* ===== NEW HEADER LAYOUT ===== */
 header{background:#fff;border-bottom:3px solid var(--bhagwa);position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(8,47,73,.06)}
 .head{max-width:1340px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
 .header-side {display:flex;align-items:center;gap:12px;flex:1}
@@ -51,6 +51,7 @@ main{max-width:1340px;margin:auto;padding:34px 5% 65px}
 .latest small{display:block;color:var(--muted);font-size:11px}
 .latest strong{display:block;color:var(--navy);font-size:28px}
 .latest span{font-size:11px;color:var(--muted)}
+
 .filters-panel{background:#fff;border:1px solid var(--border);border-radius:13px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px;overflow-x:hidden;border-top:3px solid var(--bhagwa)}
 .filters-panel h3{margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--navy);font-family:var(--heading-font);font-weight:700;font-size:18px}
 .filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -97,6 +98,7 @@ th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--border);ve
 th{background:#eff6f8;color:var(--navy);font-size:11px;text-transform:uppercase;position:sticky;top:0;z-index:1}
 tbody tr:hover{background:#f7fbfc}
 .value{font-weight:800;color:var(--navy)}
+
 .chart-wrap{border:1px solid var(--border);border-radius:9px;padding:18px;overflow:auto}
 .chart-title{font-weight:800;color:var(--navy);font-size:15px;margin-bottom:10px}
 .chart-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
@@ -113,15 +115,19 @@ tbody tr:hover{background:#f7fbfc}
 @media(max-width:620px){.chart-filters{grid-template-columns:1fr}}
 #chart{width:100%;height:auto;display:block;min-width:780px}
 .multi-toggle .chevron svg{width:13px;height:13px;display:block;min-width:0;flex-shrink:0}
-.bar-label{font-size:11px;fill:#5c7185}
 .meta{margin-top:17px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
 .notice{background:var(--gold-bg);border:1px solid var(--gold-border);color:var(--gold-deep);border-radius:9px;padding:11px 13px;font-size:12px;margin-bottom:15px}
+
+/* MAP STYLING */
+#mapContainer {position:relative;width:100%;background:#fbfdfe;border-radius:9px;border:1px solid var(--border);padding:15px;display:flex;flex-direction:column;align-items:center}
+#indiaMap {width:100%;max-width:750px;height:auto;display:block}
+#mapTooltip {position:absolute;display:none;padding:8px 12px;background:rgba(8,35,71,0.92);color:#fff;border-radius:6px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+
 footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-top:4px solid var(--bhagwa)}
 .footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
 .footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .footer-logos img{height:40px;width:auto;background:#fff;padding:4px;border-radius:6px}
 
-/* MOBILE FIXES FOR NEW HEADER */
 @media(max-width:1100px){.summary{grid-template-columns:repeat(3,1fr)}.filters{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:850px){
   .hero-top{display:block}.latest{margin-top:18px}.summary{grid-template-columns:repeat(2,1fr)}
@@ -142,13 +148,11 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <body>
 <div class="topbar">
   <span>Government of India | Ministry of Labour &amp; Employment</span>
-  <span>V.V. Giri National Labour Institute | Labour & Employment Statistics</span>
+  <span>V.V. Giri National Labour Institute | Labour &amp; Employment Statistics</span>
 </div>
 
-<!-- ===== NEW HEADER STRUCTURE ===== -->
 <header>
 <div class="head">
-  <!-- Left: Government & MOLE -->
   <div class="header-side header-left">
     <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
     <div class="logo-text" style="text-align:left">
@@ -157,17 +161,15 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     </div>
   </div>
   
-  <!-- Center: Main Title -->
   <a href="index.html" class="header-center">
     <h1>Shram Sankhyiki</h1>
-    <p>Labour & Employment Statistics</p>
+    <p>Labour &amp; Employment Statistics</p>
   </a>
   
-  <!-- Right: VVGNLI -->
   <div class="header-side header-right">
     <div class="logo-text" style="text-align:right">
       <strong>V.V. Giri National Labour Institute</strong>
-     </div>
+    </div>
     <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
   </div>
 </div>
@@ -178,10 +180,11 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
   <span>Home / Data Explorer / Results</span>
   <a class="back" href="index.html#explorer">← Back to Explore Data</a>
 </div>
+
 <section class="hero">
 <div class="hero-top">
 <div>
-<h2 id="pageTitle">Selected Labour & Employment Data</h2>
+<h2 id="pageTitle">Selected Labour &amp; Employment Data</h2>
 <p id="description">Multi-dimensional results generated from your selected filters.</p>
 <div class="badges">
   <span class="badge" id="sourceBadge">PLFS</span>
@@ -195,6 +198,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 </div>
 </div>
 </section>
+
 <section class="filters-panel">
   <h3>Refine selection</h3>
   <div class="filters">
@@ -268,17 +272,17 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     <button class="secondary" id="resetBtn">Reset to defaults</button>
   </div>
 </section>
+
 <section class="chips-bar">
   <h3>Active selections</h3>
   <div class="chips" id="chips"></div>
 </section>
-<div class="notice">
-Production data: results are retrieved from the connected PLFS dataset. EPFO and ESIC will be enabled when their production datasets are connected.
-</div>
+
 <div class="toolbar">
 <div class="tabs">
 <button class="tab active" data-tab="table">▤ Table View</button>
 <button class="tab" data-tab="chart">⌁ Chart View</button>
+<button class="tab" data-tab="map">🗺 Map View</button>
 </div>
 <div class="downloads">
 <button class="download" id="csv">↓ CSV</button>
@@ -287,6 +291,7 @@ Production data: results are retrieved from the connected PLFS dataset. EPFO and
 <button class="download" id="print">Print</button>
 </div>
 </div>
+
 <section id="tablePanel" class="panel">
 <div class="summary">
 <div class="stat"><span>Source</span><strong id="sSource">PLFS</strong></div>
@@ -306,8 +311,9 @@ Production data: results are retrieved from the connected PLFS dataset. EPFO and
 <tbody id="rows"></tbody>
 </table>
 </div>
-<div class="meta"><strong>Source:</strong> <span id="metaSource"></span> · <strong>Rows displayed:</strong> <span id="metaRows"></span>. Values are retrieved from the production PLFS dataset.</div>
+<div class="meta"><strong>Source:</strong> <span id="metaSource"></span> · <strong>Rows displayed:</strong> <span id="metaRows"></span>.</div>
 </section>
+
 <section id="chartPanel" class="panel" hidden>
 <div class="chart-wrap">
 <div class="chart-title">Visualisation</div>
@@ -351,9 +357,21 @@ Production data: results are retrieved from the connected PLFS dataset. EPFO and
 </div>
 <svg id="chart" viewBox="0 0 1200 620" role="img" aria-label="Chart"></svg>
 </div>
-<div class="meta" id="chartMeta">Use the chart filters above to choose what appears on the X-axis and how series are split (Sector, Gender, State, Indicator). Data still comes from the main filter selection.</div>
+<div class="meta" id="chartMeta">Use the chart filters above to choose what appears on the X-axis and how series are split.</div>
+</section>
+
+<section id="mapPanel" class="panel" hidden>
+  <div class="chart-wrap">
+    <div class="chart-title" id="mapTitle">State-wise Distribution</div>
+    <div id="mapContainer">
+      <svg id="indiaMap" viewBox="0 0 800 900"></svg>
+      <div id="mapTooltip"></div>
+    </div>
+  </div>
+  <div class="meta" id="mapMeta">Displays state-wise values for the selected indicator and filters.</div>
 </section>
 </main>
+
 <footer>
 <div class="footer-inner">
   <div>
@@ -361,244 +379,348 @@ Production data: results are retrieved from the connected PLFS dataset. EPFO and
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
       <img src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
     </div>
-    <span><strong>Shram Sankhyiki </strong><br>Labour & Employment Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
+    <span><strong>Shram Sankhyiki</strong><br>Labour &amp; Employment Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
   </div>
   <span>Ministry of Labour &amp; Employment<br>Government of India</span>
   <span><a href="#" style="color:#fff">RTI</a> · <a href="#" style="color:#fff">Sitemap</a> · <a href="#" style="color:#fff">Disclaimer</a> · <a href="#" style="color:#fff">Contact Us</a></span>
 </div>
 </footer>
+
 <script>
-const DATA_URL = "data/PLFS.txt";
+const DATA_SOURCES = {
+  PLFS: "data/PLFS.txt",
+  EPFO: "data/EPFO.txt",
+  ESIC: "data/ESIC.txt"
+};
+
 const sourceEl = document.getElementById("source");
-let plfsData = [];
+let currentDataset = [];
 let dataReady = false;
 let currentRows = [];
 
 const units = {
-  "Average wages of casual workers":"INR",
-  "Average monthly earnings – regular salaried":"INR",
-  "Average monthly earnings – self-employed":"INR"
+  "Average wages of casual workers": "INR",
+  "Average monthly earnings – regular salaried": "INR",
+  "Average monthly earnings – self-employed": "INR"
 };
 
-function unitFor(ind){ return units[ind] || "Percent"; }
-function esc(v){
-  return String(v ?? "").replace(/[&<>\"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[ch]));
-}
-function uniqueSorted(field, numeric=false){
-  const vals = [...new Set(plfsData.map(r => r[field]).filter(v => v !== "" && v != null))];
-  return numeric ? vals.sort((a,b)=>Number(b)-Number(a)) : vals.sort((a,b)=>String(a).localeCompare(String(b), undefined, {numeric:true}));
+function unitFor(ind) { 
+  return units[ind] || "Percent"; 
 }
 
-function buildDimensions(){
+const escapeMap = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+function esc(v) {
+  return String(v ?? "").replace(/[&<>"']/g, ch => escapeMap[ch]);
+}
+
+// Indicator normalizer: adds '%' to the specified indicators
+function normalizeIndicator(ind) {
+  if (!ind) return "";
+  let trimmed = String(ind).trim();
+  
+  const targetMap = {
+    "distribution of employed persons by industry": "% Distribution of employed persons by industry",
+    "distribution of employed persons by occupation": "% Distribution of employed persons by occupation",
+    "distribution of employment by status": "% Distribution of employment by status"
+  };
+
+  const lower = trimmed.toLowerCase();
+  if (targetMap[lower]) {
+    return targetMap[lower];
+  }
+  return trimmed;
+}
+
+function uniqueSorted(field, numeric = false) {
+  const vals = [...new Set(currentDataset.map(r => r[field]).filter(v => v !== "" && v != null))];
+  return numeric ? vals.sort((a, b) => Number(b) - Number(a)) : vals.sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }));
+}
+
+function buildDimensions() {
   return {
-    estimate: {values:uniqueSorted("estimate"), panel:"estimatePanel", summary:"estimateSummary"},
-    year: {values:uniqueSorted("year", true), panel:"yearPanel", summary:"yearSummary"},
-    frequency: {values:uniqueSorted("frequency"), panel:"frequencyPanel", summary:"frequencySummary"},
-    state: {values:uniqueSorted("state"), panel:"statePanel", summary:"stateSummary"},
-    gender: {values:uniqueSorted("gender"), panel:"genderPanel", summary:"genderSummary"},
-    sector: {values:uniqueSorted("sector"), panel:"sectorPanel", summary:"sectorSummary"},
-    age: {values:uniqueSorted("age"), panel:"agePanel", summary:"ageSummary"}
+    estimate: { values: uniqueSorted("estimate"), panel: "estimatePanel", summary: "estimateSummary" },
+    year: { values: uniqueSorted("year", true), panel: "yearPanel", summary: "yearSummary" },
+    frequency: { values: uniqueSorted("frequency"), panel: "frequencyPanel", summary: "frequencySummary" },
+    state: { values: uniqueSorted("state"), panel: "statePanel", summary: "stateSummary" },
+    gender: { values: uniqueSorted("gender"), panel: "genderPanel", summary: "genderSummary" },
+    sector: { values: uniqueSorted("sector"), panel: "sectorPanel", summary: "sectorSummary" },
+    age: { values: uniqueSorted("age"), panel: "agePanel", summary: "ageSummary" }
   };
 }
-let dimensions = {
-  estimate:{values:[],panel:"estimatePanel",summary:"estimateSummary"},
-  year:{values:[],panel:"yearPanel",summary:"yearSummary"},
-  frequency:{values:[],panel:"frequencyPanel",summary:"frequencySummary"},
-  state:{values:[],panel:"statePanel",summary:"stateSummary"},
-  gender:{values:[],panel:"genderPanel",summary:"genderSummary"},
-  sector:{values:[],panel:"sectorPanel",summary:"sectorSummary"},
-  age:{values:[],panel:"agePanel",summary:"ageSummary"}
-};
-let sourceIndicators = {PLFS:[]};
 
-function setDataStatus(message, kind="info"){
-  let el=document.getElementById("dataStatus");
-  if(!el){
-    el=document.createElement("div");
-    el.id="dataStatus";
-    el.style.cssText="margin:12px 0;padding:10px 13px;border:1px solid #d7e3e8;border-radius:9px;background:#f7fafb;color:#17324a;font-size:13px;font-weight:700";
-    const target=document.querySelector(".filters-panel");
-    target?.parentNode?.insertBefore(el,target);
+let dimensions = {
+  estimate: { values: [], panel: "estimatePanel", summary: "estimateSummary" },
+  year: { values: [], panel: "yearPanel", summary: "yearSummary" },
+  frequency: { values: [], panel: "frequencyPanel", summary: "frequencySummary" },
+  state: { values: [], panel: "statePanel", summary: "stateSummary" },
+  gender: { values: [], panel: "genderPanel", summary: "genderSummary" },
+  sector: { values: [], panel: "sectorPanel", summary: "sectorSummary" },
+  age: { values: [], panel: "agePanel", summary: "ageSummary" }
+};
+let sourceIndicators = { PLFS: [], EPFO: [], ESIC: [] };
+
+function setDataStatus(message, kind = "info") {
+  let el = document.getElementById("dataStatus");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "dataStatus";
+    el.style.cssText = "margin:12px 0;padding:10px 13px;border:1px solid #d7e3e8;border-radius:9px;font-size:13px;font-weight:700";
+    const target = document.querySelector(".filters-panel");
+    target?.parentNode?.insertBefore(el, target);
   }
-  el.textContent=message;
-  el.style.background=kind==="error"?"#fff4f4":kind==="success"?"#f1fbf5":"#f7fafb";
-  el.style.borderColor=kind==="error"?"#e6b8b8":kind==="success"?"#b9ddc5":"#d7e3e8";
-  el.style.color=kind==="error"?"#8a1f1f":kind==="success"?"#23613b":"#17324a";
+  el.textContent = message;
+  el.style.background = kind === "error" ? "#fff4f4" : kind === "success" ? "#f1fbf5" : "#f7fafb";
+  el.style.borderColor = kind === "error" ? "#e6b8b8" : kind === "success" ? "#b9ddc5" : "#d7e3e8";
+  el.style.color = kind === "error" ? "#8a1f1f" : kind === "success" ? "#23613b" : "#17324a";
 }
 
-function parsePLFS(text){
-  const lines=text.replace(/^\uFEFF/,"").split(/\r?\n/);
-  const header=lines.shift().split("\t").map(x=>x.trim());
-  const idx=Object.fromEntries(header.map((h,i)=>[h,i]));
-  const required=["Source","Indicator","Type of Estimate","Year","Frequency","State","Gender","Sector","Age-group","Value"];
-  const missing=required.filter(h=>idx[h]===undefined);
+// Multi-source flexible parser
+function parseDataset(text, source) {
+  const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/);
+  if (!lines.length || !lines[0].trim()) throw new Error("Dataset file is empty.");
   
-  if(missing.length) throw new Error("Missing columns: "+missing.join(", "));
-  const rows=[];
-  
-  for(let i=0;i<lines.length;i++){
-    const line=lines[i]; if(!line.trim()) continue;
-    const c=line.split("\t");
-    
-    const valStr = String(c[idx.Value]??"").replace(/,/g,"").trim();
-    if(valStr === "") continue; 
-    
+  const header = lines.shift().split("\t").map(x => x.trim().toLowerCase());
+  const colIndex = Object.fromEntries(header.map((h, i) => [h, i]));
+
+  const getCol = (aliases) => {
+    for (const a of aliases) {
+      if (colIndex[a.toLowerCase()] !== undefined) return colIndex[a.toLowerCase()];
+    }
+    return -1;
+  };
+
+  const idxSource = getCol(["source"]);
+  const idxInd = getCol(["indicator", "metric", "type of data"]);
+  const idxEst = getCol(["type of estimate", "estimate", "estimate_type"]);
+  const idxYear = getCol(["year", "financial year", "period"]);
+  const idxFreq = getCol(["frequency", "periodicity"]);
+  const idxState = getCol(["state", "state/ut", "states"]);
+  const idxGender = getCol(["gender", "sex"]);
+  const idxSector = getCol(["sector", "area", "industry", "establishment"]);
+  const idxAge = getCol(["age-group", "age group", "age"]);
+  const idxVal = getCol(["value", "count", "payroll count", "wages"]);
+
+  const rows = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!line.trim()) continue;
+    const c = line.split("\t");
+
+    const valStr = idxVal !== -1 ? String(c[idxVal] ?? "").replace(/,/g, "").trim() : "";
+    if (valStr === "") continue;
     const value = Number(valStr);
-    if(!Number.isFinite(value)) continue;
+    if (!Number.isFinite(value)) continue;
+
+    const rawInd = idxInd !== -1 ? String(c[idxInd] ?? "").trim() : "Total Count";
     
     rows.push({
-      source:String(c[idx.Source]??"").trim(),
-      indicator:String(c[idx.Indicator]??"").trim(),
-      estimate:String(c[idx["Type of Estimate"]]??"").trim(),
-      year:String(c[idx.Year]??"").trim(),
-      frequency:String(c[idx.Frequency]??"").trim(),
-      state:String(c[idx.State]??"").trim(),
-      gender:String(c[idx.Gender]??"").trim(),
-      sector:String(c[idx.Sector]??"").trim(),
-      age:String(c[idx["Age-group"]]??"").trim(),
+      source: idxSource !== -1 ? String(c[idxSource] ?? "").trim() : source,
+      indicator: normalizeIndicator(rawInd),
+      estimate: idxEst !== -1 ? String(c[idxEst] ?? "").trim() : "PS+SS",
+      year: idxYear !== -1 ? String(c[idxYear] ?? "").trim() : "All",
+      frequency: idxFreq !== -1 ? String(c[idxFreq] ?? "").trim() : "Annual",
+      state: idxState !== -1 ? String(c[idxState] ?? "").trim() : "India",
+      gender: idxGender !== -1 ? String(c[idxGender] ?? "").trim() : "Person",
+      sector: idxSector !== -1 ? String(c[idxSector] ?? "").trim() : "Total",
+      age: idxAge !== -1 ? String(c[idxAge] ?? "").trim() : "15 & above",
       value
     });
   }
   return rows;
 }
 
-async function loadPLFS(){
-  setDataStatus("Loading PLFS data from the GitHub data repository…");
-  try{
-    const response=await fetch(DATA_URL,{cache:"no-store"});
-    if(!response.ok) throw new Error(`HTTP ${response.status}`);
-    const text=await response.text();
-    plfsData=parsePLFS(text);
-    if(!plfsData.length) throw new Error("The PLFS file contains no valid observations.");
-    dimensions=buildDimensions();
-    sourceIndicators.PLFS=[...new Set(plfsData.map(r=>r.indicator))].sort((a,b)=>a.localeCompare(b));
-    dataReady=true;
-    const latestYear=dimensions.year.values[0] || "";
-    setDataStatus(`PLFS data loaded successfully: ${plfsData.length.toLocaleString()} observations; ${sourceIndicators.PLFS.length} indicators; ${dimensions.state.values.length} geographies; years ${dimensions.year.values.at(-1)}–${latestYear}.`,"success");
-    sourceEl.value="PLFS";
-    const hasURLFilters = initial && (initial.indicators.length || initial.years.length || initial.states.length || initial.genders.length || initial.sectors.length || initial.ages.length);
-    renderFilterUI(hasURLFilters ? initial : {
-      indicators:[sourceIndicators.PLFS[0] || "Labour Force Participation Rate"],
-      estimates:dimensions.estimate.values.includes("PS+SS")?["PS+SS"]:dimensions.estimate.values.slice(0,1),
-      years:latestYear?[latestYear]:[], frequencies:dimensions.frequency.values.includes("Annual")?["Annual"]:dimensions.frequency.values.slice(0,1),
-      states:dimensions.state.values.includes("India")?["India"]:dimensions.state.values.slice(0,1),
-      genders:dimensions.gender.values.includes("Person")?["Person"]:dimensions.gender.values.slice(0,1),
-      sectors:dimensions.sector.values.includes("Total")?["Total"]:dimensions.sector.values.slice(0,1),
-      ages:dimensions.age.values.includes("15 & above")?["15 & above"]:dimensions.age.values.slice(0,1)
+async function loadSource(source) {
+  setDataStatus(`Loading ${source} data...`, "info");
+  const url = DATA_SOURCES[source] || `data/${source}.txt`;
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}: Failed to fetch ${url}`);
+    const text = await response.text();
+    currentDataset = parseDataset(text, source);
+    if (!currentDataset.length) throw new Error(`The ${source} file contains no valid observations.`);
+    
+    dimensions = buildDimensions();
+    sourceIndicators[source] = [...new Set(currentDataset.map(r => r.indicator))].sort((a, b) => a.localeCompare(b));
+    dataReady = true;
+
+    const latestYear = dimensions.year.values[0] || "";
+    setDataStatus(`${source} loaded successfully: ${currentDataset.length.toLocaleString()} rows.`, "success");
+    sourceEl.value = source;
+
+    renderFilterUI({
+      indicators: [sourceIndicators[source][0] || ""],
+      estimates: dimensions.estimate.values.includes("PS+SS") ? ["PS+SS"] : dimensions.estimate.values.slice(0, 1),
+      years: latestYear ? [latestYear] : [],
+      frequencies: dimensions.frequency.values.includes("Annual") ? ["Annual"] : dimensions.frequency.values.slice(0, 1),
+      states: dimensions.state.values.includes("India") ? ["India"] : dimensions.state.values.slice(0, 1),
+      genders: dimensions.gender.values.includes("Person") ? ["Person"] : dimensions.gender.values.slice(0, 1),
+      sectors: dimensions.sector.values.includes("Total") ? ["Total"] : dimensions.sector.values.slice(0, 1),
+      ages: dimensions.age.values.includes("15 & above") ? ["15 & above"] : dimensions.age.values.slice(0, 1)
     });
     runQuery();
-  }catch(err){
+  } catch (err) {
     console.error(err);
-    dataReady=false;
-    setDataStatus(`Unable to load PLFS data. ${err.message}. If you are opening the HTML directly as file://, use a local web server or GitHub Pages so the browser can fetch the PLFS data.`,"error");
+    dataReady = false;
+    setDataStatus(`Unable to load ${source} data. ${err.message}`, "error");
   }
 }
 
-function buildMulti(panelId, values, prefix, prechecked){
-  const el=document.getElementById(panelId); if(!el) return;
-  const set=new Set(prechecked||[]);
-  el.innerHTML=`<div class="select-tools"><button type="button" data-action="all">Select all</button><button type="button" data-action="clear">Clear all</button></div>`+
-    values.map(x=>`<label class="check"><input type="checkbox" class="${prefix}Check" value="${esc(x)}" ${set.has(x)?"checked":""}><span>${esc(x)}</span></label>`).join("");
-  el.querySelector('[data-action="all"]').addEventListener("click",e=>{e.stopPropagation();el.querySelectorAll("input[type=checkbox]").forEach(c=>c.checked=true);updateSummaries();});
-  el.querySelector('[data-action="clear"]').addEventListener("click",e=>{e.stopPropagation();el.querySelectorAll("input[type=checkbox]").forEach(c=>c.checked=false);updateSummaries();});
-  el.addEventListener("change",updateSummaries);
+function buildMulti(panelId, values, prefix, prechecked) {
+  const el = document.getElementById(panelId);
+  if (!el) return;
+  const set = new Set(prechecked || []);
+  el.innerHTML = `<div class="select-tools"><button type="button" data-action="all">Select all</button><button type="button" data-action="clear">Clear all</button></div>` +
+    values.map(x => `<label class="check"><input type="checkbox" class="${prefix}Check" value="${esc(x)}" ${set.has(x) ? "checked" : ""}><span>${esc(x)}</span></label>`).join("");
+  
+  el.querySelector('[data-action="all"]').addEventListener("click", e => {
+    e.stopPropagation();
+    el.querySelectorAll("input[type=checkbox]").forEach(c => c.checked = true);
+    updateSummaries();
+  });
+  el.querySelector('[data-action="clear"]').addEventListener("click", e => {
+    e.stopPropagation();
+    el.querySelectorAll("input[type=checkbox]").forEach(c => c.checked = false);
+    updateSummaries();
+  });
+  el.addEventListener("change", updateSummaries);
 }
-function selected(prefix){return [...document.querySelectorAll(`.${prefix}Check:checked`)].map(x=>x.value);}
-function labelCount(prefix,none,singular){const a=selected(prefix);if(!a.length)return none;return `${a.length} ${a.length===1?singular:singular+"s"} selected`;}
-function updateSummaries(){
-  document.getElementById("indicatorSummary").textContent=labelCount("indicator","Select indicators","indicator");
-  document.getElementById("estimateSummary").textContent=labelCount("estimate","Select type(s)","type");
-  document.getElementById("yearSummary").textContent=labelCount("year","Select year(s)","year");
-  document.getElementById("frequencySummary").textContent=labelCount("frequency","Select frequency","frequency");
-  document.getElementById("stateSummary").textContent=labelCount("state","Select state(s)","state");
-  document.getElementById("genderSummary").textContent=labelCount("gender","Select gender(s)","gender");
-  document.getElementById("sectorSummary").textContent=labelCount("sector","Select sector(s)","sector");
-  document.getElementById("ageSummary").textContent=labelCount("age","Select age-group(s)","age-group");
+
+function selected(prefix) { 
+  return [...document.querySelectorAll(`.${prefix}Check:checked`)].map(x => x.value); 
 }
-function setupToggle(menuId,toggleId){const menu=document.getElementById(menuId),toggle=document.getElementById(toggleId);toggle.addEventListener("click",e=>{e.stopPropagation();document.querySelectorAll(".multi.open").forEach(m=>{if(m!==menu)m.classList.remove("open")});menu.classList.toggle("open")});}
-function renderFilterUI(pre={}){
-  const src=sourceEl.value;
-  if(src!=="PLFS"){
-    document.getElementById("indicatorPanel").innerHTML='<div style="padding:12px;color:#8a1f1f;font-weight:700">This source has no production dataset loaded yet.</div>';
-    Object.entries(dimensions).forEach(([key,d])=>buildMulti(d.panel,[],key,[]));
-    document.getElementById("estimateWrap").style.display="none";
-    updateSummaries(); return;
-  }
-  buildMulti("indicatorPanel",sourceIndicators.PLFS,"indicator",pre.indicators);
-  Object.entries(dimensions).forEach(([key,d])=>buildMulti(d.panel,d.values,key,pre[key+"s"]||pre[key]||[]));
-  document.getElementById("estimateWrap").style.display="block";
+
+function labelCount(prefix, none, singular) {
+  const a = selected(prefix);
+  if (!a.length) return none;
+  return `${a.length} ${a.length === 1 ? singular : singular + "s"} selected`;
+}
+
+function updateSummaries() {
+  document.getElementById("indicatorSummary").textContent = labelCount("indicator", "Select indicators", "indicator");
+  document.getElementById("estimateSummary").textContent = labelCount("estimate", "Select type(s)", "type");
+  document.getElementById("yearSummary").textContent = labelCount("year", "Select year(s)", "year");
+  document.getElementById("frequencySummary").textContent = labelCount("frequency", "Select frequency", "frequency");
+  document.getElementById("stateSummary").textContent = labelCount("state", "Select state(s)", "state");
+  document.getElementById("genderSummary").textContent = labelCount("gender", "Select gender(s)", "gender");
+  document.getElementById("sectorSummary").textContent = labelCount("sector", "Select sector(s)", "sector");
+  document.getElementById("ageSummary").textContent = labelCount("age", "Select age-group(s)", "age-group");
+}
+
+function setupToggle(menuId, toggleId) {
+  const menu = document.getElementById(menuId), toggle = document.getElementById(toggleId);
+  toggle.addEventListener("click", e => {
+    e.stopPropagation();
+    document.querySelectorAll(".multi.open").forEach(m => { if (m !== menu) m.classList.remove("open"); });
+    menu.classList.toggle("open");
+  });
+}
+
+function renderFilterUI(pre = {}) {
+  const src = sourceEl.value;
+  buildMulti("indicatorPanel", sourceIndicators[src] || [], "indicator", pre.indicators);
+  Object.entries(dimensions).forEach(([key, d]) => buildMulti(d.panel, d.values, key, pre[key + "s"] || pre[key] || []));
   updateSummaries();
 }
-[ ["indicatorMenu","indicatorToggle"],["estimateMenu","estimateToggle"],["yearMenu","yearToggle"],["frequencyMenu","frequencyToggle"],["stateMenu","stateToggle"],["genderMenu","genderToggle"],["sectorMenu","sectorToggle"],["ageMenu","ageToggle"] ].forEach(x=>setupToggle(...x));
-document.addEventListener("click",e=>{if(!e.target.closest(".multi"))document.querySelectorAll(".multi.open").forEach(m=>m.classList.remove("open"));});
-sourceEl.addEventListener("change",()=>{
-  if(sourceEl.value!=="PLFS"){
-    setDataStatus(`${sourceEl.value} is not connected to a production data file yet. PLFS is currently the live data source.`,"info");
-    renderFilterUI({}); return;
-  }
-  const latest=dimensions.year.values[0]||"";
-  renderFilterUI({indicators:sourceIndicators.PLFS.slice(0,1),estimates:["PS+SS"],years:latest?[latest]:[],frequencies:["Annual"],states:["India"],genders:["Person"],sectors:["Total"],ages:["15 & above"]});
+
+[
+  ["indicatorMenu", "indicatorToggle"], ["estimateMenu", "estimateToggle"], ["yearMenu", "yearToggle"],
+  ["frequencyMenu", "frequencyToggle"], ["stateMenu", "stateToggle"], ["genderMenu", "genderToggle"],
+  ["sectorMenu", "sectorToggle"], ["ageMenu", "ageToggle"]
+].forEach(x => setupToggle(...x));
+
+document.addEventListener("click", e => {
+  if (!e.target.closest(".multi")) document.querySelectorAll(".multi.open").forEach(m => m.classList.remove("open"));
 });
 
-const q=new URLSearchParams(location.search);
-const split=v=>(q.get(v)||"").split("||").filter(Boolean);
-const initial={
-  source:q.get("source")||"PLFS", indicators:split("indicators"), estimates:split("estimates"), years:split("years"),
-  frequencies:split("frequencies"), states:split("states"), genders:split("genders"), sectors:split("sectors"), ages:split("ages")
-};
-sourceEl.value=initial.source;
-renderFilterUI(initial);
+sourceEl.addEventListener("change", () => {
+  loadSource(sourceEl.value);
+});
 
-function cartesian(arrays){return arrays.reduce((acc,arr)=>acc.flatMap(a=>arr.map(v=>a.concat([v]))),[[]]);}
-function runQuery(){
-  if(!dataReady){return;}
-  const source=sourceEl.value;
-  if(source!=="PLFS"){
-    currentRows=[]; document.getElementById("rows").innerHTML='<tr><td colspan="10" style="text-align:center;padding:30px">Production data are not yet available for this source.</td></tr>'; return;
+function runQuery() {
+  if (!dataReady) return;
+  const source = sourceEl.value;
+  let indicators = selected("indicator");
+  let estimates = selected("estimate"); 
+  let years = selected("year"); 
+  let frequencies = selected("frequency"); 
+  let states = selected("state"); 
+  let genders = selected("gender"); 
+  let sectors = selected("sector"); 
+  let ages = selected("age");
+
+  if (!indicators.length) indicators = (sourceIndicators[source] || []).slice(0, 1);
+  if (!estimates.length) estimates = dimensions.estimate.values.slice(0, 1);
+  if (!years.length) years = dimensions.year.values.slice(0, 1);
+  if (!frequencies.length) frequencies = dimensions.frequency.values.slice(0, 1);
+  if (!states.length) states = dimensions.state.values.slice(0, 1);
+  if (!genders.length) genders = dimensions.gender.values.slice(0, 1);
+  if (!sectors.length) sectors = dimensions.sector.values.slice(0, 1);
+  if (!ages.length) ages = dimensions.age.values.slice(0, 1);
+
+  const I = new Set(indicators), E = new Set(estimates), Y = new Set(years.map(String)), F = new Set(frequencies),
+        S = new Set(states), G = new Set(genders), T = new Set(sectors), A = new Set(ages);
+
+  currentRows = currentDataset.filter(r => 
+    I.has(r.indicator) && E.has(r.estimate) && Y.has(String(r.year)) && F.has(r.frequency) &&
+    S.has(r.state) && G.has(r.gender) && T.has(r.sector) && A.has(r.age)
+  );
+
+  currentRows.sort((a, b) => 
+    a.indicator.localeCompare(b.indicator) || Number(a.year) - Number(b.year) ||
+    a.state.localeCompare(b.state) || a.gender.localeCompare(b.gender) ||
+    a.sector.localeCompare(b.sector) || a.age.localeCompare(b.age)
+  );
+
+  const single = indicators.length === 1;
+  document.getElementById("pageTitle").textContent = single ? indicators[0] : "Selected Labour & Employment Data";
+  document.getElementById("sourceBadge").textContent = source;
+  document.getElementById("resultBadge").textContent = `${currentRows.length.toLocaleString()} observations`;
+  document.getElementById("combinationCount").textContent = currentRows.length.toLocaleString();
+  document.getElementById("description").textContent = currentRows.length 
+    ? `${indicators.length} indicator${indicators.length > 1 ? "s" : ""} from ${source}, filtered by selected dimensions.` 
+    : `No observations match the selected dimensions.`;
+  
+  document.getElementById("sSource").textContent = source; 
+  document.getElementById("sIndicators").textContent = indicators.length; 
+  document.getElementById("sYears").textContent = years.length; 
+  document.getElementById("sStates").textContent = states.length; 
+  document.getElementById("sRows").textContent = currentRows.length.toLocaleString();
+  document.getElementById("metaSource").textContent = source; 
+  document.getElementById("metaRows").textContent = currentRows.length.toLocaleString();
+
+  const chips = document.getElementById("chips"); 
+  chips.innerHTML = "";
+  function addChip(label, value) {
+    if (!value.length) return;
+    const span = document.createElement("span");
+    span.className = "chip";
+    span.textContent = `${label}: ${value.join(", ")}`;
+    chips.appendChild(span);
   }
-  let indicators=selected("indicator");
-  let estimates=selected("estimate"); let years=selected("year"); let frequencies=selected("frequency"); let states=selected("state"); let genders=selected("gender"); let sectors=selected("sector"); let ages=selected("age");
-  if(!indicators.length) indicators=sourceIndicators.PLFS.slice(0,1);
-  if(!estimates.length) estimates=dimensions.estimate.values.includes("PS+SS")?["PS+SS"]:dimensions.estimate.values.slice(0,1);
-  if(!years.length) years=dimensions.year.values.slice(0,1);
-  if(!frequencies.length) frequencies=dimensions.frequency.values.includes("Annual")?["Annual"]:dimensions.frequency.values.slice(0,1);
-  if(!states.length) states=dimensions.state.values.includes("India")?["India"]:dimensions.state.values.slice(0,1);
-  if(!genders.length) genders=dimensions.gender.values.includes("Person")?["Person"]:dimensions.gender.values.slice(0,1);
-  if(!sectors.length) sectors=dimensions.sector.values.includes("Total")?["Total"]:dimensions.sector.values.slice(0,1);
-  if(!ages.length) ages=dimensions.age.values.includes("15 & above")?["15 & above"]:dimensions.age.values.slice(0,1);
+  addChip("Indicators", indicators); addChip("Type of Estimate", estimates); addChip("Year", years); 
+  addChip("Frequency", frequencies); addChip("States", states); addChip("Gender", genders); 
+  addChip("Sector", sectors); addChip("Age-group", ages);
 
-  const I=new Set(indicators),E=new Set(estimates),Y=new Set(years.map(String)),F=new Set(frequencies),S=new Set(states),G=new Set(genders),T=new Set(sectors),A=new Set(ages);
-  currentRows=plfsData.filter(r=>I.has(r.indicator)&&E.has(r.estimate)&&Y.has(String(r.year))&&F.has(r.frequency)&&S.has(r.state)&&G.has(r.gender)&&T.has(r.sector)&&A.has(r.age));
-  currentRows.sort((a,b)=>a.indicator.localeCompare(b.indicator)||Number(a.year)-Number(b.year)||a.state.localeCompare(b.state)||a.gender.localeCompare(b.gender)||a.sector.localeCompare(b.sector)||a.age.localeCompare(b.age));
+  document.getElementById("rows").innerHTML = currentRows.length ? currentRows.map(r => 
+    `<tr>
+      <td>${esc(r.indicator)}</td><td>${esc(r.estimate)}</td><td>${esc(r.year)}</td><td>${esc(r.frequency)}</td>
+      <td>${esc(r.state)}</td><td>${esc(r.gender)}</td><td>${esc(r.sector)}</td><td>${esc(r.age)}</td>
+      <td class="value">${Number(r.value).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+      <td>${unitFor(r.indicator)}</td>
+    </tr>`
+  ).join("") : '<tr><td colspan="10" style="text-align:center;padding:30px">No observations found for the selected filters.</td></tr>';
 
-  const single=indicators.length===1;
-  document.getElementById("pageTitle").textContent=single?indicators[0]:"Selected Labour & Employment Data";
-  document.getElementById("sourceBadge").textContent=source;
-  document.getElementById("resultBadge").textContent=`${currentRows.length.toLocaleString()} observations`;
-  document.getElementById("combinationCount").textContent=currentRows.length.toLocaleString();
-  document.getElementById("description").textContent=currentRows.length?`${indicators.length} indicator${indicators.length>1?"s":""} from the PLFS production dataset, filtered by the selected dimensions.`:`No PLFS observations match the selected dimensions.`;
-  document.getElementById("sSource").textContent=source; document.getElementById("sIndicators").textContent=indicators.length; document.getElementById("sYears").textContent=years.length; document.getElementById("sStates").textContent=states.length; document.getElementById("sRows").textContent=currentRows.length.toLocaleString();
-  document.getElementById("metaSource").textContent=source; document.getElementById("metaRows").textContent=currentRows.length.toLocaleString();
-  const chips=document.getElementById("chips"); chips.innerHTML="";
-  function addChip(label,value){if(!value.length)return;const span=document.createElement("span");span.className="chip";span.textContent=`${label}: ${value.join(", ")}`;chips.appendChild(span);}
-  addChip("Indicators",indicators); addChip("Type of Estimate",estimates); addChip("Year",years); addChip("Frequency",frequencies); addChip("States",states); addChip("Gender",genders); addChip("Sector",sectors); addChip("Age-group",ages);
-  document.getElementById("rows").innerHTML=currentRows.length?currentRows.map(r=>`<tr><td>${esc(r.indicator)}</td><td>${esc(r.estimate)}</td><td>${esc(r.year)}</td><td>${esc(r.frequency)}</td><td>${esc(r.state)}</td><td>${esc(r.gender)}</td><td>${esc(r.sector)}</td><td>${esc(r.age)}</td><td class="value">${Number(r.value).toLocaleString(undefined,{maximumFractionDigits:2})}</td><td>${unitFor(r.indicator)}</td></tr>`).join(""): '<tr><td colspan="10" style="text-align:center;padding:30px">No observations found for the selected filters.</td></tr>';
-  drawChart(indicators,years,states,genders,sectors); updateURL(source,indicators,estimates,years,frequencies,states,genders,sectors,ages);
+  drawChart(indicators, years, states, genders, sectors);
+  drawMap();
 }
-function updateURL(source,indicators,estimates,years,frequencies,states,genders,sectors,ages){const params=new URLSearchParams({source,indicators:indicators.join("||"),estimates:estimates.join("||"),years:years.join("||"),frequencies:frequencies.join("||"),states:states.join("||"),genders:genders.join("||"),sectors:sectors.join("||"),ages:ages.join("||")});history.replaceState(null,"","indicator.html?"+params.toString());}
+
 let currentChartType = "line";
-let lastIndicators = [];
-let lastYears = [];
-let lastStates = [];
-let lastGenders = [];
-let lastSectors = [];
-let chartXAxis = "year";
-let chartSeriesDim = "auto";
-let chartFocusIndicator = "";
+let lastIndicators = [], lastYears = [], lastStates = [], lastGenders = [], lastSectors = [];
+let chartXAxis = "year", chartSeriesDim = "auto", chartFocusIndicator = "";
 
-function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
+function avg(arr) { return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0; }
 
-function dimLabels(key, indicators, years, states, genders, sectors){
+function dimLabels(key, indicators, years, states, genders, sectors) {
   if (key === "year") return years;
   if (key === "sector") return sectors.length ? sectors : ["Total"];
   if (key === "gender") return genders.length ? genders : ["Person"];
@@ -606,10 +728,12 @@ function dimLabels(key, indicators, years, states, genders, sectors){
   if (key === "indicator") return indicators;
   return years;
 }
-function dimKeyName(key){
-  return ({year:"Year", sector:"Sector", gender:"Gender", state:"State", indicator:"Indicator"})[key] || key;
+
+function dimKeyName(key) {
+  return ({ year: "Year", sector: "Sector", gender: "Gender", state: "State", indicator: "Indicator" })[key] || key;
 }
-function rowMatchesDim(r, key, value){
+
+function rowMatchesDim(r, key, value) {
   if (key === "year") return String(r.year) === String(value);
   if (key === "sector") return r.sector === value;
   if (key === "gender") return r.gender === value;
@@ -617,7 +741,8 @@ function rowMatchesDim(r, key, value){
   if (key === "indicator") return r.indicator === value;
   return true;
 }
-function resolveSeriesDim(xKey, indicators, years, states, genders, sectors){
+
+function resolveSeriesDim(xKey, indicators, years, states, genders, sectors) {
   let s = chartSeriesDim;
   if (s === "auto") {
     if (xKey !== "sector" && sectors.length > 1) s = "sector";
@@ -630,7 +755,8 @@ function resolveSeriesDim(xKey, indicators, years, states, genders, sectors){
   if (s === xKey) s = "none";
   return s;
 }
-function buildChartMeta(indicators, years, states, genders, sectors){
+
+function buildChartMeta(indicators, years, states, genders, sectors) {
   let inds = indicators.slice();
   if (chartFocusIndicator && inds.includes(chartFocusIndicator)) {
     inds = [chartFocusIndicator];
@@ -646,28 +772,28 @@ function buildChartMeta(indicators, years, states, genders, sectors){
     filter: (r, cat) => {
       if (!rowMatchesDim(r, xKey, cat)) return false;
       if (sKey !== "none" && !rowMatchesDim(r, sKey, lab)) return false;
-      if (xKey !== "indicator" && sKey !== "indicator") {
-        if (!inds.includes(r.indicator)) return false;
-      }
+      if (xKey !== "indicator" && sKey !== "indicator" && !inds.includes(r.indicator)) return false;
       return true;
     }
   }));
 
   const titleParts = [];
-  if (inds.length === 1) titleParts.push(inds[0].slice(0, 40));
-  else if (xKey !== "indicator" && sKey !== "indicator") titleParts.push(inds.length + " indicators");
-  titleParts.push("by " + dimKeyName(xKey));
-  if (sKey !== "none") titleParts.push("· series: " + dimKeyName(sKey));
+  if (inds.length === 1) titleParts.push(inds[0].slice(0, 50));
+  else if (xKey !== "indicator" && sKey !== "indicator") titleParts.push(`${inds.length} indicators`);
+  titleParts.push(`by ${dimKeyName(xKey)}`);
+  if (sKey !== "none") titleParts.push(`· series: ${dimKeyName(sKey)}`);
 
   return { categories, series, xKey, sKey, title: titleParts.join(" "), indicators: inds };
 }
-function seriesValuesFromMeta(meta){
+
+function seriesValuesFromMeta(meta) {
   return meta.series.map(s => meta.categories.map(cat => {
     const subset = currentRows.filter(r => s.filter(r, cat));
     return avg(subset.map(r => r.value));
   }));
 }
-function updateChartFilterUI(indicators){
+
+function updateChartFilterUI(indicators) {
   const pick = document.getElementById("chartIndicatorPick");
   const wrap = document.getElementById("chartIndWrap");
   if (!pick || !wrap) return;
@@ -675,175 +801,262 @@ function updateChartFilterUI(indicators){
     wrap.style.display = "block";
     const prev = chartFocusIndicator;
     pick.innerHTML = '<option value="">All selected indicators</option>' +
-      indicators.map(i => '<option value="'+esc(i)+'"'+(i===prev?' selected':'')+'>'+esc(i)+'</option>').join("");
+      indicators.map(i => `<option value="${esc(i)}"${i === prev ? " selected" : ""}>${esc(i)}</option>`).join("");
   } else {
     wrap.style.display = "none";
     chartFocusIndicator = "";
   }
 }
-function drawChart(indicators, years, states, genders, sectors){
-  lastIndicators = indicators;
-  lastYears = years;
-  lastStates = states || [];
-  lastGenders = genders || [];
-  lastSectors = sectors || [];
+
+function drawChart(indicators, years, states, genders, sectors) {
+  lastIndicators = indicators; lastYears = years; lastStates = states || [];
+  lastGenders = genders || []; lastSectors = sectors || [];
   updateChartFilterUI(indicators);
+  
   const svg = document.getElementById("chart");
   const hint = document.getElementById("chartHint");
   const type = currentChartType;
   const meta = buildChartMeta(indicators, years, states, genders, sectors);
   hint.textContent = meta.title;
+
   if (type === "line") drawCategoryLine(svg, meta);
   else if (type === "bar" || type === "grouped") drawCategoryBars(svg, meta);
   else if (type === "hbar") drawCategoryHBars(svg, meta);
 }
-function drawAxes(svg, W, H, L, R, T, B, min, max){
-  const plotW = W-L-R, plotH = H-T-B;
-  const range = Math.max(max-min, 1);
+
+function drawAxes(svg, W, H, L, R, T, B, min, max) {
+  const plotW = W - L - R, plotH = H - T - B;
+  const range = Math.max(max - min, 1);
   let out = "";
   for (let i = 0; i < 5; i++) {
     const y = T + i * plotH / 4;
     const v = max - i * range / 4;
-    out += '<line x1="'+L+'" y1="'+y+'" x2="'+(W-R)+'" y2="'+y+'" stroke="#d7e3e8"/>' +
-           '<text x="'+(L-10)+'" y="'+(y+4)+'" text-anchor="end" font-size="12" fill="#5c7185">'+v.toLocaleString(undefined,{maximumFractionDigits:1})+'</text>';
+    out += `<line x1="${L}" y1="${y}" x2="${W - R}" y2="${y}" stroke="#d7e3e8"/>
+            <text x="${L - 10}" y="${y + 4}" text-anchor="end" font-size="12" fill="#5c7185">${v.toLocaleString(undefined, { maximumFractionDigits: 1 })}</text>`;
   }
-  out += '<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+(H-B)+'" stroke="#5c7185"/>' +
-         '<line x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'" stroke="#5c7185"/>';
-  return {out, plotW, plotH, range};
+  out += `<line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#5c7185"/>
+          <line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#5c7185"/>`;
+  return { out, plotW, plotH, range };
 }
-function drawCategoryLine(svg, meta){
-  const W=1200, H=620, L=80, R=40, T=55, B=110;
+
+function drawCategoryLine(svg, meta) {
+  const W = 1200, H = 620, L = 80, R = 40, T = 55, B = 110;
   const vals = seriesValuesFromMeta(meta);
   const all = vals.flat().filter(Number.isFinite);
-  const min = Math.min(...(all.length?all:[0]), 0), max = Math.max(...(all.length?all:[1]), 1);
-  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
-  let out = axes + '<text x="'+(W/2)+'" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#0a3357">'+esc(meta.title.slice(0,80))+'</text>';
-  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b","#c2410c","#0369a1"];
+  const min = 0, max = Math.max(...(all.length ? all : [1]), 1);
+  const { out: axes, plotW, plotH, range } = drawAxes(svg, W, H, L, R, T, B, min, max);
+  let out = axes + `<text x="${W / 2}" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#0a3357">${esc(meta.title.slice(0, 80))}</text>`;
+  const palette = ["#FF6B00", "#0a3357", "#b8860b", "#b5563a", "#3d7a5c", "#4a6785", "#6b4e71", "#14919b"];
   const cats = meta.categories;
+
   meta.series.forEach((s, si) => {
     const pts = vals[si].map((v, i) => {
-      const x = cats.length === 1 ? L + plotW/2 : L + (i / Math.max(cats.length-1,1)) * plotW;
-      const y = T + (1 - (v-min)/range) * plotH;
-      return [x,y];
+      const x = cats.length === 1 ? L + plotW / 2 : L + (i / Math.max(cats.length - 1, 1)) * plotW;
+      const y = T + (1 - (v - min) / range) * plotH;
+      return [x, y];
     });
-    if (pts.length > 1) out += '<polyline fill="none" stroke="'+palette[si%palette.length]+'" stroke-width="3.5" points="'+pts.map(p=>p[0]+","+p[1]).join(" ")+'"/>';
-    pts.forEach(p => { out += '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="'+palette[si%palette.length]+'"/>'; });
+    if (pts.length > 1) out += `<polyline fill="none" stroke="${palette[si % palette.length]}" stroke-width="3.5" points="${pts.map(p => p[0] + "," + p[1]).join(" ")}"/>`;
+    pts.forEach(p => { out += `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${palette[si % palette.length]}"/>`; });
   });
+
   cats.forEach((c, i) => {
-    const x = cats.length === 1 ? L + plotW/2 : L + (i / Math.max(cats.length-1,1)) * plotW;
-    out += '<text x="'+x+'" y="'+(H-75)+'" text-anchor="middle" font-size="11" fill="#5c7185">'+esc(String(c).slice(0,14))+'</text>';
+    const x = cats.length === 1 ? L + plotW / 2 : L + (i / Math.max(cats.length - 1, 1)) * plotW;
+    out += `<text x="${x}" y="${H - 75}" text-anchor="middle" font-size="11" fill="#5c7185">${esc(String(c).slice(0, 14))}</text>`;
   });
+
   const perRow = Math.min(meta.series.length, 5);
   meta.series.forEach((s, si) => {
     const row = Math.floor(si / perRow), col = si % perRow;
     const lx = 80 + col * 220, ly = H - 42 + row * 18;
-    out += '<line x1="'+lx+'" y1="'+ly+'" x2="'+(lx+18)+'" y2="'+ly+'" stroke="'+palette[si%palette.length]+'" stroke-width="3.5"/>' +
-           '<text x="'+(lx+24)+'" y="'+(ly+4)+'" font-size="11" fill="#17324a">'+esc(String(s.label).slice(0,24))+'</text>';
+    out += `<line x1="${lx}" y1="${ly}" x2="${lx + 18}" y2="${ly}" stroke="${palette[si % palette.length]}" stroke-width="3.5"/>
+            <text x="${lx + 24}" y="${ly + 4}" font-size="11" fill="#17324a">${esc(String(s.label).slice(0, 24))}</text>`;
   });
-  svg.setAttribute("viewBox", "0 0 "+W+" "+H);
+
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-function drawCategoryBars(svg, meta){
-  const W=1200, H=620, L=80, R=40, T=55, B=110;
+
+function drawCategoryBars(svg, meta) {
+  const W = 1200, H = 620, L = 80, R = 40, T = 55, B = 110;
   const vals = seriesValuesFromMeta(meta);
   const all = vals.flat().filter(Number.isFinite);
-  const min = 0, max = Math.max(...(all.length?all:[1]), 1);
-  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
-  let out = axes + '<text x="'+(W/2)+'" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#0a3357">'+esc(meta.title.slice(0,80))+'</text>';
-  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b","#c2410c","#0369a1"];
+  const min = 0, max = Math.max(...(all.length ? all : [1]), 1);
+  const { out: axes, plotW, plotH, range } = drawAxes(svg, W, H, L, R, T, B, min, max);
+  let out = axes + `<text x="${W / 2}" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#0a3357">${esc(meta.title.slice(0, 80))}</text>`;
+  const palette = ["#FF6B00", "#0a3357", "#b8860b", "#b5563a", "#3d7a5c", "#4a6785", "#6b4e71", "#14919b"];
   const cats = meta.categories;
   const nCats = cats.length, nSeries = meta.series.length;
   const groupW = plotW / Math.max(nCats, 1);
   const barW = Math.min(26, (groupW * 0.78) / Math.max(nSeries, 1));
+
   cats.forEach((c, yi) => {
-    const gx = L + yi * groupW + groupW/2;
+    const gx = L + yi * groupW + groupW / 2;
     meta.series.forEach((s, si) => {
       const v = vals[si][yi];
       const h = ((v - min) / range) * plotH;
-      const x = gx - (nSeries * barW)/2 + si * barW;
+      const x = gx - (nSeries * barW) / 2 + si * barW;
       const y = T + plotH - h;
-      out += '<rect x="'+x+'" y="'+y+'" width="'+Math.max(barW-2,3)+'" height="'+Math.max(h,1)+'" fill="'+palette[si%palette.length]+'" rx="3"/>';
+      out += `<rect x="${x}" y="${y}" width="${Math.max(barW - 2, 3)}" height="${Math.max(h, 1)}" fill="${palette[si % palette.length]}" rx="3"/>`;
     });
-    out += '<text x="'+gx+'" y="'+(H-75)+'" text-anchor="middle" font-size="11" fill="#5c7185">'+esc(String(c).slice(0,14))+'</text>';
+    out += `<text x="${gx}" y="${H - 75}" text-anchor="middle" font-size="11" fill="#5c7185">${esc(String(c).slice(0, 14))}</text>`;
   });
+
   const perRow = Math.min(meta.series.length, 5);
   meta.series.forEach((s, si) => {
     const row = Math.floor(si / perRow), col = si % perRow;
     const lx = 80 + col * 220, ly = H - 42 + row * 18;
-    out += '<rect x="'+lx+'" y="'+(ly-7)+'" width="14" height="10" fill="'+palette[si%palette.length]+'" rx="2"/>' +
-           '<text x="'+(lx+20)+'" y="'+ly+'" font-size="11" fill="#17324a">'+esc(String(s.label).slice(0,24))+'</text>';
+    out += `<rect x="${lx}" y="${ly - 7}" width="14" height="10" fill="${palette[si % palette.length]}" rx="2"/>
+            <text x="${lx + 20}" y="${ly}" font-size="11" fill="#17324a">${esc(String(s.label).slice(0, 24))}</text>`;
   });
-  svg.setAttribute("viewBox", "0 0 "+W+" "+H);
+
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-function drawCategoryHBars(svg, meta){
+
+function drawCategoryHBars(svg, meta) {
   const data = [];
   const vals = seriesValuesFromMeta(meta);
   meta.categories.forEach((c, ci) => {
     meta.series.forEach((s, si) => {
-      const label = meta.series.length === 1 ? String(c) : (String(c).slice(0,12) + " · " + String(s.label).slice(0,14));
-      data.push({label, value: vals[si][ci]});
+      const label = meta.series.length === 1 ? String(c) : `${String(c).slice(0, 12)} · ${String(s.label).slice(0, 14)}`;
+      data.push({ label, value: vals[si][ci] });
     });
   });
   const max = Math.max(...data.map(d => d.value), 1);
   const W = 1200, H = Math.max(420, 70 + data.length * 34);
   const L = 210, R = 90, T = 44, B = 30;
   const plotW = W - L - R, plotH = H - T - B;
-  const barH = Math.min(24, plotH / Math.max(data.length,1) * 0.7);
-  let out = '<text x="'+(W/2)+'" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#0a3357">'+esc(meta.title.slice(0,80))+'</text>';
-  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
+  const barH = Math.min(24, plotH / Math.max(data.length, 1) * 0.7);
+  let out = `<text x="${W / 2}" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#0a3357">${esc(meta.title.slice(0, 80))}</text>`;
+  const palette = ["#FF6B00", "#0a3357", "#b8860b", "#b5563a", "#3d7a5c", "#4a6785", "#6b4e71", "#14919b"];
+
   data.forEach((d, i) => {
-    const y = T + (i + 0.5) * (plotH / data.length) - barH/2;
+    const y = T + (i + 0.5) * (plotH / data.length) - barH / 2;
     const w = (d.value / max) * plotW;
-    out += '<rect x="'+L+'" y="'+y+'" width="'+Math.max(w,2)+'" height="'+barH+'" fill="'+palette[i%palette.length]+'" rx="4"/>' +
-           '<text x="'+(L-10)+'" y="'+(y+barH/2+4)+'" text-anchor="end" font-size="11" fill="#17324a">'+esc(String(d.label).slice(0,30))+'</text>' +
-           '<text x="'+(L+w+8)+'" y="'+(y+barH/2+4)+'" font-size="12" font-weight="700" fill="#0a3357">'+d.value.toLocaleString(undefined,{maximumFractionDigits:1})+'</text>';
+    out += `<rect x="${L}" y="${y}" width="${Math.max(w, 2)}" height="${barH}" fill="${palette[i % palette.length]}" rx="4"/>
+            <text x="${L - 10}" y="${y + barH / 2 + 4}" text-anchor="end" font-size="11" fill="#17324a">${esc(String(d.label).slice(0, 30))}</text>
+            <text x="${L + w + 8}" y="${y + barH / 2 + 4}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined, { maximumFractionDigits: 1 })}</text>`;
   });
-  svg.setAttribute("viewBox", "0 0 "+W+" "+H);
+
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
+}
+
+// Map Viewer implementation
+let indiaGeoData = null;
+async function loadIndiaMap() {
+  if (indiaGeoData) return indiaGeoData;
+  try {
+    const res = await fetch("https://raw.githubusercontent.com/Subhash9325/GeoJson-Data-of-Indian-States/master/Indian_States");
+    indiaGeoData = await res.json();
+    return indiaGeoData;
+  } catch (e) {
+    console.error("Failed to load map GeoJSON", e);
+    return null;
+  }
+}
+
+async function drawMap() {
+  const geojson = await loadIndiaMap();
+  if (!geojson) {
+    document.getElementById("mapTitle").textContent = "Unable to load state boundaries.";
+    return;
+  }
+
+  const svg = d3.select("#indiaMap");
+  svg.selectAll("*").remove();
+
+  const width = 800, height = 900;
+  const projection = d3.geoMercator().center([78.9629, 22.5937]).scale(1100).translate([width / 2, height / 2]);
+  const pathGenerator = d3.geoPath().projection(projection);
+
+  const stateValues = {};
+  currentRows.forEach(r => {
+    const s = r.state.trim().toLowerCase();
+    if (!stateValues[s]) stateValues[s] = [];
+    stateValues[s].push(r.value);
+  });
+
+  const stateAverages = {};
+  let minVal = Infinity, maxVal = -Infinity;
+  for (const [state, vals] of Object.entries(stateValues)) {
+    const mean = avg(vals);
+    stateAverages[state] = mean;
+    if (mean < minVal) minVal = mean;
+    if (mean > maxVal) maxVal = mean;
+  }
+  if (minVal === Infinity) { minVal = 0; maxVal = 1; }
+
+  const colorScale = d3.scaleSequential()
+    .domain([minVal, maxVal])
+    .interpolator(d3.interpolate("#FFE8D6", "#FF6B00"));
+
+  const tooltip = d3.select("#mapTooltip");
+
+  svg.append("g")
+    .selectAll("path")
+    .data(geojson.features)
+    .join("path")
+    .attr("d", pathGenerator)
+    .attr("fill", d => {
+      const stateName = (d.properties.NAME_1 || d.properties.st_nm || "").trim().toLowerCase();
+      const val = stateAverages[stateName];
+      return val !== undefined ? colorScale(val) : "#e2e8f0";
+    })
+    .attr("stroke", "#ffffff")
+    .attr("stroke-width", "1.2")
+    .style("cursor", "pointer")
+    .on("mouseover", (event, d) => {
+      const stateName = d.properties.NAME_1 || d.properties.st_nm || "State";
+      const val = stateAverages[stateName.toLowerCase()];
+      tooltip.style("display", "block")
+        .html(`<strong>${stateName}</strong><br/>Value: ${val !== undefined ? val.toLocaleString(undefined, { maximumFractionDigits: 2 }) : "No Data"}`);
+    })
+    .on("mousemove", (event) => {
+      tooltip.style("left", (event.offsetX + 15) + "px").style("top", (event.offsetY - 20) + "px");
+    })
+    .on("mouseout", () => tooltip.style("display", "none"));
 }
 
 document.getElementById("applyBtn").addEventListener("click", runQuery);
 document.getElementById("resetBtn").addEventListener("click", () => {
   sourceEl.value = "PLFS";
-  renderFilterUI({
-    indicators: ["Labour Force Participation Rate"],
-    estimates: ["PS+SS"], years: [dimensions.year.values[0] || ""], frequencies: ["Annual"],
-    states: ["India"], genders: ["Person"], sectors: ["Total"], ages: ["15 & above"]
-  });
-  runQuery();
+  loadSource("PLFS");
 });
-function csvContent(){
-  const header = ["Indicator","Type of Estimate","Year","Frequency","States","Gender","Sector","Age-group (years)","Value","Unit"];
-  const rows = currentRows.map(r => [r.indicator,r.estimate,r.year,r.frequency,r.state,r.gender,r.sector,r.age,r.value,unitFor(r.indicator)]);
-  return [header, ...rows].map(row => row.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+
+function csvContent() {
+  const header = ["Indicator", "Type of Estimate", "Year", "Frequency", "States", "Gender", "Sector", "Age-group (years)", "Value", "Unit"];
+  const rows = currentRows.map(r => [r.indicator, r.estimate, r.year, r.frequency, r.state, r.gender, r.sector, r.age, r.value, unitFor(r.indicator)]);
+  return [header, ...rows].map(row => row.map(v => `"${String(v).replaceAll('"', '""')}"`).join(",")).join("\n");
 }
-function downloadBlob(content, name, type){
-  const blob = new Blob([content], {type});
+
+function downloadBlob(content, name, type) {
+  const blob = new Blob([content], { type });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
 document.getElementById("csv").addEventListener("click", () => {
-  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
+  downloadBlob("\ufeff" + csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
 });
 document.getElementById("excel").addEventListener("click", () => {
-  downloadBlob("\ufeff"+csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
+  downloadBlob("\ufeff" + csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
 });
 document.getElementById("print").addEventListener("click", () => window.print());
 document.getElementById("png").addEventListener("click", () => {
   const svg = document.getElementById("chart");
   const sourceText = new XMLSerializer().serializeToString(svg);
-  const blob = new Blob([sourceText], {type:"image/svg+xml;charset=utf-8"});
+  const blob = new Blob([sourceText], { type: "image/svg+xml;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const img = new Image();
   img.onload = () => {
     const canvas = document.createElement("canvas");
     canvas.width = 1800; canvas.height = 930;
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#fff"; ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     URL.revokeObjectURL(url);
     canvas.toBlob(b => {
       const u = URL.createObjectURL(b);
@@ -853,16 +1066,20 @@ document.getElementById("png").addEventListener("click", () => {
   };
   img.src = url;
 });
+
 document.querySelectorAll(".tab").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    const isTable = btn.dataset.tab === "table";
-    document.getElementById("tablePanel").hidden = !isTable;
-    document.getElementById("chartPanel").hidden = isTable;
-    if (!isTable) drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
+    const tab = btn.dataset.tab;
+    document.getElementById("tablePanel").hidden = tab !== "table";
+    document.getElementById("chartPanel").hidden = tab !== "chart";
+    document.getElementById("mapPanel").hidden = tab !== "map";
+    if (tab === "chart") drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
+    if (tab === "map") drawMap();
   });
 });
+
 document.querySelectorAll(".chart-type-btn[data-chart]").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".chart-type-btn[data-chart]").forEach(b => b.classList.remove("active"));
@@ -871,7 +1088,8 @@ document.querySelectorAll(".chart-type-btn[data-chart]").forEach(btn => {
     drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
   });
 });
-function applyChartFilters(){
+
+function applyChartFilters() {
   const xa = document.getElementById("chartXAxis");
   const sd = document.getElementById("chartSeries");
   const fi = document.getElementById("chartIndicatorPick");
@@ -881,10 +1099,12 @@ function applyChartFilters(){
   drawChart(lastIndicators, lastYears, lastStates, lastGenders, lastSectors);
 }
 document.getElementById("chartApplyBtn")?.addEventListener("click", applyChartFilters);
-["chartXAxis","chartSeries","chartIndicatorPick"].forEach(id => {
+["chartXAxis", "chartSeries", "chartIndicatorPick"].forEach(id => {
   document.getElementById(id)?.addEventListener("change", applyChartFilters);
 });
-loadPLFS();
+
+// Initial load
+loadSource("PLFS");
 </script>
 </body>
 </html>
