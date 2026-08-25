@@ -161,7 +161,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <section class="hero">
 <div class="hero-inner">
 <div class="eyebrow">VVGNLI Data Portal</div>
-<h2>Explore India's Labour &amp; Employment</h2>
+<h2>Explore India's Labour &amp; Employment Statistics</h2>
 <p>Explore, compare and download statistics from PLFS, EPFO and ESIC through a single interface.</p>
 <div class="search"><input id="searchInput" type="search" placeholder="Search indicator, source or state..."><button id="searchBtn">Search</button></div>
 </div>
@@ -291,13 +291,13 @@ const keyIndicators = [
   {name:"Growth of Labour Force (%)",                   icon:"trend", unit:"Percent", estimate:"PS+SS"},
   {name:"Growth of Employed Persons (%)",               icon:"trend", unit:"Percent", estimate:"PS+SS"},
   /* NEET & wages – CWS */
-  {name:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"CWS"},
+  {name:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"PS+SS"},
   {name:"Average wages of casual workers",              icon:"rupee", unit:"INR",     estimate:"CWS"},
   {name:"Average monthly earnings – regular salaried",  icon:"rupee", unit:"INR",     estimate:"CWS"},
   {name:"Average monthly earnings – self-employed",     icon:"rupee", unit:"INR",     estimate:"CWS"},
   /* Skills – PS+SS */
-  {name:"Access to technical education",                icon:"edu",   unit:"Percent", estimate:"PS+SS"},
-  {name:"Access to vocational training",                icon:"edu",   unit:"Percent", estimate:"PS+SS"}
+  {name:"Access to technical education",                icon:"edu",   unit:"Percent"},
+  {name:"Access to vocational training",                icon:"edu",   unit:"Percent"}
 ];
 const kiIcons = {
   chart:`<svg viewBox="0 0 24 24"><path d="M4 19V5h16v14"/><path d="M7 15l3-4 3 2 4-5"/></svg>`,
