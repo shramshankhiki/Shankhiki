@@ -142,7 +142,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <body>
 <div class="topbar">
   <span>Government of India | Ministry of Labour &amp; Employment</span>
-  <span>V.V. Giri National Labour Institute | Labour Market Statistics</span>
+  <span>V.V. Giri National Labour Institute | Labour & Employment Statistics</span>
 </div>
 
 <!-- ===== NEW HEADER STRUCTURE ===== -->
@@ -160,15 +160,14 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
   <!-- Center: Main Title -->
   <a href="index.html" class="header-center">
     <h1>Shram Sankhyiki</h1>
-    <p>Labour Market Statistics</p>
+    <p>Labour & Employment Statistics</p>
   </a>
   
   <!-- Right: VVGNLI -->
   <div class="header-side header-right">
     <div class="logo-text" style="text-align:right">
-      <strong>V.V. Giri National</strong>
-      <span>Labour Institute</span>
-    </div>
+      <strong>V.V. Giri National Labour Institute</strong>
+     </div>
     <img class="logo-img" src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
   </div>
 </div>
@@ -182,7 +181,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 <section class="hero">
 <div class="hero-top">
 <div>
-<h2 id="pageTitle">Selected Labour Market Data</h2>
+<h2 id="pageTitle">Selected Labour & Employment Data</h2>
 <p id="description">Multi-dimensional results generated from your selected filters.</p>
 <div class="badges">
   <span class="badge" id="sourceBadge">PLFS</span>
@@ -362,7 +361,7 @@ Production data: results are retrieved from the connected PLFS dataset. EPFO and
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India">
       <img src="https://vvgnli.gov.in/themes/vvgov/images/logo2.jpg" alt="VVGNLI" onerror="this.src='https://vvgnli.gov.in/sites/default/files/default_images/logo2_0.png'">
     </div>
-    <span><strong>Shram Sankhyiki </strong><br>Labour Market Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
+    <span><strong>Shram Sankhyiki </strong><br>Labour & Employment Statistics Portal<br>V.V. Giri National Labour Institute, Sector 24, NOIDA</span>
   </div>
   <span>Ministry of Labour &amp; Employment<br>Government of India</span>
   <span><a href="#" style="color:#fff">RTI</a> · <a href="#" style="color:#fff">Sitemap</a> · <a href="#" style="color:#fff">Disclaimer</a> · <a href="#" style="color:#fff">Contact Us</a></span>
@@ -573,7 +572,7 @@ function runQuery(){
   currentRows.sort((a,b)=>a.indicator.localeCompare(b.indicator)||Number(a.year)-Number(b.year)||a.state.localeCompare(b.state)||a.gender.localeCompare(b.gender)||a.sector.localeCompare(b.sector)||a.age.localeCompare(b.age));
 
   const single=indicators.length===1;
-  document.getElementById("pageTitle").textContent=single?indicators[0]:"Selected Labour Market Data";
+  document.getElementById("pageTitle").textContent=single?indicators[0]:"Selected Labour & Employment Data";
   document.getElementById("sourceBadge").textContent=source;
   document.getElementById("resultBadge").textContent=`${currentRows.length.toLocaleString()} observations`;
   document.getElementById("combinationCount").textContent=currentRows.length.toLocaleString();
