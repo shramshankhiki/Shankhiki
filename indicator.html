@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <style>
 :root{
   --navy:#0a3357;--navy-deep:#082347;--teal:#0f766e;--teal2:#14919b;--mint:#eaf8f6;
@@ -192,9 +193,9 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 </div>
 </div>
 <div class="latest">
-  <small>Selected combinations</small>
+  <small>Selected observations</small>
   <strong id="combinationCount">0</strong>
-  <span>filter combinations</span>
+  <span>matching rows</span>
 </div>
 </div>
 </section>
@@ -286,7 +287,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 </div>
 <div class="downloads">
 <button class="download" id="csv">↓ CSV</button>
-<button class="download" id="excel">↓ Excel</button>
+<button class="download" id="excel">↓ Excel (.xlsx)</button>
 <button class="download" id="png">↓ Chart PNG</button>
 <button class="download" id="print">Print</button>
 </div>
@@ -368,7 +369,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
       <div id="mapTooltip"></div>
     </div>
   </div>
-  <div class="meta" id="mapMeta">Displays state-wise values for the selected indicator and filters.</div>
+  <div class="meta" id="mapMeta">Displays state/UT-wise values using the supplied India State Boundary dataset.</div>
 </section>
 </main>
 
@@ -439,19 +440,22 @@ function normalizeStateName(str) {
     .replace(/[^a-z0-9]/g, "");
 
   const stateAliases = {
-    "andamanandnicobar": "andamanandnicobarislands",
-    "andamanandnicobarislands": "andamanandnicobarislands",
-    "damananddiuanddadraandnagarhaveli": "dnhdd",
-    "dadraandnagarhavelianddamananddiu": "dnhdd",
+    "andamanandnicobar": "andamanandnicobar",
+    "andamanandnicobarislands": "andamanandnicobar",
+    "damananddiuanddadraandnagarhaveli": "damananddiuanddadraandnagarhaveli",
+    "dadraandnagarhavelianddamananddiu": "damananddiuanddadraandnagarhaveli",
     "dadraandnagarhaveli": "dnhdd",
     "dadranagarhaveli": "dnhdd",
-    "damananddiu": "dnhdd",
+    "damananddiu": "damananddiuanddadraandnagarhaveli",
     "delhi": "delhi",
     "nctofdelhi": "delhi",
     "jammuandkashmir": "jammuandkashmir",
-    "chhattishgarh": "chhattisgarh",
+    "chhattishgarh": "chhattishgarh",
+    "chhattisgarh": "chhattishgarh",
     "chhatisgarh": "chhattisgarh",
-    "telengana": "telangana",
+    "telengana": "telengana",
+    "telangana": "telengana",
+    "tamilnadu": "tamilnadu",
     "tamilnadu": "tamilnadu",
     "orissa": "odisha",
     "pondicherry": "puducherry",
@@ -778,7 +782,7 @@ let currentChartType = "line";
 let lastIndicators = [], lastYears = [], lastStates = [], lastGenders = [], lastSectors = [];
 let chartXAxis = "year", chartSeriesDim = "auto", chartFocusIndicator = "";
 
-function avg(arr) { return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0; }
+function avg(arr) { return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null; }
 
 function dimLabels(key, indicators, years, states, genders, sectors) {
   if (key === "year") return years;
@@ -880,7 +884,8 @@ function drawChart(indicators, years, states, genders, sectors) {
   hint.textContent = meta.title;
 
   if (type === "line") drawCategoryLine(svg, meta);
-  else if (type === "bar" || type === "grouped") drawCategoryBars(svg, meta);
+  else if (type === "bar") drawCategoryBars(svg, meta, false);
+  else if (type === "grouped") drawCategoryBars(svg, meta, true);
   else if (type === "hbar") drawCategoryHBars(svg, meta);
 }
 
@@ -911,12 +916,30 @@ function drawCategoryLine(svg, meta) {
 
   meta.series.forEach((s, si) => {
     const pts = vals[si].map((v, i) => {
+      if (!Number.isFinite(v)) return null;
       const x = cats.length === 1 ? L + plotW / 2 : L + (i / Math.max(cats.length - 1, 1)) * plotW;
       const y = T + (1 - (v - min) / range) * plotH;
       return [x, y];
     });
-    if (pts.length > 1) out += `<polyline fill="none" stroke="${palette[si % palette.length]}" stroke-width="3.5" points="${pts.map(p => p[0] + "," + p[1]).join(" ")}"/>`;
-    pts.forEach(p => { out += `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${palette[si % palette.length]}"/>`; });
+
+    // Split the line at missing observations instead of plotting missing data as zero.
+    let segment = [];
+    const flushSegment = () => {
+      if (segment.length > 1) {
+        out += `<polyline fill="none" stroke="${palette[si % palette.length]}" stroke-width="3.5" points="${segment.map(p => p[0] + "," + p[1]).join(" ")}"/>`;
+      }
+      segment = [];
+    };
+
+    pts.forEach(p => {
+      if (p) {
+        segment.push(p);
+        out += `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${palette[si % palette.length]}"/>`;
+      } else {
+        flushSegment();
+      }
+    });
+    flushSegment();
   });
 
   cats.forEach((c, i) => {
@@ -936,7 +959,7 @@ function drawCategoryLine(svg, meta) {
   svg.innerHTML = out;
 }
 
-function drawCategoryBars(svg, meta) {
+function drawCategoryBars(svg, meta, grouped = false) {
   const W = 1200, H = 620, L = 80, R = 40, T = 55, B = 110;
   const vals = seriesValuesFromMeta(meta);
   const all = vals.flat().filter(Number.isFinite);
@@ -953,8 +976,11 @@ function drawCategoryBars(svg, meta) {
     const gx = L + yi * groupW + groupW / 2;
     meta.series.forEach((s, si) => {
       const v = vals[si][yi];
+      if (!Number.isFinite(v)) return;
       const h = ((v - min) / range) * plotH;
-      const x = gx - (nSeries * barW) / 2 + si * barW;
+      const x = grouped
+        ? gx - (nSeries * barW) / 2 + si * barW
+        : gx - barW / 2;
       const y = T + plotH - h;
       out += `<rect x="${x}" y="${y}" width="${Math.max(barW - 2, 3)}" height="${Math.max(h, 1)}" fill="${palette[si % palette.length]}" rx="3"/>`;
     });
@@ -982,7 +1008,8 @@ function drawCategoryHBars(svg, meta) {
       data.push({ label, value: vals[si][ci] });
     });
   });
-  const max = Math.max(...data.map(d => d.value), 1);
+  const validData = data.filter(d => Number.isFinite(d.value));
+  const max = Math.max(...validData.map(d => d.value), 1);
   const W = 1200, H = Math.max(420, 70 + data.length * 34);
   const L = 210, R = 90, T = 44, B = 30;
   const plotW = W - L - R, plotH = H - T - B;
@@ -991,11 +1018,17 @@ function drawCategoryHBars(svg, meta) {
   const palette = ["#FF6B00", "#0a3357", "#b8860b", "#b5563a", "#3d7a5c", "#4a6785", "#6b4e71", "#14919b"];
 
   data.forEach((d, i) => {
-    const y = T + (i + 0.5) * (plotH / data.length) - barH / 2;
+    const y = T + (i + 0.5) * (plotH / Math.max(data.length, 1)) - barH / 2;
+    const labelY = y + barH / 2 + 4;
+    if (!Number.isFinite(d.value)) {
+      out += `<text x="${L - 10}" y="${labelY}" text-anchor="end" font-size="11" fill="#17324a">${esc(String(d.label).slice(0, 30))}</text>
+              <text x="${L}" y="${labelY}" font-size="11" fill="#5c7185">No data</text>`;
+      return;
+    }
     const w = (d.value / max) * plotW;
     out += `<rect x="${L}" y="${y}" width="${Math.max(w, 2)}" height="${barH}" fill="${palette[i % palette.length]}" rx="4"/>
-            <text x="${L - 10}" y="${y + barH / 2 + 4}" text-anchor="end" font-size="11" fill="#17324a">${esc(String(d.label).slice(0, 30))}</text>
-            <text x="${L + w + 8}" y="${y + barH / 2 + 4}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined, { maximumFractionDigits: 1 })}</text>`;
+            <text x="${L - 10}" y="${labelY}" text-anchor="end" font-size="11" fill="#17324a">${esc(String(d.label).slice(0, 30))}</text>
+            <text x="${L + w + 8}" y="${labelY}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined, { maximumFractionDigits: 1 })}</text>`;
   });
 
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
@@ -1006,20 +1039,17 @@ function drawCategoryHBars(svg, meta) {
 let indiaGeoData = null;
 async function loadIndiaMap() {
   if (indiaGeoData) return indiaGeoData;
-  // Prefer local high-detail boundary (your India_State.json), then lighter CDN fallback
+  // Use the supplied India State Boundary dataset converted to web-optimized GeoJSON.
+  // This avoids third-party/community boundary fallbacks.
   const candidates = [
-    "data/India_State.json",
-    "India_State.json",
-    "data/India_State_Boundary.json",
-    "India_State_Boundary.json",
-    "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/india.geojson"
+    "data/india-states-medium.geojson",
+    "india-states-medium.geojson"
   ];
   for (const url of candidates) {
     try {
       const res = await fetch(url, { cache: "force-cache" });
       if (!res.ok) continue;
       const data = await res.json();
-      // Accept only a real FeatureCollection with geometries
       if (data && data.type === "FeatureCollection" && Array.isArray(data.features) && data.features.length && data.features[0].geometry) {
         indiaGeoData = data;
         return indiaGeoData;
@@ -1157,7 +1187,27 @@ document.getElementById("csv").addEventListener("click", () => {
   downloadBlob("\ufeff" + csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.csv`, "text/csv;charset=utf-8");
 });
 document.getElementById("excel").addEventListener("click", () => {
-  downloadBlob("\ufeff" + csvContent(), `Shram_Sankhyiki_${sourceEl.value}_filtered.xls`, "application/vnd.ms-excel;charset=utf-8");
+  if (typeof XLSX === "undefined") {
+    setDataStatus("Excel export library could not be loaded. Use CSV instead.", "error");
+    return;
+  }
+
+  const header = ["Indicator", "Type of Estimate", "Year", "Frequency", "States", "Gender", "Sector", "Age-group (years)", "Value", "Unit"];
+  const rows = currentRows.map(r => [
+    r.indicator, r.estimate, r.year, r.frequency, r.state, r.gender,
+    r.sector, r.age, r.value, unitFor(r.indicator)
+  ]);
+
+  const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
+  ws["!autofilter"] = { ref: ws["!ref"] };
+  ws["!cols"] = [
+    { wch: 42 }, { wch: 20 }, { wch: 14 }, { wch: 14 }, { wch: 24 },
+    { wch: 14 }, { wch: 18 }, { wch: 20 }, { wch: 14 }, { wch: 12 }
+  ];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Filtered Data");
+  XLSX.writeFile(wb, `Shram_Sankhyiki_${sourceEl.value}_filtered.xlsx`);
 });
 document.getElementById("print").addEventListener("click", () => window.print());
 document.getElementById("png").addEventListener("click", () => {
