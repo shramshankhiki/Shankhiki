@@ -975,13 +975,16 @@ let indiaGeoData = null;
 async function loadIndiaMap() {
   if (indiaGeoData) return indiaGeoData;
   try {
-    const res = await fetch("data/India_State_Boundary.json");
-    if (!res.ok) throw new Error("Local map file not found.");
+    // Fetching the RAW data directly from your GitHub repository
+    const res = await fetch("https://raw.githubusercontent.com/shramshankhiki/Shankhiki/main/data/India_State_Boundary.json");
+    
+    if (!res.ok) throw new Error("Map file not found on GitHub.");
+    
     indiaGeoData = await res.json();
     return indiaGeoData;
   } catch (e) {
     console.error("Failed to load map GeoJSON:", e);
-    document.getElementById("mapTitle").innerHTML = `State-wise Distribution <br><span style="color:#b5563a;font-size:12px;font-weight:600">Please ensure boundary file is placed at <code>data/India_State_Boundary.json</code>.</span>`;
+    document.getElementById("mapTitle").innerHTML = `State-wise Distribution <br><span style="color:#b5563a;font-size:12px;font-weight:600">Could not connect to the map data.</span>`;
     return null;
   }
 }
