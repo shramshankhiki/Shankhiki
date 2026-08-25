@@ -124,7 +124,8 @@ tbody tr:hover{background:#f7fbfc}
 #indiaMap {width:100%;max-width:720px;height:auto;display:block}
 #mapTooltip {position:absolute;display:none;padding:8px 12px;background:rgba(8,35,71,0.95);color:#fff;border-radius:6px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 14px rgba(0,0,0,0.2)}
 #mapLegend{width:min(560px,100%);margin-top:14px;padding:10px 12px;background:#fff;border:1px solid var(--border);border-radius:9px}
-#mapLegend .legend-title{font-size:11px;font-weight:800;color:var(--navy);margin-bottom:7px}
+#mapLegend .legend-title{font-size:11px;font-weight:800;color:var(--navy);margin-bottom:4px}
+#mapLegend .legend-indicator{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.35}
 #mapLegend .legend-bar{height:12px;border-radius:999px;border:1px solid rgba(8,47,73,.12)}
 #mapLegend .legend-labels{display:flex;justify-content:space-between;gap:12px;margin-top:5px;font-size:10px;color:var(--muted)}
 
@@ -372,7 +373,8 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     <div id="mapContainer">
       <svg id="indiaMap" viewBox="0 0 800 900"></svg>
        <div id="mapLegend" aria-label="Map legend">
-         <div class="legend-title">Value</div>
+         <div class="legend-title">Selected indicator</div>
+         <div class="legend-indicator" id="mapLegendIndicator">—</div>
          <div class="legend-bar" id="mapLegendBar"></div>
          <div class="legend-labels">
            <span id="mapLegendMin">Low</span>
@@ -1145,17 +1147,31 @@ async function drawMap() {
     .domain([minVal, maxVal])
     .interpolator(d3.interpolate("#FFE8D6", "#FF6B00"));
 
-  // Update the legend to match the currently filtered map values.
+  // Update the legend to show the selected indicator and unit-aware range.
   const legendBar = document.getElementById("mapLegendBar");
+  const legendIndicator = document.getElementById("mapLegendIndicator");
   const legendMin = document.getElementById("mapLegendMin");
   const legendMax = document.getElementById("mapLegendMax");
-  if (legendBar && legendMin && legendMax) {
-    const low = minVal.toLocaleString(undefined, { maximumFractionDigits: 2 });
-    const high = maxVal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+
+  if (legendBar && legendIndicator && legendMin && legendMax) {
+    const activeIndicators = [...new Set(currentRows.map(r => r.indicator))];
+    const activeIndicator = activeIndicators.length === 1
+      ? activeIndicators[0]
+      : (activeIndicators.length > 1 ? "Selected indicators" : "Selected indicator");
+
+    const unit = activeIndicators.length === 1 ? unitFor(activeIndicators[0]) : "";
+    const formatLegendValue = value => {
+      const n = Number(value);
+      const formatted = n.toLocaleString(undefined, { maximumFractionDigits: 2 });
+      return unit === "INR" ? `₹${formatted}` : unit === "Percent" ? `${formatted}%` : `${formatted} ${unit}`;
+    };
+
+    legendIndicator.textContent = activeIndicator;
     legendBar.style.background =
       "linear-gradient(90deg, #FFE8D6 0%, #FFB066 50%, #FF6B00 100%)";
-    legendMin.textContent = low;
-    legendMax.textContent = high;
+    legendMin.textContent = formatLegendValue(minVal);
+    legendMax.textContent = formatLegendValue(maxVal);
+    legendBar.setAttribute("aria-label", `${activeIndicator}: ${formatLegendValue(minVal)} to ${formatLegendValue(maxVal)}`);
   }
 
   const tooltip = d3.select("#mapTooltip");
@@ -1180,7 +1196,19 @@ async function drawMap() {
       const rawName = p.Name || p.ST_NM || p.st_nm || p.State_Name || p.STATE || p.NAME_1 || p.name || "State";
       const val = stateAverages[normalizeStateName(rawName)];
       tooltip.style("display", "block")
-        .html(`<strong>${rawName}</strong><br/>Value: ${val !== undefined ? val.toLocaleString(undefined, { maximumFractionDigits: 2 }) : "No Data"}`);
+        .html(() => {
+          const activeIndicators = [...new Set(currentRows.map(r => r.indicator))];
+          const activeIndicator = activeIndicators.length === 1 ? activeIndicators[0] : "";
+          const unit = activeIndicators.length === 1 ? unitFor(activeIndicators[0]) : "";
+          const shown = val !== undefined
+            ? (unit === "INR"
+                ? `₹${val.toLocaleString(undefined, { maximumFractionDigits: 2 })}`
+                : unit === "Percent"
+                  ? `${val.toLocaleString(undefined, { maximumFractionDigits: 2 })}%`
+                  : `${val.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit}`)
+            : "No Data";
+          return `<strong>${rawName}</strong><br/>${activeIndicator ? esc(activeIndicator) + "<br/>" : ""}Value: ${shown}`;
+        });
     })
     .on("mousemove", (event) => {
       const [x, y] = d3.pointer(event, document.getElementById("mapContainer"));
