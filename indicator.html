@@ -578,15 +578,44 @@ async function loadSource(source) {
     setDataStatus(`${source} loaded successfully: ${currentDataset.length.toLocaleString()} rows.`, "success");
     sourceEl.value = source;
 
+    // Prefer filters from URL query string (deep links from Home key cards / shared links)
+    const qp = new URLSearchParams(window.location.search);
+    const split = (key) => {
+      const raw = qp.get(key);
+      if (!raw) return [];
+      return raw.split("||").map(s => s.trim()).filter(Boolean);
+    };
+    // Also support single-value params used by index.html key-card links
+    const oneOrMany = (key) => {
+      const multi = split(key);
+      if (multi.length) return multi;
+      const single = qp.get(key);
+      return single ? [single] : [];
+    };
+
+    const urlIndicators = oneOrMany("indicators");
+    const urlEstimates = oneOrMany("estimates");
+    const urlYears = oneOrMany("years");
+    const urlFreqs = oneOrMany("frequencies");
+    const urlStates = oneOrMany("states");
+    const urlGenders = oneOrMany("genders");
+    const urlSectors = oneOrMany("sectors");
+    const urlAges = oneOrMany("ages");
+
+    const pick = (wanted, available, fallback) => {
+      const hit = wanted.filter(v => available.includes(v));
+      return hit.length ? hit : fallback;
+    };
+
     renderFilterUI({
-      indicators: [sourceIndicators[source][0] || ""],
-      estimates: dimensions.estimate.values.includes("PS+SS") ? ["PS+SS"] : dimensions.estimate.values.slice(0, 1),
-      years: latestYear ? [latestYear] : [],
-      frequencies: dimensions.frequency.values.includes("Annual") ? ["Annual"] : dimensions.frequency.values.slice(0, 1),
-      states: dimensions.state.values.includes("India") ? ["India"] : dimensions.state.values.slice(0, 1),
-      genders: dimensions.gender.values.includes("Person") ? ["Person"] : dimensions.gender.values.slice(0, 1),
-      sectors: dimensions.sector.values.includes("Total") ? ["Total"] : dimensions.sector.values.slice(0, 1),
-      ages: dimensions.age.values.includes("15 & above") ? ["15 & above"] : dimensions.age.values.slice(0, 1)
+      indicators: pick(urlIndicators, sourceIndicators[source] || [], [sourceIndicators[source][0] || ""]),
+      estimates: pick(urlEstimates, dimensions.estimate.values, dimensions.estimate.values.includes("PS+SS") ? ["PS+SS"] : dimensions.estimate.values.slice(0, 1)),
+      years: pick(urlYears, dimensions.year.values, latestYear ? [latestYear] : []),
+      frequencies: pick(urlFreqs, dimensions.frequency.values, dimensions.frequency.values.includes("Annual") ? ["Annual"] : dimensions.frequency.values.slice(0, 1)),
+      states: pick(urlStates, dimensions.state.values, dimensions.state.values.includes("India") ? ["India"] : dimensions.state.values.slice(0, 1)),
+      genders: pick(urlGenders, dimensions.gender.values, dimensions.gender.values.includes("Person") ? ["Person"] : dimensions.gender.values.slice(0, 1)),
+      sectors: pick(urlSectors, dimensions.sector.values, dimensions.sector.values.includes("Total") ? ["Total"] : dimensions.sector.values.slice(0, 1)),
+      ages: pick(urlAges, dimensions.age.values, dimensions.age.values.includes("15 & above") ? ["15 & above"] : dimensions.age.values.slice(0, 1))
     });
     runQuery();
   } catch (err) {
@@ -1189,8 +1218,12 @@ document.getElementById("chartApplyBtn")?.addEventListener("click", applyChartFi
   document.getElementById(id)?.addEventListener("change", applyChartFilters);
 });
 
-// Initial load
-loadSource("PLFS");
+// Initial load — honour ?source= from the URL when present
+(() => {
+  const qp = new URLSearchParams(window.location.search);
+  const src = (qp.get("source") || "PLFS").toUpperCase();
+  loadSource(["PLFS", "EPFO", "ESIC"].includes(src) ? src : "PLFS");
+})();
 </script>
 </body>
 </html>
