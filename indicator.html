@@ -431,7 +431,7 @@ function normalizeIndicator(ind) {
   return trimmed;
 }
 
-// State Name Standardizer to map spelling variations between GeoJSON and your Data
+// State Name Standardizer to map spelling variations between GeoJSON and data
 function normalizeStateName(str) {
   if (!str) return "";
   let s = String(str).trim().toLowerCase()
@@ -440,20 +440,23 @@ function normalizeStateName(str) {
 
   const stateAliases = {
     "andamanandnicobar": "andamanandnicobarislands",
+    "andamanandnicobarislands": "andamanandnicobarislands",
     "damananddiuanddadraandnagarhaveli": "dnhdd",
     "dadraandnagarhavelianddamananddiu": "dnhdd",
+    "dadraandnagarhaveli": "dnhdd",
     "dadranagarhaveli": "dnhdd",
     "damananddiu": "dnhdd",
     "delhi": "delhi",
     "nctofdelhi": "delhi",
     "jammuandkashmir": "jammuandkashmir",
-    "chhattishgarh": "chhattisgarh", 
+    "chhattishgarh": "chhattisgarh",
     "chhatisgarh": "chhattisgarh",
-    "telengana": "telangana",       
-    "tamilnadu": "tamilnadu",       
+    "telengana": "telangana",
+    "tamilnadu": "tamilnadu",
     "orissa": "odisha",
     "pondicherry": "puducherry",
-    "uttaranchal": "uttarakhand"
+    "uttaranchal": "uttarakhand",
+    "ladakh": "ladakh"
   };
 
   return stateAliases[s] || s;
@@ -970,23 +973,35 @@ function drawCategoryHBars(svg, meta) {
   svg.innerHTML = out;
 }
 
-// Map Viewer Implementation calling local 'India_State_Boundary.json'
+// Map Viewer – load a proper India states GeoJSON (FeatureCollection with geometries)
 let indiaGeoData = null;
 async function loadIndiaMap() {
   if (indiaGeoData) return indiaGeoData;
-  try {
-    // Fetching the RAW data directly from your GitHub repository
-    const res = await fetch("https://raw.githubusercontent.com/shramshankhiki/Shankhiki/main/data/India_State_Boundary.json");
-    
-    if (!res.ok) throw new Error("Map file not found on GitHub.");
-    
-    indiaGeoData = await res.json();
-    return indiaGeoData;
-  } catch (e) {
-    console.error("Failed to load map GeoJSON:", e);
-    document.getElementById("mapTitle").innerHTML = `State-wise Distribution <br><span style="color:#b5563a;font-size:12px;font-weight:600">Could not connect to the map data.</span>`;
-    return null;
+  // Prefer local high-detail boundary (your India_State.json), then lighter CDN fallback
+  const candidates = [
+    "data/India_State.json",
+    "India_State.json",
+    "data/India_State_Boundary.json",
+    "India_State_Boundary.json",
+    "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/india.geojson"
+  ];
+  for (const url of candidates) {
+    try {
+      const res = await fetch(url, { cache: "force-cache" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      // Accept only a real FeatureCollection with geometries
+      if (data && data.type === "FeatureCollection" && Array.isArray(data.features) && data.features.length && data.features[0].geometry) {
+        indiaGeoData = data;
+        return indiaGeoData;
+      }
+    } catch (e) {
+      console.warn("Map candidate failed:", url, e);
+    }
   }
+  console.error("Failed to load any India states GeoJSON.");
+  document.getElementById("mapTitle").innerHTML = `State-wise Distribution <br><span style="color:#b5563a;font-size:12px;font-weight:600">Could not load map boundary data.</span>`;
+  return null;
 }
 
 async function drawMap() {
