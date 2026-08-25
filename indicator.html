@@ -123,6 +123,11 @@ tbody tr:hover{background:#f7fbfc}
 #mapContainer {position:relative;width:100%;background:#fbfdfe;border-radius:9px;border:1px solid var(--border);padding:15px;display:flex;flex-direction:column;align-items:center}
 #indiaMap {width:100%;max-width:720px;height:auto;display:block}
 #mapTooltip {position:absolute;display:none;padding:8px 12px;background:rgba(8,35,71,0.95);color:#fff;border-radius:6px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 14px rgba(0,0,0,0.2)}
+#mapLegend{width:min(560px,100%);margin-top:14px;padding:10px 12px;background:#fff;border:1px solid var(--border);border-radius:9px}
+#mapLegend .legend-title{font-size:11px;font-weight:800;color:var(--navy);margin-bottom:7px}
+#mapLegend .legend-bar{height:12px;border-radius:999px;border:1px solid rgba(8,47,73,.12)}
+#mapLegend .legend-labels{display:flex;justify-content:space-between;gap:12px;margin-top:5px;font-size:10px;color:var(--muted)}
+
 
 footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-top:4px solid var(--bhagwa)}
 .footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
@@ -366,6 +371,14 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     <div class="chart-title" id="mapTitle">State-wise Distribution</div>
     <div id="mapContainer">
       <svg id="indiaMap" viewBox="0 0 800 900"></svg>
+       <div id="mapLegend" aria-label="Map legend">
+         <div class="legend-title">Value</div>
+         <div class="legend-bar" id="mapLegendBar"></div>
+         <div class="legend-labels">
+           <span id="mapLegendMin">Low</span>
+           <span id="mapLegendMax">High</span>
+         </div>
+       </div>
       <div id="mapTooltip"></div>
     </div>
   </div>
@@ -1131,6 +1144,19 @@ async function drawMap() {
   const colorScale = d3.scaleSequential()
     .domain([minVal, maxVal])
     .interpolator(d3.interpolate("#FFE8D6", "#FF6B00"));
+
+  // Update the legend to match the currently filtered map values.
+  const legendBar = document.getElementById("mapLegendBar");
+  const legendMin = document.getElementById("mapLegendMin");
+  const legendMax = document.getElementById("mapLegendMax");
+  if (legendBar && legendMin && legendMax) {
+    const low = minVal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    const high = maxVal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    legendBar.style.background =
+      "linear-gradient(90deg, #FFE8D6 0%, #FFB066 50%, #FF6B00 100%)";
+    legendMin.textContent = low;
+    legendMax.textContent = high;
+  }
 
   const tooltip = d3.select("#mapTooltip");
 
