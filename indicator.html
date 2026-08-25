@@ -120,8 +120,8 @@ tbody tr:hover{background:#f7fbfc}
 
 /* MAP STYLING */
 #mapContainer {position:relative;width:100%;background:#fbfdfe;border-radius:9px;border:1px solid var(--border);padding:15px;display:flex;flex-direction:column;align-items:center}
-#indiaMap {width:100%;max-width:750px;height:auto;display:block}
-#mapTooltip {position:absolute;display:none;padding:8px 12px;background:rgba(8,35,71,0.92);color:#fff;border-radius:6px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+#indiaMap {width:100%;max-width:720px;height:auto;display:block}
+#mapTooltip {position:absolute;display:none;padding:8px 12px;background:rgba(8,35,71,0.95);color:#fff;border-radius:6px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 14px rgba(0,0,0,0.2)}
 
 footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-top:4px solid var(--bhagwa)}
 .footer-inner{max-width:1340px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
@@ -205,9 +205,9 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
     <div style="grid-column:1/-1">
       <label>Source</label>
       <select id="source">
-        <option value="PLFS">PLFS</option>
-        <option value="EPFO">EPFO</option>
-        <option value="ESIC">ESIC</option>
+        <option value="PLFS">PLFS (Periodic Labour Force Survey)</option>
+        <option value="EPFO">EPFO (Payroll Data)</option>
+        <option value="ESIC">ESIC (Social Security Data)</option>
       </select>
     </div>
     <div style="grid-column:1/-1">
@@ -413,7 +413,7 @@ function esc(v) {
   return String(v ?? "").replace(/[&<>"']/g, ch => escapeMap[ch]);
 }
 
-// Indicator normalizer: adds '%' to the specified indicators
+// Indicator normalizer: adds '%' to the specified distribution indicators
 function normalizeIndicator(ind) {
   if (!ind) return "";
   let trimmed = String(ind).trim();
@@ -429,6 +429,34 @@ function normalizeIndicator(ind) {
     return targetMap[lower];
   }
   return trimmed;
+}
+
+// State Name Standardizer to map spelling variations between GeoJSON and your Data
+function normalizeStateName(str) {
+  if (!str) return "";
+  let s = String(str).trim().toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]/g, "");
+
+  const stateAliases = {
+    "andamanandnicobar": "andamanandnicobarislands",
+    "damananddiuanddadraandnagarhaveli": "dnhdd",
+    "dadraandnagarhavelianddamananddiu": "dnhdd",
+    "dadranagarhaveli": "dnhdd",
+    "damananddiu": "dnhdd",
+    "delhi": "delhi",
+    "nctofdelhi": "delhi",
+    "jammuandkashmir": "jammuandkashmir",
+    "chhattishgarh": "chhattisgarh", 
+    "chhatisgarh": "chhattisgarh",
+    "telengana": "telangana",       
+    "tamilnadu": "tamilnadu",       
+    "orissa": "odisha",
+    "pondicherry": "puducherry",
+    "uttaranchal": "uttarakhand"
+  };
+
+  return stateAliases[s] || s;
 }
 
 function uniqueSorted(field, numeric = false) {
@@ -942,46 +970,48 @@ function drawCategoryHBars(svg, meta) {
   svg.innerHTML = out;
 }
 
-// Map Viewer implementation
+// Map Viewer Implementation calling local 'India_State_Boundary.json'
 let indiaGeoData = null;
 async function loadIndiaMap() {
   if (indiaGeoData) return indiaGeoData;
   try {
-    const res = await fetch("https://raw.githubusercontent.com/Subhash9325/GeoJson-Data-of-Indian-States/master/Indian_States");
+    const res = await fetch("data/India_State_Boundary.json");
+    if (!res.ok) throw new Error("Local map file not found.");
     indiaGeoData = await res.json();
     return indiaGeoData;
   } catch (e) {
-    console.error("Failed to load map GeoJSON", e);
+    console.error("Failed to load map GeoJSON:", e);
+    document.getElementById("mapTitle").innerHTML = `State-wise Distribution <br><span style="color:#b5563a;font-size:12px;font-weight:600">Please ensure boundary file is placed at <code>data/India_State_Boundary.json</code>.</span>`;
     return null;
   }
 }
 
 async function drawMap() {
   const geojson = await loadIndiaMap();
-  if (!geojson) {
-    document.getElementById("mapTitle").textContent = "Unable to load state boundaries.";
-    return;
-  }
+  if (!geojson) return;
+
+  document.getElementById("mapTitle").textContent = "State-wise Distribution";
 
   const svg = d3.select("#indiaMap");
   svg.selectAll("*").remove();
 
   const width = 800, height = 900;
-  const projection = d3.geoMercator().center([78.9629, 22.5937]).scale(1100).translate([width / 2, height / 2]);
+  // D3's fitSize automatically scales and centers the GeoJSON boundaries into your SVG box
+  const projection = d3.geoMercator().fitSize([width, height], geojson);
   const pathGenerator = d3.geoPath().projection(projection);
 
   const stateValues = {};
   currentRows.forEach(r => {
-    const s = r.state.trim().toLowerCase();
+    const s = normalizeStateName(r.state);
     if (!stateValues[s]) stateValues[s] = [];
     stateValues[s].push(r.value);
   });
 
   const stateAverages = {};
   let minVal = Infinity, maxVal = -Infinity;
-  for (const [state, vals] of Object.entries(stateValues)) {
+  for (const [stateKey, vals] of Object.entries(stateValues)) {
     const mean = avg(vals);
-    stateAverages[state] = mean;
+    stateAverages[stateKey] = mean;
     if (mean < minVal) minVal = mean;
     if (mean > maxVal) maxVal = mean;
   }
@@ -999,21 +1029,25 @@ async function drawMap() {
     .join("path")
     .attr("d", pathGenerator)
     .attr("fill", d => {
-      const stateName = (d.properties.NAME_1 || d.properties.st_nm || "").trim().toLowerCase();
-      const val = stateAverages[stateName];
+      const p = d.properties || {};
+      // Safely check common property name keys that might exist in the boundary JSON file
+      const rawName = p.Name || p.ST_NM || p.st_nm || p.State_Name || p.STATE || p.NAME_1 || p.name || "";
+      const val = stateAverages[normalizeStateName(rawName)];
       return val !== undefined ? colorScale(val) : "#e2e8f0";
     })
     .attr("stroke", "#ffffff")
     .attr("stroke-width", "1.2")
     .style("cursor", "pointer")
     .on("mouseover", (event, d) => {
-      const stateName = d.properties.NAME_1 || d.properties.st_nm || "State";
-      const val = stateAverages[stateName.toLowerCase()];
+      const p = d.properties || {};
+      const rawName = p.Name || p.ST_NM || p.st_nm || p.State_Name || p.STATE || p.NAME_1 || p.name || "State";
+      const val = stateAverages[normalizeStateName(rawName)];
       tooltip.style("display", "block")
-        .html(`<strong>${stateName}</strong><br/>Value: ${val !== undefined ? val.toLocaleString(undefined, { maximumFractionDigits: 2 }) : "No Data"}`);
+        .html(`<strong>${rawName}</strong><br/>Value: ${val !== undefined ? val.toLocaleString(undefined, { maximumFractionDigits: 2 }) : "No Data"}`);
     })
     .on("mousemove", (event) => {
-      tooltip.style("left", (event.offsetX + 15) + "px").style("top", (event.offsetY - 20) + "px");
+      const [x, y] = d3.pointer(event, document.getElementById("mapContainer"));
+      tooltip.style("left", (x + 15) + "px").style("top", (y - 20) + "px");
     })
     .on("mouseout", () => tooltip.style("display", "none"));
 }
