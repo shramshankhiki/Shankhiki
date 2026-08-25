@@ -1018,8 +1018,30 @@ async function drawMap() {
   const projection = d3.geoMercator().fitSize([width, height], geojson);
   const pathGenerator = d3.geoPath().projection(projection);
 
+  // Build state-level values for the choropleth.
+  // If the table filter is only "India" (or has no state rows), pull state-wise
+  // rows from the full dataset using the same indicator / year / etc. filters.
   const stateValues = {};
-  currentRows.forEach(r => {
+  const rowsForMap = (() => {
+    const stateLevel = currentRows.filter(r => r.state && r.state !== "India");
+    if (stateLevel.length > 0) return stateLevel;
+    // Fallback: same dims as current selection, but all individual states
+    const inds = new Set(currentRows.map(r => r.indicator));
+    const ests = new Set(currentRows.map(r => r.estimate));
+    const years = new Set(currentRows.map(r => String(r.year)));
+    const freqs = new Set(currentRows.map(r => r.frequency));
+    const gens = new Set(currentRows.map(r => r.gender));
+    const secs = new Set(currentRows.map(r => r.sector));
+    const ages = new Set(currentRows.map(r => r.age));
+    return currentDataset.filter(r =>
+      r.state && r.state !== "India" &&
+      inds.has(r.indicator) && ests.has(r.estimate) &&
+      years.has(String(r.year)) && freqs.has(r.frequency) &&
+      gens.has(r.gender) && secs.has(r.sector) && ages.has(r.age)
+    );
+  })();
+
+  rowsForMap.forEach(r => {
     const s = normalizeStateName(r.state);
     if (!stateValues[s]) stateValues[s] = [];
     stateValues[s].push(r.value);
@@ -1034,6 +1056,18 @@ async function drawMap() {
     if (mean > maxVal) maxVal = mean;
   }
   if (minVal === Infinity) { minVal = 0; maxVal = 1; }
+
+  const nStatesColored = Object.keys(stateAverages).length;
+  document.getElementById("mapTitle").textContent =
+    nStatesColored
+      ? `State-wise Distribution (${nStatesColored} states)`
+      : "State-wise Distribution";
+  const mapMeta = document.getElementById("mapMeta");
+  if (mapMeta) {
+    mapMeta.textContent = nStatesColored
+      ? `Showing state-level values for the selected indicator and filters (${nStatesColored} states with data).`
+      : "No state-level data for the current filters. Select an indicator with state breakdowns.";
+  }
 
   const colorScale = d3.scaleSequential()
     .domain([minVal, maxVal])
