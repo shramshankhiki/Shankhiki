@@ -566,17 +566,19 @@ function drawChart(indicators, years, states, genders, sectors){
   const svg = document.getElementById("chart");
   const hint = document.getElementById("chartHint");
   const type = currentChartType;
+  const bo = pickBreakoutDim(states, genders, sectors);
+  const boNote = bo ? ` · broken out by ${bo.label}` : " · other dimensions averaged";
   if (type === "line") {
-    hint.textContent = "Trend by year (line chart)";
-    drawLineChart(svg, indicators, years);
+    hint.textContent = "Trend by year" + boNote;
+    drawLineChart(svg, indicators, years, states, genders, sectors);
   } else if (type === "bar") {
-    hint.textContent = "Values by year (bar chart)";
-    drawBarChart(svg, indicators, years);
+    hint.textContent = "Values by year" + boNote;
+    drawBarChart(svg, indicators, years, states, genders, sectors);
   } else if (type === "hbar") {
-    hint.textContent = "Comparison across selected dimension";
+    hint.textContent = "Comparison across " + (bo ? bo.label : "year") + (indicators.length > 1 ? " (all indicators)" : "");
     drawHBarChart(svg, indicators, years, states, genders, sectors);
   } else if (type === "grouped") {
-    hint.textContent = "Grouped comparison by gender / sector / state";
+    hint.textContent = "Grouped by year" + boNote;
     drawGroupedChart(svg, indicators, years, states, genders, sectors);
   }
 }
@@ -594,143 +596,208 @@ function drawAxes(svg, W, H, L, R, T, B, min, max){
           <line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#5c7185"/>`;
   return {out, plotW, plotH, range};
 }
+/* Build series that preserve Rural/Urban, Gender, State when multi-selected */
+function pickBreakoutDim(states, genders, sectors){
+  if (sectors && sectors.length > 1) return {key:"sector", labels:sectors, label:"Sector"};
+  if (genders && genders.length > 1) return {key:"gender", labels:genders, label:"Gender"};
+  if (states && states.length > 1 && states.length <= 12) return {key:"state", labels:states, label:"State"};
+  return null;
+}
+function buildSeriesMeta(indicators, years, states, genders, sectors){
+  const breakout = pickBreakoutDim(states, genders, sectors);
+  // Multiple indicators + a breakout dimension → composite series (e.g. "LFPR · Rural")
+  if (breakout && indicators.length >= 1) {
+    const series = [];
+    indicators.forEach(ind => {
+      breakout.labels.forEach(lab => {
+        series.push({
+          label: indicators.length === 1 ? String(lab) : `${ind.slice(0,18)}${ind.length>18?"…":""} · ${lab}`,
+          filter: (r, yr) => r.indicator === ind && r.year === yr && r[breakout.key] === lab
+        });
+      });
+    });
+    // Cap total series so the chart stays readable
+    if (series.length > 16) {
+      return {
+        series: indicators.map(ind => ({
+          label: ind,
+          filter: (r, yr) => r.indicator === ind && r.year === yr
+        })),
+        title: "Indicators by year (other dimensions averaged — too many combinations)",
+        breakout: null
+      };
+    }
+    return {
+      series,
+      title: indicators.length === 1
+        ? `${indicators[0].slice(0,45)} by ${breakout.label}`
+        : `Indicators × ${breakout.label}`,
+      breakout
+    };
+  }
+  return {
+    series: indicators.map(ind => ({
+      label: ind,
+      filter: (r, yr) => r.indicator === ind && r.year === yr
+    })),
+    title: "Indicators by year",
+    breakout: null
+  };
+}
 function seriesValuesByYear(indicators, years){
   return indicators.map(ind => years.map(yr => {
     const subset = currentRows.filter(r => r.indicator === ind && r.year === yr);
     return avg(subset.map(r => r.value));
   }));
 }
-function drawLineChart(svg, indicators, years){
-  const W=1200, H=620, L=80, R=40, T=55, B=90;
-  const vals = seriesValuesByYear(indicators, years);
-  const all = vals.flat();
+function seriesValuesFromMeta(meta, years){
+  return meta.series.map(s => years.map(yr => {
+    const subset = currentRows.filter(r => s.filter(r, yr));
+    return avg(subset.map(r => r.value));
+  }));
+}
+function drawLineChart(svg, indicators, years, states, genders, sectors){
+  const meta = buildSeriesMeta(indicators, years, states, genders, sectors);
+  const W=1200, H=620, L=80, R=40, T=55, B=110;
+  const vals = seriesValuesFromMeta(meta, years);
+  const all = vals.flat().filter(Number.isFinite);
   const min = Math.min(...all, 0), max = Math.max(...all, 1);
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes;
-  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
-  indicators.forEach((ind, si) => {
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b","#c2410c","#0369a1"];
+  meta.series.forEach((s, si) => {
     const pts = vals[si].map((v, i) => {
       const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
       const y = T + (1 - (v-min)/range) * plotH;
       return [x,y];
     });
     if (pts.length > 1) out += `<polyline fill="none" stroke="${palette[si%palette.length]}" stroke-width="3.5" points="${pts.map(p=>p[0]+","+p[1]).join(" ")}"/>`;
-    pts.forEach(p => out += `<circle cx="${p[0]}" cy="${p[1]}" r="5.5" fill="${palette[si%palette.length]}"/>`);
-    const lx = 90 + si * 210;
-    out += `<line x1="${lx}" y1="${H-35}" x2="${lx+20}" y2="${H-35}" stroke="${palette[si%palette.length]}" stroke-width="3.5"/>
-            <text x="${lx+28}" y="${H-31}" font-size="12" fill="#17324a">${ind.slice(0,26)}${ind.length>26?"…":""}</text>`;
+    pts.forEach(p => out += `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${palette[si%palette.length]}"/>`);
   });
   years.forEach((yr, i) => {
     const x = years.length === 1 ? L + plotW/2 : L + (i / Math.max(years.length-1,1)) * plotW;
-    out += `<text x="${x}" y="${H-65}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
+    out += `<text x="${x}" y="${H-75}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
+  });
+  // Legend (wrap if many series)
+  const perRow = Math.min(meta.series.length, 5);
+  meta.series.forEach((s, si) => {
+    const row = Math.floor(si / perRow);
+    const col = si % perRow;
+    const lx = 80 + col * 220;
+    const ly = H - 42 + row * 18;
+    out += `<line x1="${lx}" y1="${ly}" x2="${lx+18}" y2="${ly}" stroke="${palette[si%palette.length]}" stroke-width="3.5"/>
+            <text x="${lx+24}" y="${ly+4}" font-size="11" fill="#17324a">${String(s.label).slice(0,24)}</text>`;
   });
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
 }
-function drawBarChart(svg, indicators, years){
-  const W=1200, H=620, L=80, R=40, T=55, B=100;
-  const vals = seriesValuesByYear(indicators, years);
-  const all = vals.flat();
+function drawBarChart(svg, indicators, years, states, genders, sectors){
+  const meta = buildSeriesMeta(indicators, years, states, genders, sectors);
+  const W=1200, H=620, L=80, R=40, T=55, B=110;
+  const vals = seriesValuesFromMeta(meta, years);
+  const all = vals.flat().filter(Number.isFinite);
   const min = 0, max = Math.max(...all, 1);
   const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
   let out = axes;
-  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
-  const nYears = years.length, nSeries = indicators.length;
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b","#c2410c","#0369a1"];
+  const nYears = years.length, nSeries = meta.series.length;
   const groupW = plotW / Math.max(nYears, 1);
-  const barW = Math.min(28, (groupW * 0.75) / Math.max(nSeries, 1));
+  const barW = Math.min(26, (groupW * 0.78) / Math.max(nSeries, 1));
   years.forEach((yr, yi) => {
     const gx = L + yi * groupW + groupW/2;
-    indicators.forEach((ind, si) => {
-      const v = vals[si][yi];
-      const h = ((v - min) / range) * plotH;
-      const x = gx - (nSeries * barW)/2 + si * barW;
-      const y = T + plotH - h;
-      out += `<rect x="${x}" y="${y}" width="${Math.max(barW-3,4)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
-    });
-    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
-  });
-  indicators.forEach((ind, si) => {
-    const lx = 90 + si * 210;
-    out += `<rect x="${lx}" y="${H-42}" width="16" height="10" fill="${palette[si%palette.length]}" rx="2"/>
-            <text x="${lx+22}" y="${H-33}" font-size="12" fill="#17324a">${ind.slice(0,26)}${ind.length>26?"…":""}</text>`;
-  });
-  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  svg.innerHTML = out;
-}
-function drawHBarChart(svg, indicators, years, states, genders, sectors){
-  let dimLabel = "Year";
-  let categories = years;
-  let getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.year===cat).map(r=>r.value));
-  if (states && states.length > 1) {
-    dimLabel = "State"; categories = states;
-    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.state===cat).map(r=>r.value));
-  } else if (genders && genders.length > 1) {
-    dimLabel = "Gender"; categories = genders;
-    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.gender===cat).map(r=>r.value));
-  } else if (sectors && sectors.length > 1) {
-    dimLabel = "Sector"; categories = sectors;
-    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.sector===cat).map(r=>r.value));
-  }
-  const ind = indicators[0] || "Indicator";
-  const data = categories.map(c => ({label: c, value: getVal(ind, c)}));
-  const max = Math.max(...data.map(d => d.value), 1);
-  const W = 1200, H = Math.max(420, 80 + data.length * 42);
-  const L = 160, R = 80, T = 40, B = 40;
-  const plotW = W - L - R, plotH = H - T - B;
-  const barH = Math.min(28, plotH / Math.max(data.length,1) * 0.65);
-  let out = `<text x="${W/2}" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${ind.slice(0,50)} — by ${dimLabel}</text>`;
-  data.forEach((d, i) => {
-    const y = T + (i + 0.5) * (plotH / data.length) - barH/2;
-    const w = (d.value / max) * plotW;
-    out += `<rect x="${L}" y="${y}" width="${Math.max(w,2)}" height="${barH}" fill="#FF6B00" rx="4"/>
-            <text x="${L-10}" y="${y+barH/2+4}" text-anchor="end" font-size="12" fill="#17324a">${String(d.label).slice(0,18)}</text>
-            <text x="${L+w+8}" y="${y+barH/2+4}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
-  });
-  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  svg.innerHTML = out;
-}
-function drawGroupedChart(svg, indicators, years, states, genders, sectors){
-  let seriesLabels = indicators;
-  let getSeriesVal = (series, yr) => avg(currentRows.filter(r => r.indicator===series && r.year===yr).map(r=>r.value));
-  let title = "Indicators by year";
-  if (genders && genders.length > 1 && indicators.length === 1) {
-    seriesLabels = genders;
-    getSeriesVal = (g, yr) => avg(currentRows.filter(r => r.gender===g && r.year===yr).map(r=>r.value));
-    title = `${indicators[0]} by gender`;
-  } else if (sectors && sectors.length > 1 && indicators.length === 1) {
-    seriesLabels = sectors;
-    getSeriesVal = (s, yr) => avg(currentRows.filter(r => r.sector===s && r.year===yr).map(r=>r.value));
-    title = `${indicators[0]} by sector`;
-  } else if (states && states.length > 1 && states.length <= 8 && indicators.length === 1) {
-    seriesLabels = states;
-    getSeriesVal = (st, yr) => avg(currentRows.filter(r => r.state===st && r.year===yr).map(r=>r.value));
-    title = `${indicators[0]} by state`;
-  }
-  const vals = seriesLabels.map(s => years.map(yr => getSeriesVal(s, yr)));
-  const all = vals.flat();
-  const min = 0, max = Math.max(...all, 1);
-  const W=1200, H=620, L=80, R=40, T=60, B=100;
-  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
-  let out = axes + `<text x="${W/2}" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${title.slice(0,70)}</text>`;
-  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b"];
-  const nYears = years.length, nSeries = seriesLabels.length;
-  const groupW = plotW / Math.max(nYears, 1);
-  const barW = Math.min(26, (groupW * 0.8) / Math.max(nSeries, 1));
-  years.forEach((yr, yi) => {
-    const gx = L + yi * groupW + groupW/2;
-    seriesLabels.forEach((lab, si) => {
+    meta.series.forEach((s, si) => {
       const v = vals[si][yi];
       const h = ((v - min) / range) * plotH;
       const x = gx - (nSeries * barW)/2 + si * barW;
       const y = T + plotH - h;
       out += `<rect x="${x}" y="${y}" width="${Math.max(barW-2,3)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
     });
-    out += `<text x="${gx}" y="${H-70}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
+    out += `<text x="${gx}" y="${H-75}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
   });
-  seriesLabels.forEach((lab, si) => {
-    const lx = 80 + si * 150;
-    out += `<rect x="${lx}" y="${H-42}" width="14" height="10" fill="${palette[si%palette.length]}" rx="2"/>
-            <text x="${lx+20}" y="${H-33}" font-size="11" fill="#17324a">${String(lab).slice(0,18)}</text>`;
+  const perRow = Math.min(meta.series.length, 5);
+  meta.series.forEach((s, si) => {
+    const row = Math.floor(si / perRow);
+    const col = si % perRow;
+    const lx = 80 + col * 220;
+    const ly = H - 42 + row * 18;
+    out += `<rect x="${lx}" y="${ly-7}" width="14" height="10" fill="${palette[si%palette.length]}" rx="2"/>
+            <text x="${lx+20}" y="${ly}" font-size="11" fill="#17324a">${String(s.label).slice(0,24)}</text>`;
+  });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.innerHTML = out;
+}
+function drawHBarChart(svg, indicators, years, states, genders, sectors){
+  const breakout = pickBreakoutDim(states, genders, sectors);
+  let dimLabel = "Year";
+  let categories = years;
+  let getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r.year===cat).map(r=>r.value));
+  if (breakout) {
+    dimLabel = breakout.label;
+    categories = breakout.labels;
+    getVal = (ind, cat) => avg(currentRows.filter(r => r.indicator===ind && r[breakout.key]===cat).map(r=>r.value));
+  }
+  // One row per (indicator × category) so multi-indicator selections stay visible
+  const data = [];
+  indicators.forEach(ind => {
+    categories.forEach(c => {
+      data.push({
+        label: indicators.length === 1 ? String(c) : `${ind.slice(0,16)}${ind.length>16?"…":""} · ${c}`,
+        value: getVal(ind, c)
+      });
+    });
+  });
+  const max = Math.max(...data.map(d => d.value), 1);
+  const W = 1200, H = Math.max(420, 70 + data.length * 36);
+  const L = 200, R = 90, T = 44, B = 30;
+  const plotW = W - L - R, plotH = H - T - B;
+  const barH = Math.min(26, plotH / Math.max(data.length,1) * 0.7);
+  const title = indicators.length === 1
+    ? `${indicators[0].slice(0,50)} — by ${dimLabel}`
+    : `Selected indicators — by ${dimLabel}`;
+  let out = `<text x="${W/2}" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${title}</text>`;
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785"];
+  data.forEach((d, i) => {
+    const y = T + (i + 0.5) * (plotH / data.length) - barH/2;
+    const w = (d.value / max) * plotW;
+    const color = palette[i % palette.length];
+    out += `<rect x="${L}" y="${y}" width="${Math.max(w,2)}" height="${barH}" fill="${color}" rx="4"/>
+            <text x="${L-10}" y="${y+barH/2+4}" text-anchor="end" font-size="11" fill="#17324a">${String(d.label).slice(0,28)}</text>
+            <text x="${L+w+8}" y="${y+barH/2+4}" font-size="12" font-weight="700" fill="#0a3357">${d.value.toLocaleString(undefined,{maximumFractionDigits:1})}</text>`;
+  });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.innerHTML = out;
+}
+function drawGroupedChart(svg, indicators, years, states, genders, sectors){
+  const meta = buildSeriesMeta(indicators, years, states, genders, sectors);
+  const vals = seriesValuesFromMeta(meta, years);
+  const all = vals.flat().filter(Number.isFinite);
+  const min = 0, max = Math.max(...all, 1);
+  const W=1200, H=620, L=80, R=40, T=60, B=110;
+  const {out: axes, plotW, plotH, range} = drawAxes(svg, W, H, L, R, T, B, min, max);
+  let out = axes + `<text x="${W/2}" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#0a3357">${meta.title.slice(0,72)}</text>`;
+  const palette = ["#FF6B00","#0a3357","#b8860b","#b5563a","#3d7a5c","#4a6785","#6b4e71","#14919b","#c2410c","#0369a1"];
+  const nYears = years.length, nSeries = meta.series.length;
+  const groupW = plotW / Math.max(nYears, 1);
+  const barW = Math.min(24, (groupW * 0.82) / Math.max(nSeries, 1));
+  years.forEach((yr, yi) => {
+    const gx = L + yi * groupW + groupW/2;
+    meta.series.forEach((lab, si) => {
+      const v = vals[si][yi];
+      const h = ((v - min) / range) * plotH;
+      const x = gx - (nSeries * barW)/2 + si * barW;
+      const y = T + plotH - h;
+      out += `<rect x="${x}" y="${y}" width="${Math.max(barW-2,3)}" height="${Math.max(h,1)}" fill="${palette[si%palette.length]}" rx="3"/>`;
+    });
+    out += `<text x="${gx}" y="${H-75}" text-anchor="middle" font-size="12" fill="#5c7185">${yr}</text>`;
+  });
+  const perRow = Math.min(meta.series.length, 5);
+  meta.series.forEach((s, si) => {
+    const row = Math.floor(si / perRow);
+    const col = si % perRow;
+    const lx = 80 + col * 220;
+    const ly = H - 42 + row * 18;
+    out += `<rect x="${lx}" y="${ly-7}" width="14" height="10" fill="${palette[si%palette.length]}" rx="2"/>
+            <text x="${lx+20}" y="${ly}" font-size="11" fill="#17324a">${String(s.label).slice(0,24)}</text>`;
   });
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = out;
@@ -747,7 +814,7 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 });
 function csvContent(){
   const header = ["Indicator","Type of Estimate","Year","Frequency","States","Gender","Sector","Age-group (years)","Value","Unit"];
-  const rows = currentRows.map(r => [r.indicator,r.estimate,r.year,r.frequency,r.state,r.gender,r.sector,r.age,r.value,r.unit]);
+  const rows = currentRows.map(r => [r.indicator,r.estimate,r.year,r.frequency,r.state,r.gender,r.sector,r.age,r.value,unitFor(r.indicator)]);
   return [header, ...rows].map(row => row.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
 }
 function downloadBlob(content, name, type){
