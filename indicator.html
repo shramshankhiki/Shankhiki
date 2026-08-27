@@ -491,13 +491,12 @@ function normalizeStateName(str) {
 
 /* Fixed category lists — same as index.html explorer filters */
 const FIXED_ORDER = {
-  estimate: ["PS+SS", "PS", CWS"],
+  estimate: ["PS+SS", "PS", "CWS"],
   gender: ["Person", "Male", "Female"],
   sector: ["Total", "Rural", "Urban"],
-  age: ["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"
-],
+  age: ["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"],
   frequency: ["Annual", "Quarterly-Q1", "Quarterly-Q2", "Quarterly-Q3", "Quarterly-Q4"],
-  year: ["2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018"],
+  year: ["2026","2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018"],
   state: ["All India", "Jammu and Kashmir", "Himachal Pradesh", "Punjab", "Chandigarh", "Uttarakhand", "Haryana", "Delhi", "Rajasthan", "Uttar Pradesh", "Bihar", "Sikkim", "Arunachal Pradesh", "Nagaland", "Manipur", "Mizoram", "Tripura", "Meghalaya", "Assam", "West Bengal", "Jharkhand", "Odisha", "Chhattisgarh", "Madhya Pradesh", "Gujarat", "Dadra and Nagar Haveli and Daman and Diu", "Maharashtra", "Andhra Pradesh", "Karnataka", "Goa", "Lakshadweep", "Kerala", "Tamil Nadu", "Puducherry", "Andaman and Nicobar Islands", "Telangana", "Ladakh"],
   indicator: [
     "Labour Force Participation Rate",
@@ -517,18 +516,24 @@ const FIXED_ORDER = {
   ]
 };
 
-/** Keep index order; append any extra values found in data at the end */
+/** Always use index fixed list order; append any extra data-only values at the end.
+ *  Years: prefer actual data years (newest first), then any fixed extras. */
 function orderedValues(field, fromData) {
   const fixed = FIXED_ORDER[field] || [];
-  const dataSet = new Set((fromData || []).filter(v => v !== "" && v != null));
-  const ordered = [];
-  for (const v of fixed) {
-    if (dataSet.has(v) || field === "year" || field === "estimate" || field === "gender" || field === "sector" || field === "age" || field === "frequency" || field === "state" || field === "indicator") {
-      // Always show fixed list (same categories as index), even if a value has no rows yet
+  const dataVals = (fromData || []).filter(v => v !== "" && v != null);
+  const dataSet = new Set(dataVals);
+
+  if (field === "year") {
+    // Newest year first from actual data
+    const fromDataYears = [...dataSet].sort((a, b) => Number(b) - Number(a));
+    const ordered = [...fromDataYears];
+    for (const v of fixed) {
       if (!ordered.includes(v)) ordered.push(v);
     }
+    return ordered;
   }
-  // Append any data-only extras not in the fixed list
+
+  const ordered = [...fixed]; // always show full fixed list (includes PS)
   for (const v of [...dataSet].sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }))) {
     if (!ordered.includes(v)) ordered.push(v);
   }
@@ -648,7 +653,8 @@ async function loadSource(source) {
     sourceIndicators[source] = orderedValues("indicator", [...new Set(currentDataset.map(r => r.indicator))]);
     dataReady = true;
 
-    const latestYear = dimensions.year.values[0] || "";
+    const dataYears = uniqueFromData("year", true);
+    const latestYear = (dataYears[0] || dimensions.year.values[0] || "");
     setDataStatus(`${source} loaded successfully: ${currentDataset.length.toLocaleString()} rows.`, "success");
     sourceEl.value = source;
 
