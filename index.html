@@ -283,31 +283,29 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 </footer>
 <script>
 /*
-  Key Indicators order & estimate type (Annual, All India, Person, Total, 15 & above):
-  1–3  Core rates          → PS+SS
-  4–5  Growth rates        → PS+SS
-  6    Unemployment        → PS+SS
-  7    NEET                → PS+SS
-  8–10 Wages / earnings    → CWS
-  11–12 Education/skills   → %
+  Key Indicators
+  - name      = label shown in UI (your preferred names)
+  - dataName  = exact string in PLFS.txt (used for matching)
+  State in data = "India"  →  we display & pass "All India"
 */
-<script>
+const PLFS_DATA_URL = "https://raw.githubusercontent.com/shramshankhiki/Shankhiki/refs/heads/main/data/PLFS.txt";
+
 const keyIndicators = [
   /* Core rates – PS+SS */
-  {name:"Labour Force Participation Rate",              icon:"chart", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
-  {name:"Worker Population Ratio / Employment Rate",    icon:"users", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
-  {name:"Unemployment Rate",                            icon:"alert", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Labour Force Participation Rate",              dataName:"Labour Force Participation Rate",              icon:"chart", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Worker Population Ratio / Employment Rate",    dataName:"Worker Population Ratio / Employment Rate",    icon:"users", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Unemployment Rate",                            dataName:"Unemployment Rate",                            icon:"alert", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
   /* Growth – PS+SS */
-  {name:"Growth of Labour Force (%)",                   icon:"trend", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
-  {name:"Growth of Employment (%)",                     icon:"trend", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Growth of Labour Force (%)",                   dataName:"Growth of Labour Force (%)",                   icon:"trend", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Growth of Employment (%)",                     dataName:"Growth of Employed Persons (%)",               icon:"trend", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
   /* NEET & wages */
-  {name:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"PS+SS", age:"15-29"},
-  {name:"Average wages of casual workers",              icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
-  {name:"Average monthly earnings – regular salaried",  icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
-  {name:"Average monthly earnings – self-employed",     icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
-  /* Skills – % */
-  {name:"Access to technical education (%)",            icon:"edu",   unit:"Percent", estimate:"%",     age:"15 & above"},
-  {name:"Access to vocational training (%)",            icon:"edu",   unit:"Percent", estimate:"%",     age:"15 & above"}
+  {name:"NEET Rate",                                    dataName:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"PS+SS", age:"15-29"},
+  {name:"Average wages of casual workers",              dataName:"Average wages of casual workers",              icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
+  {name:"Average monthly earnings – regular salaried",  dataName:"Average monthly earnings – regular salaried",  icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
+  {name:"Average monthly earnings – self-employed",     dataName:"Average monthly earnings – self-employed",     icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
+  /* Skills – display has (%), data does not */
+  {name:"Access to technical education (%)",            dataName:"Access to technical education",                icon:"edu",   unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Access to vocational training (%)",            dataName:"Access to vocational training",                icon:"edu",   unit:"Percent", estimate:"PS+SS", age:"15 & above"}
 ];
 
 const kiIcons = {
@@ -334,8 +332,8 @@ function getCardsPerView(){
 
 async function buildKeyCards(){
   try {
-    const response = await fetch("data/PLFS.txt", {cache:"no-store"});
-    if(!response.ok) throw new Error(`HTTP Error ${response.status} - The file data/PLFS.txt was not found.`);
+    const response = await fetch(PLFS_DATA_URL, {cache:"no-store"});
+    if(!response.ok) throw new Error(`HTTP Error ${response.status} – could not load PLFS data.`);
     
     const text = (await response.text()).replace(/^\uFEFF/,"");
     const lines = text.split(/\r?\n/);
@@ -343,7 +341,7 @@ async function buildKeyCards(){
     const ix = Object.fromEntries(h.map((x, i) => [x, i]));
     
     if(ix.Year === undefined || ix.Indicator === undefined) {
-       throw new Error("Missing required columns ('Year' or 'Indicator'). Check if the file is tab-separated.");
+       throw new Error("Missing required columns ('Year' or 'Indicator').");
     }
     
     let latestOverallYear = 0;
@@ -364,24 +362,23 @@ async function buildKeyCards(){
     keyIndicators.forEach(d => {
       const targetAge = d.age || "15 & above";
       const targetEst = d.estimate;
+      const matchName = d.dataName || d.name;
       
-      // Match candidate rows for national aggregate
       const candidates = parsedRows.filter(c => {
         const stateVal = c[ix.State];
         const isNational = stateVal === "India" || stateVal === "All India";
         const isGender = c[ix.Gender] === "Person";
         const isSector = c[ix.Sector] === "Total";
         const isFreq = c[ix.Frequency] === "Annual";
-        const isIndicator = c[ix.Indicator] === d.name;
+        const isIndicator = c[ix.Indicator] === matchName;
         const isAge = c[ix["Age-group"]] === targetAge;
         const estCol = ix["Type of Estimate"] !== undefined ? c[ix["Type of Estimate"]] : "";
-        const isEst = targetEst === "%" ? true : estCol === targetEst;
+        const isEst = estCol === targetEst;
 
         return isNational && isGender && isSector && isFreq && isIndicator && isAge && isEst;
       });
 
       if (candidates.length > 0) {
-        // Pick the most recent available year for this specific indicator
         candidates.sort((a, b) => Number(b[ix.Year]) - Number(a[ix.Year]));
         const best = candidates[0];
         const valStr = String(best[ix.Value] || "").replace(/,/g, "").trim();
@@ -408,7 +405,7 @@ async function buildKeyCards(){
         indicators: d.name,
         years: String(year),
         frequencies: "Annual",
-        states: "India",
+        states: "All India",
         genders: "Person",
         sectors: "Total",
         ages: d.age || "15 & above",
@@ -468,6 +465,7 @@ keyPauseBtn.addEventListener("click", () => {
 window.addEventListener("resize", () => { buildDots(); goToPage(0); });
 buildKeyCards();
 
+/* Display names (preferred labels). indicator.html should map these to data names if needed. */
 const plfsIndicators = [
   "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate",
   "Growth of Labour Force (%)","Growth of Employment (%)","Average wages of casual workers",
@@ -482,7 +480,7 @@ const dimensions = {
   estimate: {values:["PS+SS","PS","CWS"], panel:"estimatePanel", summary:"estimateSummary", menu:"estimateMenu"},
   year: {values:["2026","2025","2024","2023","2022","2021","2020","2019","2018"], panel:"yearPanel", summary:"yearSummary", menu:"yearMenu"},
   frequency: {values:["Annual","Quarterly","Monthly"], panel:"frequencyPanel", summary:"frequencySummary", menu:"frequencyMenu"},
-  state: {values:["India","All India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"], panel:"statePanel", summary:"stateSummary", menu:"stateMenu"},
+  state: {values:["All India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"], panel:"statePanel", summary:"stateSummary", menu:"stateMenu"},
   gender: {values:["Person","Male","Female"], panel:"genderPanel", summary:"genderSummary", menu:"genderMenu"},
   sector: {values:["Total","Rural","Urban"], panel:"sectorPanel", summary:"sectorSummary", menu:"sectorMenu"},
   age: {values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"], panel:"agePanel", summary:"ageSummary", menu:"ageMenu"}
