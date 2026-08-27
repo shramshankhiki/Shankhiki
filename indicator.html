@@ -404,7 +404,7 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
 
 <script>
 const DATA_SOURCES = {
-  PLFS: "data/PLFS.txt",
+  PLFS: "https://raw.githubusercontent.com/shramshankhiki/Shankhiki/refs/heads/main/data/PLFS.txt",
   EPFO: "data/EPFO.txt",
   ESIC: "data/ESIC.txt"
 };
@@ -429,22 +429,30 @@ function esc(v) {
   return String(v ?? "").replace(/[&<>"']/g, ch => escapeMap[ch]);
 }
 
-// Indicator normalizer: adds '%' to the specified distribution indicators
+/*
+  Map data-file indicator names → preferred UI labels
+  (same mapping used on index.html key cards / explorer)
+*/
+const INDICATOR_DISPLAY_MAP = {
+  "Growth of Employed Persons (%)": "Growth of Employment (%)",
+  "Access to technical education": "Access to technical education (%)",
+  "Access to vocational training": "Access to vocational training (%)",
+  "Distribution of employment by status": "Distribution of employment by status (%)",
+  "Distribution of employed persons by industry": "Distribution of employed persons by industry (%)",
+  "Distribution of employed persons by occupation": "Distribution of employed persons by occupation (%)"
+};
+
 function normalizeIndicator(ind) {
   if (!ind) return "";
-  let trimmed = String(ind).trim();
-  
-  const targetMap = {
-    "distribution of employed persons by industry": "% Distribution of employed persons by industry",
-    "distribution of employed persons by occupation": "% Distribution of employed persons by occupation",
-    "distribution of employment by status": "% Distribution of employment by status"
-  };
+  const trimmed = String(ind).trim();
+  return INDICATOR_DISPLAY_MAP[trimmed] || trimmed;
+}
 
-  const lower = trimmed.toLowerCase();
-  if (targetMap[lower]) {
-    return targetMap[lower];
-  }
-  return trimmed;
+function normalizeState(state) {
+  if (!state) return "";
+  const s = String(state).trim();
+  if (s === "India" || s.toLowerCase() === "all india") return "All India";
+  return s;
 }
 
 // State Name Standardizer to map spelling variations between GeoJSON and data
@@ -481,20 +489,67 @@ function normalizeStateName(str) {
   return stateAliases[s] || s;
 }
 
-function uniqueSorted(field, numeric = false) {
+/* Fixed category lists — same as index.html explorer filters */
+const FIXED_ORDER = {
+  estimate: ["PS+SS", "CWS"],
+  gender: ["Person", "Male", "Female"],
+  sector: ["Total", "Rural", "Urban"],
+  age: ["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"
+],
+  frequency: ["Annual", "Quarterly-Q1", "Quarterly-Q2", "Quarterly-Q3", "Quarterly-Q4"],
+  year: ["2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018"],
+  state: ["All India", "Jammu and Kashmir", "Himachal Pradesh", "Punjab", "Chandigarh", "Uttarakhand", "Haryana", "Delhi", "Rajasthan", "Uttar Pradesh", "Bihar", "Sikkim", "Arunachal Pradesh", "Nagaland", "Manipur", "Mizoram", "Tripura", "Meghalaya", "Assam", "West Bengal", "Jharkhand", "Odisha", "Chhattisgarh", "Madhya Pradesh", "Gujarat", "Dadra and Nagar Haveli and Daman and Diu", "Maharashtra", "Andhra Pradesh", "Karnataka", "Goa", "Lakshadweep", "Kerala", "Tamil Nadu", "Puducherry", "Andaman and Nicobar Islands", "Telangana", "Ladakh"],
+  indicator: [
+    "Labour Force Participation Rate",
+    "Worker Population Ratio / Employment Rate",
+    "Unemployment Rate",
+    "NEET Rate",
+    "Growth of Labour Force (%)",
+    "Growth of Employment (%)",
+    "Average wages of casual workers",
+    "Average monthly earnings – regular salaried",
+    "Average monthly earnings – self-employed",
+    "Distribution of employment by status (%)",
+    "Distribution of employed persons by industry (%)",
+    "Distribution of employed persons by occupation (%)",
+    "Access to technical education (%)",
+    "Access to vocational training (%)"
+  ]
+};
+
+/** Keep index order; append any extra values found in data at the end */
+function orderedValues(field, fromData) {
+  const fixed = FIXED_ORDER[field] || [];
+  const dataSet = new Set((fromData || []).filter(v => v !== "" && v != null));
+  const ordered = [];
+  for (const v of fixed) {
+    if (dataSet.has(v) || field === "year" || field === "estimate" || field === "gender" || field === "sector" || field === "age" || field === "frequency" || field === "state" || field === "indicator") {
+      // Always show fixed list (same categories as index), even if a value has no rows yet
+      if (!ordered.includes(v)) ordered.push(v);
+    }
+  }
+  // Append any data-only extras not in the fixed list
+  for (const v of [...dataSet].sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }))) {
+    if (!ordered.includes(v)) ordered.push(v);
+  }
+  return ordered;
+}
+
+function uniqueFromData(field, numeric = false) {
   const vals = [...new Set(currentDataset.map(r => r[field]).filter(v => v !== "" && v != null))];
-  return numeric ? vals.sort((a, b) => Number(b) - Number(a)) : vals.sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }));
+  if (numeric) return vals.sort((a, b) => Number(b) - Number(a));
+  return vals;
 }
 
 function buildDimensions() {
   return {
-    estimate: { values: uniqueSorted("estimate"), panel: "estimatePanel", summary: "estimateSummary" },
-    year: { values: uniqueSorted("year", true), panel: "yearPanel", summary: "yearSummary" },
-    frequency: { values: uniqueSorted("frequency"), panel: "frequencyPanel", summary: "frequencySummary" },
-    state: { values: uniqueSorted("state"), panel: "statePanel", summary: "stateSummary" },
-    gender: { values: uniqueSorted("gender"), panel: "genderPanel", summary: "genderSummary" },
-    sector: { values: uniqueSorted("sector"), panel: "sectorPanel", summary: "sectorSummary" },
-    age: { values: uniqueSorted("age"), panel: "agePanel", summary: "ageSummary" }
+    estimate: { values: orderedValues("estimate", uniqueFromData("estimate")), panel: "estimatePanel", summary: "estimateSummary" },
+    year: { values: orderedValues("year", uniqueFromData("year", true)), panel: "yearPanel", summary: "yearSummary" },
+    frequency: { values: orderedValues("frequency", uniqueFromData("frequency")), panel: "frequencyPanel", summary: "frequencySummary" },
+    state: { values: orderedValues("state", uniqueFromData("state")), panel: "statePanel", summary: "stateSummary" },
+    gender: { values: orderedValues("gender", uniqueFromData("gender")), panel: "genderPanel", summary: "genderSummary" },
+    sector: { values: orderedValues("sector", uniqueFromData("sector")), panel: "sectorPanel", summary: "sectorSummary" },
+    age: { values: orderedValues("age", uniqueFromData("age")), panel: "agePanel", summary: "ageSummary" }
   };
 }
 
@@ -569,7 +624,7 @@ function parseDataset(text, source) {
       estimate: idxEst !== -1 ? String(c[idxEst] ?? "").trim() : "PS+SS",
       year: idxYear !== -1 ? String(c[idxYear] ?? "").trim() : "All",
       frequency: idxFreq !== -1 ? String(c[idxFreq] ?? "").trim() : "Annual",
-      state: idxState !== -1 ? String(c[idxState] ?? "").trim() : "India",
+      state: normalizeState(idxState !== -1 ? String(c[idxState] ?? "").trim() : "All India"),
       gender: idxGender !== -1 ? String(c[idxGender] ?? "").trim() : "Person",
       sector: idxSector !== -1 ? String(c[idxSector] ?? "").trim() : "Total",
       age: idxAge !== -1 ? String(c[idxAge] ?? "").trim() : "15 & above",
@@ -590,7 +645,7 @@ async function loadSource(source) {
     if (!currentDataset.length) throw new Error(`The ${source} file contains no valid observations.`);
     
     dimensions = buildDimensions();
-    sourceIndicators[source] = [...new Set(currentDataset.map(r => r.indicator))].sort((a, b) => a.localeCompare(b));
+    sourceIndicators[source] = orderedValues("indicator", [...new Set(currentDataset.map(r => r.indicator))]);
     dataReady = true;
 
     const latestYear = dimensions.year.values[0] || "";
@@ -612,11 +667,13 @@ async function loadSource(source) {
       return single ? [single] : [];
     };
 
-    const urlIndicators = oneOrMany("indicators");
+    // Map URL indicator names (preferred labels) so they match normalized dataset labels
+    const urlIndicators = oneOrMany("indicators").map(normalizeIndicator);
     const urlEstimates = oneOrMany("estimates");
     const urlYears = oneOrMany("years");
     const urlFreqs = oneOrMany("frequencies");
-    const urlStates = oneOrMany("states");
+    // Accept both "India" and "All India" from URL
+    const urlStates = oneOrMany("states").map(normalizeState);
     const urlGenders = oneOrMany("genders");
     const urlSectors = oneOrMany("sectors");
     const urlAges = oneOrMany("ages");
@@ -631,7 +688,7 @@ async function loadSource(source) {
       estimates: pick(urlEstimates, dimensions.estimate.values, dimensions.estimate.values.includes("PS+SS") ? ["PS+SS"] : dimensions.estimate.values.slice(0, 1)),
       years: pick(urlYears, dimensions.year.values, latestYear ? [latestYear] : []),
       frequencies: pick(urlFreqs, dimensions.frequency.values, dimensions.frequency.values.includes("Annual") ? ["Annual"] : dimensions.frequency.values.slice(0, 1)),
-      states: pick(urlStates, dimensions.state.values, dimensions.state.values.includes("India") ? ["India"] : dimensions.state.values.slice(0, 1)),
+      states: pick(urlStates, dimensions.state.values, dimensions.state.values.includes("All India") ? ["All India"] : dimensions.state.values.slice(0, 1)),
       genders: pick(urlGenders, dimensions.gender.values, dimensions.gender.values.includes("Person") ? ["Person"] : dimensions.gender.values.slice(0, 1)),
       sectors: pick(urlSectors, dimensions.sector.values, dimensions.sector.values.includes("Total") ? ["Total"] : dimensions.sector.values.slice(0, 1)),
       ages: pick(urlAges, dimensions.age.values, dimensions.age.values.includes("15 & above") ? ["15 & above"] : dimensions.age.values.slice(0, 1))
@@ -803,7 +860,7 @@ function dimLabels(key, indicators, years, states, genders, sectors) {
   if (key === "year") return years;
   if (key === "sector") return sectors.length ? sectors : ["Total"];
   if (key === "gender") return genders.length ? genders : ["Person"];
-  if (key === "state") return states.length ? states : ["India"];
+  if (key === "state") return states.length ? states : ["All India"];
   if (key === "indicator") return indicators;
   return years;
 }
@@ -1093,11 +1150,11 @@ async function drawMap() {
   const pathGenerator = d3.geoPath().projection(projection);
 
   // Build state-level values for the choropleth.
-  // If the table filter is only "India" (or has no state rows), pull state-wise
+  // If the table filter is only "All India" (or has no state rows), pull state-wise
   // rows from the full dataset using the same indicator / year / etc. filters.
   const stateValues = {};
   const rowsForMap = (() => {
-    const stateLevel = currentRows.filter(r => r.state && r.state !== "India");
+    const stateLevel = currentRows.filter(r => r.state && r.state !== "All India" && r.state !== "India");
     if (stateLevel.length > 0) return stateLevel;
     // Fallback: same dims as current selection, but all individual states
     const inds = new Set(currentRows.map(r => r.indicator));
@@ -1108,7 +1165,7 @@ async function drawMap() {
     const secs = new Set(currentRows.map(r => r.sector));
     const ages = new Set(currentRows.map(r => r.age));
     return currentDataset.filter(r =>
-      r.state && r.state !== "India" &&
+      r.state && r.state !== "All India" && r.state !== "India" &&
       inds.has(r.indicator) && ests.has(r.estimate) &&
       years.has(String(r.year)) && freqs.has(r.frequency) &&
       gens.has(r.gender) && secs.has(r.sector) && ages.has(r.age)
