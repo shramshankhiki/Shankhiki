@@ -291,23 +291,25 @@ footer{background:var(--navy);color:#fff;padding:28px 5%;font-size:12px;border-t
   8–10 Wages / earnings    → CWS
   11–12 Education/skills   → %
 */
+<script>
 const keyIndicators = [
   /* Core rates – PS+SS */
-  {name:"Labour Force Participation Rate",              icon:"chart", unit:"Percent", estimate:"PS+SS"},
-  {name:"Worker Population Ratio / Employment Rate",    icon:"users", unit:"Percent", estimate:"PS+SS"},
-  {name:"Unemployment Rate",                            icon:"alert", unit:"Percent", estimate:"PS+SS"},
+  {name:"Labour Force Participation Rate",              icon:"chart", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Worker Population Ratio / Employment Rate",    icon:"users", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Unemployment Rate",                            icon:"alert", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
   /* Growth – PS+SS */
-  {name:"Growth of Labour Force (%)",                   icon:"trend", unit:"Percent", estimate:"PS+SS"},
-  {name:"Growth of Employment (%)",               icon:"trend", unit:"Percent", estimate:"PS+SS"},
-  /* NEET & wages – CWS */
-  {name:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"PS+SS"},
-  {name:"Average wages of casual workers",              icon:"rupee", unit:"INR",     estimate:"CWS"},
-  {name:"Average monthly earnings – regular salaried",  icon:"rupee", unit:"INR",     estimate:"CWS"},
-  {name:"Average monthly earnings – self-employed",     icon:"rupee", unit:"INR",     estimate:"CWS"},
+  {name:"Growth of Labour Force (%)",                   icon:"trend", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  {name:"Growth of Employment (%)",                     icon:"trend", unit:"Percent", estimate:"PS+SS", age:"15 & above"},
+  /* NEET & wages */
+  {name:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"PS+SS", age:"15-29"},
+  {name:"Average wages of casual workers",              icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
+  {name:"Average monthly earnings – regular salaried",  icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
+  {name:"Average monthly earnings – self-employed",     icon:"rupee", unit:"INR",     estimate:"CWS",   age:"15 & above"},
   /* Skills – % */
-  {name:"Access to technical education (%)",                icon:"edu",   unit:"Percent",estimate:"%"},
-  {name:"Access to vocational training (%)",                icon:"edu",   unit:"Percent",estimate:"%"}
+  {name:"Access to technical education (%)",            icon:"edu",   unit:"Percent", estimate:"%",     age:"15 & above"},
+  {name:"Access to vocational training (%)",            icon:"edu",   unit:"Percent", estimate:"%",     age:"15 & above"}
 ];
+
 const kiIcons = {
   chart:`<svg viewBox="0 0 24 24"><path d="M4 19V5h16v14"/><path d="M7 15l3-4 3 2 4-5"/></svg>`,
   users:`<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
@@ -317,103 +319,130 @@ const kiIcons = {
   rupee:`<svg viewBox="0 0 24 24"><path d="M6 3h12M6 8h12"/><path d="M6 13c4 0 6-2 6-5H6"/><path d="M10 13l6 8"/></svg>`,
   edu:`<svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`
 };
+
 const keyTrack = document.getElementById("keyTrack");
 const keyDots = document.getElementById("keyDots");
 const keyPauseBtn = document.getElementById("keyPauseBtn");
 let currentPage = 0, isPaused = false, autoTimer = null;
+
 function getCardsPerView(){
   if(window.innerWidth<=520) return 1;
   if(window.innerWidth<=800) return 2;
   if(window.innerWidth<=1100) return 3;
   return 4;
 }
+
 async function buildKeyCards(){
-  try{
-    const response=await fetch("data/PLFS.txt",{cache:"no-store"});
+  try {
+    const response = await fetch("data/PLFS.txt", {cache:"no-store"});
     if(!response.ok) throw new Error(`HTTP Error ${response.status} - The file data/PLFS.txt was not found.`);
     
-    const text=(await response.text()).replace(/^\uFEFF/,"");
-    const lines=text.split(/\r?\n/);
-    const h=lines.shift().split("\t").map(x=>x.trim());
-    const ix=Object.fromEntries(h.map((x,i)=>[x,i]));
+    const text = (await response.text()).replace(/^\uFEFF/,"");
+    const lines = text.split(/\r?\n/);
+    const h = lines.shift().split("\t").map(x => x.trim());
+    const ix = Object.fromEntries(h.map((x, i) => [x, i]));
     
     if(ix.Year === undefined || ix.Indicator === undefined) {
-       throw new Error("Missing required columns ('Year' or 'Indicator'). Check if the file is truly tab-separated.");
+       throw new Error("Missing required columns ('Year' or 'Indicator'). Check if the file is tab-separated.");
     }
     
-    let latest = 0;
-    for (let i = 0; i < lines.length; i++) {
-      if (!lines[i].trim()) continue;
-      const val = lines[i].split("\t")[ix.Year];
-      if (val) {
-        const num = Number(val.trim());
-        if (Number.isFinite(num) && num > latest) {
-          latest = num;
+    let latestOverallYear = 0;
+    const parsedRows = [];
+
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      const c = line.split("\t").map(x => x.trim());
+      const rowYear = Number(c[ix.Year]);
+      if (Number.isFinite(rowYear) && rowYear > latestOverallYear) {
+        latestOverallYear = rowYear;
+      }
+      parsedRows.push(c);
+    }
+
+    const byName = new Map();
+
+    keyIndicators.forEach(d => {
+      const targetAge = d.age || "15 & above";
+      const targetEst = d.estimate;
+      
+      // Match candidate rows for national aggregate
+      const candidates = parsedRows.filter(c => {
+        const stateVal = c[ix.State];
+        const isNational = stateVal === "India" || stateVal === "All India";
+        const isGender = c[ix.Gender] === "Person";
+        const isSector = c[ix.Sector] === "Total";
+        const isFreq = c[ix.Frequency] === "Annual";
+        const isIndicator = c[ix.Indicator] === d.name;
+        const isAge = c[ix["Age-group"]] === targetAge;
+        const estCol = ix["Type of Estimate"] !== undefined ? c[ix["Type of Estimate"]] : "";
+        const isEst = targetEst === "%" ? true : estCol === targetEst;
+
+        return isNational && isGender && isSector && isFreq && isIndicator && isAge && isEst;
+      });
+
+      if (candidates.length > 0) {
+        // Pick the most recent available year for this specific indicator
+        candidates.sort((a, b) => Number(b[ix.Year]) - Number(a[ix.Year]));
+        const best = candidates[0];
+        const valStr = String(best[ix.Value] || "").replace(/,/g, "").trim();
+        if (valStr !== "" && Number.isFinite(Number(valStr))) {
+          byName.set(d.name, {
+            value: Number(valStr),
+            year: best[ix.Year],
+            estimate: best[ix["Type of Estimate"]] || targetEst
+          });
         }
       }
-    }
+    });
     
-    // Map indicator name → preferred estimate
-    const estimateByName = Object.fromEntries(keyIndicators.map(d => [d.name, d.estimate]));
-    const wanted = new Set(keyIndicators.map(d => d.name));
-    const rows = [];
-    
-    for(const line of lines){
-      if(!line.trim()) continue;
-      const c=line.split("\t").map(x=>x.trim());
-      const indicator=c[ix.Indicator];
-      if(!wanted.has(indicator)) continue;
+    keyTrack.innerHTML = keyIndicators.map(d => {
+      const row = byName.get(d.name);
+      const value = row ? row.value : null;
+      const year = row ? row.year : latestOverallYear;
+      const est = row ? row.estimate : d.estimate;
       
-      const preferEstimate = estimateByName[indicator] || "PS+SS";
-      const estCol = ix["Type of Estimate"] !== undefined ? c[ix["Type of Estimate"]] : "";
-      
-      // Common filters: All India, Person, Total, 15 & above, Annual, latest year
-      if(c[ix.State]!=="All India" || c[ix.Gender]!=="Person" || c[ix.Sector]!=="Total" || c[ix["Age-group"]]!=="15 & above" || c[ix.Frequency]!=="Annual" || Number(c[ix.Year])!==latest) continue;
-      // Per-indicator estimate type
-      if(estCol !== preferEstimate) continue;
-      
-      const valStr = String(c[ix.Value] || "").replace(/,/g,"").trim();
-      if(valStr !== "" && Number.isFinite(Number(valStr))) {
-         rows.push({indicator, value: Number(valStr), estimate: estCol});
-      }
-    }
-    
-    const byName=new Map(rows.map(r=>[r.indicator,r]));
-    keyTrack.innerHTML=keyIndicators.map(d=>{
-      const row=byName.get(d.name);
-      const value=row?row.value:null;
-      const est=d.estimate;
-      const display=value==null?"N/A":(d.unit==="INR"?`₹${value.toLocaleString(undefined,{maximumFractionDigits:0})}`:`${value.toLocaleString(undefined,{maximumFractionDigits:2})}%`);
-      const period=`Annual · ${est} · ${latest}`;
-      const params=new URLSearchParams({
-        source:"PLFS",
-        indicators:d.name,
-        years:String(latest),
-        frequencies:"Annual",
-        states:"All India",
-        genders:"Person",
-        sectors:"Total",
-        ages:"15 & above",
-        estimates:est
+      const display = value == null ? "N/A" : (d.unit === "INR" ? `₹${value.toLocaleString(undefined,{maximumFractionDigits:0})}` : `${value.toLocaleString(undefined,{maximumFractionDigits:2})}%`);
+      const period = `Annual · ${est} · ${year}`;
+      const params = new URLSearchParams({
+        source: "PLFS",
+        indicators: d.name,
+        years: String(year),
+        frequencies: "Annual",
+        states: "India",
+        genders: "Person",
+        sectors: "Total",
+        ages: d.age || "15 & above",
+        estimates: est
       });
-      return `<a class="key-card" href="indicator.html?${params.toString()}"><div class="ki-icon">${kiIcons[d.icon]||kiIcons.chart}</div><div class="ki-title">${d.name}</div><div class="ki-period">${period}</div><div class="ki-value">${display}</div><p class="ki-source">Periodic Labour Force Survey (PLFS)</p></a>`;
+      return `<a class="key-card" href="indicator.html?${params.toString()}">
+        <div class="ki-icon">${kiIcons[d.icon] || kiIcons.chart}</div>
+        <div class="ki-title">${d.name}</div>
+        <div class="ki-period">${period}</div>
+        <div class="ki-value">${display}</div>
+        <p class="ki-source">Periodic Labour Force Survey (PLFS)</p>
+      </a>`;
     }).join("");
-    buildDots(); goToPage(0); startAuto();
-  }catch(err){
+
+    buildDots(); 
+    goToPage(0); 
+    startAuto();
+  } catch(err) {
     console.error(err);
-    keyTrack.innerHTML=`<div style="padding:20px;color:#8a1f1f;font-weight:700">Failed to load data: ${err.message}</div>`;
+    keyTrack.innerHTML = `<div style="padding:20px;color:#8a1f1f;font-weight:700">Failed to load data: ${err.message}</div>`;
   }
 }
+
 function buildDots(){
   const pages = Math.ceil(keyIndicators.length / getCardsPerView());
   keyDots.innerHTML = "";
-  for(let i=0;i<pages;i++){
+  for(let i=0; i<pages; i++){
     const btn = document.createElement("button");
-    btn.className = "key-dot"+(i===currentPage?" active":"");
-    btn.addEventListener("click",()=>goToPage(i));
+    btn.className = "key-dot" + (i === currentPage ? " active" : "");
+    btn.addEventListener("click", () => goToPage(i));
     keyDots.appendChild(btn);
   }
 }
+
 function goToPage(page){
   const per = getCardsPerView();
   const pages = Math.ceil(keyIndicators.length / per);
@@ -422,76 +451,94 @@ function goToPage(page){
   if(!card) return;
   const shift = currentPage * per * (card.offsetWidth + 18);
   keyTrack.style.transform = `translateX(-${shift}px)`;
-  [...keyDots.children].forEach((d,i)=>d.classList.toggle("active",i===currentPage));
+  [...keyDots.children].forEach((d, i) => d.classList.toggle("active", i === currentPage));
 }
-function nextPage(){ goToPage(currentPage+1); }
-function startAuto(){ stopAuto(); if(!isPaused) autoTimer=setInterval(nextPage,4500); }
+
+function nextPage(){ goToPage(currentPage + 1); }
+function startAuto(){ stopAuto(); if(!isPaused) autoTimer = setInterval(nextPage, 4500); }
 function stopAuto(){ if(autoTimer) clearInterval(autoTimer); }
-keyPauseBtn.addEventListener("click",()=>{
-  isPaused=!isPaused;
-  keyPauseBtn.innerHTML=isPaused?'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 5l12 7-12 7V5z"/></svg>':'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
-  keyPauseBtn.title=isPaused?"Play":"Pause";
+
+keyPauseBtn.addEventListener("click", () => {
+  isPaused = !isPaused;
+  keyPauseBtn.innerHTML = isPaused ? '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 5l12 7-12 7V5z"/></svg>' : '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  keyPauseBtn.title = isPaused ? "Play" : "Pause";
   if(isPaused) stopAuto(); else startAuto();
 });
-window.addEventListener("resize",()=>{ buildDots(); goToPage(0); });
+
+window.addEventListener("resize", () => { buildDots(); goToPage(0); });
 buildKeyCards();
-const plfsIndicators=[
-  "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Growth of Labour Force (%)","Growth of Employment (%)","Unemployment Rate","NEET Rate","Average wages of casual workers", "Average monthly earnings – regular salaried","Average monthly earnings – self-employed", "% Distribution of employment by status "," % Distribution of employed persons by industry ", "% Distribution of employed persons by occupation ","Access to technical education (%)","Access to vocational training (%)"
+
+const plfsIndicators = [
+  "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate",
+  "Growth of Labour Force (%)","Growth of Employment (%)","Average wages of casual workers",
+  "Average monthly earnings – regular salaried","Average monthly earnings – self-employed",
+  "Distribution of employment by status (%)","Distribution of employed persons by industry (%)",
+  "Distribution of employed persons by occupation (%)","Access to technical education (%)","Access to vocational training (%)"
 ];
-const sourceIndicators={ PLFS:plfsIndicators, EPFO:["Net number of subscribers"], ESIC:["Net number of ESIC beneficiaries (Persons)"] };
-const dimensions={
-  estimate:{values:["PS+SS","PS","CWS"],panel:"estimatePanel",summary:"estimateSummary",menu:"estimateMenu"},
-  year:{values:["2026","2025","2024","2023","2022","2021","2020","2019","2018"],panel:"yearPanel",summary:"yearSummary",menu:"yearMenu"},
-  frequency:{values:["Annual","Quarterly","Monthly"],panel:"frequencyPanel",summary:"frequencySummary",menu:"frequencyMenu"},
-  state:{values:["All India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"],panel:"statePanel",summary:"stateSummary",menu:"stateMenu"},
-  gender:{values:["Person","Male","Female"],panel:"genderPanel",summary:"genderSummary",menu:"genderMenu"},
-  sector:{values:["Total","Rural","Urban"],panel:"sectorPanel",summary:"sectorSummary",menu:"sectorMenu"},
-  age:{values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"],panel:"agePanel",summary:"ageSummary",menu:"ageMenu"}
+
+const sourceIndicators = { PLFS: plfsIndicators, EPFO: ["Net number of subscribers"], ESIC: ["Net number of ESIC beneficiaries (Persons)"] };
+
+const dimensions = {
+  estimate: {values:["PS+SS","PS","CWS"], panel:"estimatePanel", summary:"estimateSummary", menu:"estimateMenu"},
+  year: {values:["2026","2025","2024","2023","2022","2021","2020","2019","2018"], panel:"yearPanel", summary:"yearSummary", menu:"yearMenu"},
+  frequency: {values:["Annual","Quarterly","Monthly"], panel:"frequencyPanel", summary:"frequencySummary", menu:"frequencyMenu"},
+  state: {values:["India","All India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"], panel:"statePanel", summary:"stateSummary", menu:"stateMenu"},
+  gender: {values:["Person","Male","Female"], panel:"genderPanel", summary:"genderSummary", menu:"genderMenu"},
+  sector: {values:["Total","Rural","Urban"], panel:"sectorPanel", summary:"sectorSummary", menu:"sectorMenu"},
+  age: {values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"], panel:"agePanel", summary:"ageSummary", menu:"ageMenu"}
 };
-const source=document.getElementById("source");
-const selection=document.getElementById("selection");
+
+const source = document.getElementById("source");
+const selection = document.getElementById("selection");
+
 function buildMulti(panelId, values, prefix){
-  const el=document.getElementById(panelId);
-  el.innerHTML=`<div class="select-tools">
+  const el = document.getElementById(panelId);
+  el.innerHTML = `<div class="select-tools">
     <button type="button" data-action="all">Select all</button>
     <button type="button" data-action="clear">Clear all</button>
-  </div>`+values.map(x=>`<label class="check"><input type="checkbox" class="${prefix}Check" value="${x}"><span>${x}</span></label>`).join("");
-  el.querySelector('[data-action="all"]').addEventListener("click",e=>{e.stopPropagation();el.querySelectorAll("input[type=checkbox]").forEach(c=>c.checked=true);updateAllSummaries();});
-  el.querySelector('[data-action="clear"]').addEventListener("click",e=>{e.stopPropagation();el.querySelectorAll("input[type=checkbox]").forEach(c=>c.checked=false);updateAllSummaries();});
-  el.addEventListener("change",updateAllSummaries);
+  </div>` + values.map(x => `<label class="check"><input type="checkbox" class="${prefix}Check" value="${x}"><span>${x}</span></label>`).join("");
+  el.querySelector('[data-action="all"]').addEventListener("click", e => { e.stopPropagation(); el.querySelectorAll("input[type=checkbox]").forEach(c => c.checked = true); updateAllSummaries(); });
+  el.querySelector('[data-action="clear"]').addEventListener("click", e => { e.stopPropagation(); el.querySelectorAll("input[type=checkbox]").forEach(c => c.checked = false); updateAllSummaries(); });
+  el.addEventListener("change", updateAllSummaries);
 }
-function selected(prefix){return [...document.querySelectorAll(`.${prefix}Check:checked`)].map(x=>x.value);}
-function labelCount(prefix,none,singular){
-  const a=selected(prefix);
+
+function selected(prefix){ return [...document.querySelectorAll(`.${prefix}Check:checked`)].map(x => x.value); }
+
+function labelCount(prefix, none, singular){
+  const a = selected(prefix);
   if(!a.length) return none;
-  return `${a.length} ${a.length===1?singular:singular+"s"} selected`;
+  return `${a.length} ${a.length === 1 ? singular : singular + "s"} selected`;
 }
+
 function updateAllSummaries(){
-  document.getElementById("indicatorSummary").textContent=labelCount("indicator","Select indicators","indicator");
-  document.getElementById("estimateSummary").textContent=labelCount("estimate","Select type(s)","type");
-  document.getElementById("yearSummary").textContent=labelCount("year","Select year(s)","year");
-  document.getElementById("frequencySummary").textContent=labelCount("frequency","Select frequency","frequency");
-  document.getElementById("stateSummary").textContent=labelCount("state","Select state(s)","state");
-  document.getElementById("genderSummary").textContent=labelCount("gender","Select gender(s)","gender");
-  document.getElementById("sectorSummary").textContent=labelCount("sector","Select sector(s)","sector");
-  document.getElementById("ageSummary").textContent=labelCount("age","Select age-group(s)","age-group");
-  const n=selected("indicator").length;
-  selection.textContent=n?`${n} indicator${n>1?"s":""} selected`:"No indicators selected";
+  document.getElementById("indicatorSummary").textContent = labelCount("indicator", "Select indicators", "indicator");
+  document.getElementById("estimateSummary").textContent = labelCount("estimate", "Select type(s)", "type");
+  document.getElementById("yearSummary").textContent = labelCount("year", "Select year(s)", "year");
+  document.getElementById("frequencySummary").textContent = labelCount("frequency", "Select frequency", "frequency");
+  document.getElementById("stateSummary").textContent = labelCount("state", "Select state(s)", "state");
+  document.getElementById("genderSummary").textContent = labelCount("gender", "Select gender(s)", "gender");
+  document.getElementById("sectorSummary").textContent = labelCount("sector", "Select sector(s)", "sector");
+  document.getElementById("ageSummary").textContent = labelCount("age", "Select age-group(s)", "age-group");
+  const n = selected("indicator").length;
+  selection.textContent = n ? `${n} indicator${n > 1 ? "s" : ""} selected` : "No indicators selected";
 }
-function setupToggle(menuId,toggleId){
-  const menu=document.getElementById(menuId), toggle=document.getElementById(toggleId);
-  toggle.addEventListener("click",e=>{
+
+function setupToggle(menuId, toggleId){
+  const menu = document.getElementById(menuId), toggle = document.getElementById(toggleId);
+  toggle.addEventListener("click", e => {
     e.stopPropagation();
-    document.querySelectorAll(".multi.open").forEach(m=>{if(m!==menu)m.classList.remove("open")});
+    document.querySelectorAll(".multi.open").forEach(m => { if(m !== menu) m.classList.remove("open"); });
     menu.classList.toggle("open");
   });
 }
+
 function renderIndicators(){
-  buildMulti("indicatorPanel",sourceIndicators[source.value],"indicator");
-  Object.entries(dimensions).forEach(([key,d])=>buildMulti(d.panel,d.values,key));
-  document.getElementById("estimateWrap").style.display=source.value==="PLFS"?"block":"none";
+  buildMulti("indicatorPanel", sourceIndicators[source.value], "indicator");
+  Object.entries(dimensions).forEach(([key, d]) => buildMulti(d.panel, d.values, key));
+  document.getElementById("estimateWrap").style.display = source.value === "PLFS" ? "block" : "none";
   updateAllSummaries();
 }
+
 setupToggle("indicatorMenu","indicatorToggle");
 setupToggle("estimateMenu","estimateToggle");
 setupToggle("yearMenu","yearToggle");
@@ -500,39 +547,46 @@ setupToggle("stateMenu","stateToggle");
 setupToggle("genderMenu","genderToggle");
 setupToggle("sectorMenu","sectorToggle");
 setupToggle("ageMenu","ageToggle");
-document.addEventListener("click",e=>{
-  if(!e.target.closest(".multi")) document.querySelectorAll(".multi.open").forEach(m=>m.classList.remove("open"));
+
+document.addEventListener("click", e => {
+  if(!e.target.closest(".multi")) document.querySelectorAll(".multi.open").forEach(m => m.classList.remove("open"));
 });
-source.addEventListener("change",renderIndicators);
-document.querySelectorAll("[data-source]").forEach(a=>a.addEventListener("click",()=>{
-  source.value=a.dataset.source; renderIndicators();
+
+source.addEventListener("change", renderIndicators);
+document.querySelectorAll("[data-source]").forEach(a => a.addEventListener("click", () => {
+  source.value = a.dataset.source; 
+  renderIndicators();
 }));
-document.getElementById("viewBtn").addEventListener("click",()=>{
-  const inds=selected("indicator");
-  if(!inds.length){alert("Please select at least one indicator.");return;}
-  const params=new URLSearchParams({
-    source:source.value,
-    indicators:inds.join("||"),
-    estimates:selected("estimate").join("||"),
-    years:selected("year").join("||"),
-    frequencies:selected("frequency").join("||"),
-    states:selected("state").join("||"),
-    genders:selected("gender").join("||"),
-    sectors:selected("sector").join("||"),
-    ages:selected("age").join("||")
+
+document.getElementById("viewBtn").addEventListener("click", () => {
+  const inds = selected("indicator");
+  if(!inds.length){ alert("Please select at least one indicator."); return; }
+  const params = new URLSearchParams({
+    source: source.value,
+    indicators: inds.join("||"),
+    estimates: selected("estimate").join("||"),
+    years: selected("year").join("||"),
+    frequencies: selected("frequency").join("||"),
+    states: selected("state").join("||"),
+    genders: selected("gender").join("||"),
+    sectors: selected("sector").join("||"),
+    ages: selected("age").join("||")
   });
-  location.href="indicator.html?"+params.toString();
+  location.href = "indicator.html?" + params.toString();
 });
-document.getElementById("searchBtn").addEventListener("click",()=>{
-  const q=document.getElementById("searchInput").value.trim().toLowerCase();
+
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
   if(!q) return;
-  source.value=q.includes("epfo")?"EPFO":q.includes("esic")?"ESIC":"PLFS";
+  source.value = q.includes("epfo") ? "EPFO" : q.includes("esic") ? "ESIC" : "PLFS";
   renderIndicators();
   document.getElementById("explorer").scrollIntoView({behavior:"smooth"});
 });
-document.getElementById("searchInput").addEventListener("keydown",e=>{
-  if(e.key==="Enter") document.getElementById("searchBtn").click();
+
+document.getElementById("searchInput").addEventListener("keydown", e => {
+  if(e.key === "Enter") document.getElementById("searchBtn").click();
 });
+
 renderIndicators();
 </script>
 </body>
