@@ -298,7 +298,7 @@ const keyIndicators = [
   {name:"Unemployment Rate",                            icon:"alert", unit:"Percent", estimate:"PS+SS"},
   /* Growth – PS+SS */
   {name:"Growth of Labour Force (%)",                   icon:"trend", unit:"Percent", estimate:"PS+SS"},
-  {name:"Growth of Employed Persons (%)",               icon:"trend", unit:"Percent", estimate:"PS+SS"},
+  {name:"Growth of Employment (%)",               icon:"trend", unit:"Percent", estimate:"PS+SS"},
   /* NEET & wages – CWS */
   {name:"NEET Rate",                                    icon:"youth", unit:"Percent", estimate:"CWS"},
   {name:"Average wages of casual workers",              icon:"rupee", unit:"INR",     estimate:"CWS"},
@@ -437,7 +437,7 @@ window.addEventListener("resize",()=>{ buildDots(); goToPage(0); });
 buildKeyCards();
 const plfsIndicators=[
   "Labour Force Participation Rate","Worker Population Ratio / Employment Rate","Unemployment Rate","NEET Rate",
-  "Growth of Labour Force (%)","Growth of Employed Persons (%)","Average wages of casual workers",
+  "Growth of Labour Force (%)","Growth of Employment (%)","Average wages of casual workers",
   "Average monthly earnings – regular salaried","Average monthly earnings – self-employed",
   "Distribution of employment by status","Distribution of employed persons by industry",
   "Distribution of employed persons by occupation","Access to technical education","Access to vocational training"
@@ -447,7 +447,7 @@ const dimensions={
   estimate:{values:["PS+SS","PS","CWS"],panel:"estimatePanel",summary:"estimateSummary",menu:"estimateMenu"},
   year:{values:["2026","2025","2024","2023","2022","2021","2020","2019","2018"],panel:"yearPanel",summary:"yearSummary",menu:"yearMenu"},
   frequency:{values:["Annual","Quarterly","Monthly"],panel:"frequencyPanel",summary:"frequencySummary",menu:"frequencyMenu"},
-  state:{values:["India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"],panel:"statePanel",summary:"stateSummary",menu:"stateMenu"},
+  state:{values:["All India","Jammu and Kashmir","Himachal Pradesh","Punjab","Chandigarh","Uttarakhand","Haryana","Delhi","Rajasthan","Uttar Pradesh","Bihar","Sikkim","Arunachal Pradesh","Nagaland","Manipur","Mizoram","Tripura","Meghalaya","Assam","West Bengal","Jharkhand","Odisha","Chhattisgarh","Madhya Pradesh","Gujarat","Dadra and Nagar Haveli and Daman and Diu","Maharashtra","Andhra Pradesh","Karnataka","Goa","Lakshadweep","Kerala","Tamil Nadu","Puducherry","Andaman and Nicobar Islands","Telangana","Ladakh"],panel:"statePanel",summary:"stateSummary",menu:"stateMenu"},
   gender:{values:["Person","Male","Female"],panel:"genderPanel",summary:"genderSummary",menu:"genderMenu"},
   sector:{values:["Total","Rural","Urban"],panel:"sectorPanel",summary:"sectorSummary",menu:"sectorMenu"},
   age:{values:["15-17","18-29","30-44","45-59","60 & above","15 & above","15-59","15-29"],panel:"agePanel",summary:"ageSummary",menu:"ageMenu"}
