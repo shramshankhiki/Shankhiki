@@ -907,7 +907,7 @@ function buildChartMeta(indicators, years, states, genders, sectors) {
   const sKey = resolveSeriesDim(xKey, inds, years, states, genders, sectors);
   const categories = dimLabels(xKey, inds, years, states, genders, sectors);
   let seriesLabels = sKey === "none" ? ["Value"] : dimLabels(sKey, inds, years, states, genders, sectors);
-  if (seriesLabels.length > 14) seriesLabels = seriesLabels.slice(0, 14);
+  if (seriesLabels.length > 37) seriesLabels = seriesLabels.slice(0, 37);
 
   const series = seriesLabels.map(lab => ({
     label: sKey === "none" ? (inds.length === 1 ? inds[0] : "Average") : String(lab),
